@@ -1,0 +1,6 @@
+framework module Pods_Skyipay {
+  umbrella header "Pods-Skyipay-umbrella.h"
+
+  export *
+  module * { export * }
+}
