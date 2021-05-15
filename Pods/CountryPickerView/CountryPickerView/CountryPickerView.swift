@@ -15,29 +15,37 @@ public enum SearchBarPosition {
 }
 
 public struct Country: Equatable {
-    public var name: String = ""
-    public var code: String = ""
-    public var phoneCode: String = ""
+    public var countryId: Int = 0
+    public var countryISOCode: String = ""
+    public var countryName: String = ""
+    public var countryDialCode: Int = 0
+    public var countryCurrency: String = ""
+    
+//    public var name: String = ""
+//    public var code: String = ""
+//    public var phoneCode: String = ""
     public func localizedName(_ locale: Locale = Locale.current) -> String? {
-        return locale.localizedString(forRegionCode: code)
+        return locale.localizedString(forRegionCode: countryISOCode)
     }
     public var flag: UIImage {
-        return UIImage(named: "CountryPickerView.bundle/Images/\(code.uppercased())",
+        return UIImage(named: "CountryPickerView.bundle/Images/\(countryISOCode.uppercased())",
             in: Bundle(for: CountryPickerView.self), compatibleWith: nil)!
     }
     public init() {}
-    public init(name: String, code: String, phoneCode: String) {
-        self.name = name
-        self.code = code
-        self.phoneCode = phoneCode
+    public init(countryId:Int, countryISOCode: String, countryName: String, countryDialCode: Int, countryCurrency: String) {
+        self.countryId = countryId
+        self.countryISOCode = countryISOCode
+        self.countryName = countryName
+        self.countryDialCode = countryDialCode
+        self.countryCurrency = countryCurrency
     }
 }
 
 public func ==(lhs: Country, rhs: Country) -> Bool {
-    return lhs.code == rhs.code
+    return lhs.countryISOCode == rhs.countryISOCode
 }
 public func !=(lhs: Country, rhs: Country) -> Bool {
-    return lhs.code != rhs.code
+    return lhs.countryISOCode != rhs.countryISOCode
 }
 
 
@@ -107,7 +115,7 @@ public class CountryPickerView: NibView {
     internal(set) public var selectedCountry: Country {
         get {
             return _selectedCountry
-                ?? usableCountries.first(where: { $0.code == Locale.current.regionCode })
+                ?? usableCountries.first(where: { $0.countryISOCode == "IN" })
                 ?? usableCountries.first!
         }
         set {
@@ -133,13 +141,13 @@ public class CountryPickerView: NibView {
         countryDetailsLabel.font = font
         countryDetailsLabel.textColor = textColor
         if showCountryCodeInView && showPhoneCodeInView {
-            countryDetailsLabel.text = "\(selectedCountry.phoneCode)\u{202C}"
+            countryDetailsLabel.text = "\(selectedCountry.countryDialCode)\u{202C}"
         } else if showCountryNameInView && showPhoneCodeInView {
-            countryDetailsLabel.text = "(\(selectedCountry.localizedName() ?? selectedCountry.name)) \u{202A}\(selectedCountry.phoneCode)\u{202C}"
+            countryDetailsLabel.text = "(\(selectedCountry.localizedName() ?? selectedCountry.countryName)) \u{202A}\(selectedCountry.countryDialCode)\u{202C}"
         } else if showCountryCodeInView || showPhoneCodeInView || showCountryNameInView {
-            countryDetailsLabel.text = showCountryCodeInView ? selectedCountry.code
-                : showPhoneCodeInView ? selectedCountry.phoneCode
-                : selectedCountry.localizedName() ?? selectedCountry.name
+            countryDetailsLabel.text = showCountryCodeInView ? selectedCountry.countryISOCode
+                : showPhoneCodeInView ? "\(selectedCountry.countryDialCode)"
+                : selectedCountry.localizedName() ?? selectedCountry.countryName
         } else {
             countryDetailsLabel.text = nil
         }
@@ -193,14 +201,13 @@ public class CountryPickerView: NibView {
                 guard let countryObj = jsonObject as? Dictionary<String, Any> else {
                     continue
                 }
-                
-                guard let name = countryObj["name"] as? String,
-                    let code = countryObj["code"] as? String,
-                    let phoneCode = countryObj["dial_code"] as? String else {
+                guard let id = countryObj["id"] as? Int, let isoCode = countryObj["iso"] as? String,
+                    let name = countryObj["nicename"] as? String,
+                    let dialCode = countryObj["dial_code"] as? Int, let currency = countryObj["currency"] as? String else {
                         continue
                 }
                 
-                let country = Country(name: name, code: code, phoneCode: phoneCode)
+                let country = Country(countryId: id, countryISOCode: isoCode, countryName: name, countryDialCode: dialCode, countryCurrency: currency)
                 countries.append(country)
             }
         }
@@ -216,32 +223,32 @@ public class CountryPickerView: NibView {
 //MARK: Helper methods
 extension CountryPickerView {
     public func setCountryByName(_ name: String) {
-        if let country = countries.first(where: { $0.name == name }) {
+        if let country = countries.first(where: { $0.countryName == name }) {
             selectedCountry = country
         }
     }
     
     public func setCountryByPhoneCode(_ phoneCode: String) {
-        if let country = countries.first(where: { $0.phoneCode == phoneCode }) {
+        if let country = countries.first(where: { "\($0.countryDialCode)" == phoneCode }) {
             selectedCountry = country
         }
     }
     
     public func setCountryByCode(_ code: String) {
-        if let country = countries.first(where: { $0.code == code }) {
+        if let country = countries.first(where: { $0.countryISOCode == code }) {
             selectedCountry = country
         }
     }
     
     public func getCountryByName(_ name: String) -> Country? {
-        return countries.first(where: { $0.name == name })
+        return countries.first(where: { $0.countryName == name })
     }
     
     public func getCountryByPhoneCode(_ phoneCode: String) -> Country? {
-        return countries.first(where: { $0.phoneCode == phoneCode })
+        return countries.first(where: { "\($0.countryDialCode)" == phoneCode })
     }
     
     public func getCountryByCode(_ code: String) -> Country? {
-        return countries.first(where: { $0.code == code })
+        return countries.first(where: { $0.countryISOCode == code })
     }
 }

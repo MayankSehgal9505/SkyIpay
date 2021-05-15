@@ -49,12 +49,12 @@ extension CountryPickerViewController {
             let locale = dataSource.localeForCountryNameInList
             
             var groupedData = Dictionary<String, [Country]>(grouping: countriesArray) {
-                let name = $0.localizedName(locale) ?? $0.name
+                let name = $0.localizedName(locale) ?? $0.countryName
                 return String(name.capitalized[name.startIndex])
             }
             groupedData.forEach{ key, value in
                 groupedData[key] = value.sorted(by: { (lhs, rhs) -> Bool in
-                    return lhs.localizedName(locale) ?? lhs.name < rhs.localizedName(locale) ?? rhs.name
+                    return lhs.localizedName(locale) ?? lhs.countryName < rhs.localizedName(locale) ?? rhs.countryName
                 })
             }
             
@@ -129,12 +129,12 @@ extension CountryPickerViewController {
         let country = isSearchMode ? searchResults[indexPath.row]
             : countries[sectionsTitles[indexPath.section]]![indexPath.row]
 
-        var name = country.localizedName(dataSource.localeForCountryNameInList) ?? country.name
+        var name = country.localizedName(dataSource.localeForCountryNameInList) ?? country.countryName
         if dataSource.showCountryCodeInList {
-            name = "\(name) (\(country.code))"
+            name = "\(name) (\(country.countryISOCode))"
         }
         if dataSource.showPhoneCodeInList {
-            name = "\(name) (\u{202A}\(country.phoneCode)\u{202C})"
+            name = "\(name) (\u{202A}\(country.countryDialCode)\u{202C})"
         }
         cell.imageView?.image = country.flag
         
@@ -225,8 +225,8 @@ extension CountryPickerViewController: UISearchResultsUpdating {
             }
 
             searchResults.append(contentsOf: indexArray.filter({
-                let name = ($0.localizedName(dataSource.localeForCountryNameInList) ?? $0.name).lowercased()
-                let code = $0.code.lowercased()
+                let name = ($0.localizedName(dataSource.localeForCountryNameInList) ?? $0.countryName).lowercased()
+                let code = $0.countryISOCode.lowercased()
                 let query = text.lowercased()
                 return name.hasPrefix(query) || (dataSource.showCountryCodeInList && code.hasPrefix(query))
             }))

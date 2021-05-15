@@ -7,56 +7,42 @@
 
 import Foundation
 import SwiftyJSON
-import SDWebImage
-import UIKit
 struct UserModel {
+    var userID : Int = 0
     var firstName: String = ""
     var lastname: String = ""
+    var userName : String = ""
     var email: String = ""
-    var countryCode: String = ""
-    var userNumber:String = ""
+    var dialCode: String = ""
+    var userPhoneNumber:String = ""
+    var userGender:String = ""
+    var userDOB:String = ""
+    var userVerified: VerificationStatus = .ongoing
     var userImageUrl:String = ""
-    var dob:String = ""
-    var languages:String = ""
-    var birthCountry:String = ""
-    var userID:String = ""
-    var userName:String = ""
-    var otpID:String = ""
+    var userAddress: Array<AddressModel> = Array<AddressModel>()
+    var documents: DocumentsModel = DocumentsModel()
     var password: String = ""
-    var gender: String = ""
-    var nationality = ""
     init() {
     }
     
     init(JsonDashBoard: JSON) {
-        firstName = JsonDashBoard["firstname"].stringValue
-        lastname = JsonDashBoard["lastname"].stringValue
+        userID = JsonDashBoard["id"].intValue
+        firstName = JsonDashBoard["first_name"].stringValue
+        lastname = JsonDashBoard["last_name"].stringValue
+        userName = JsonDashBoard["username"].stringValue
         email = JsonDashBoard["email"].stringValue
-        countryCode = JsonDashBoard["country_code"].stringValue
-        userImageUrl = JsonDashBoard["image"].stringValue
-        languages = JsonDashBoard["languages"].stringValue
-        birthCountry = JsonDashBoard["country_birth"].stringValue
-        dob = JsonDashBoard["dob"].stringValue
-        var userIDValue = ""
-        if (JsonDashBoard["user_id"].stringValue.count > 0) {
-            userIDValue = JsonDashBoard["user_id"].stringValue
-        } else if (JsonDashBoard["id"].stringValue.count > 0) {
-            userIDValue = JsonDashBoard["id"].stringValue
-        }else if (JsonDashBoard["userId"].stringValue.count > 0) {
-            userIDValue = JsonDashBoard["userId"].stringValue
+        dialCode = JsonDashBoard["dial_code"].stringValue
+        userPhoneNumber = JsonDashBoard["phone"].stringValue
+        userGender = JsonDashBoard["gender"].stringValue
+        userDOB = JsonDashBoard["dob"].stringValue
+        if let verificationStatus =  VerificationStatus.init(rawValue: JsonDashBoard["is_verify"].intValue) {
+            userVerified = verificationStatus
         }
-        userID = userIDValue
-        otpID = JsonDashBoard["otp_id"].stringValue
-        var phoneNumber = ""
-        if (JsonDashBoard["phoneNumber"].stringValue.count > 0) {
-            phoneNumber = JsonDashBoard["phoneNumber"].stringValue
-        } else if (JsonDashBoard["phonenumber"].stringValue.count > 0) {
-            phoneNumber = JsonDashBoard["phonenumber"].stringValue
+        userImageUrl = JsonDashBoard["profile_image"].stringValue
+        for address in JsonDashBoard["address"].arrayValue {
+            let addressModel =  AddressModel.init(JsonDashBoard: address)
+            userAddress.append(addressModel)
         }
-        userNumber = phoneNumber
-        password = JsonDashBoard["password"].stringValue
-        gender = JsonDashBoard["gender"].stringValue
-        nationality = JsonDashBoard["nationality"].stringValue
-
+        documents = DocumentsModel.init(JsonDashBoard: JsonDashBoard["document"])
     }
 }

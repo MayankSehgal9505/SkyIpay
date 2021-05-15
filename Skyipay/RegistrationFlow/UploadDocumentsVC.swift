@@ -48,10 +48,12 @@ class UploadDocumentsVC: BaseViewController {
     var selecteddate = ""
     var imagedict:[String:Data] = [:]
     private let user = UserData.sharedInstance
+    var userModelObj = UserModel()
     //MARK:- Life cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitle(navigationTitle: "Document Verification")
+        self.enableLeftBtn(withIcon: "")
         setupInitialUi()
     }
     
@@ -101,13 +103,23 @@ class UploadDocumentsVC: BaseViewController {
         effectView = (viewArray.last as? UIVisualEffectView)
         self.pickerMainView.isHidden = false
         CommonMethods.setPickerConstraintAccordingToDevice(pickerView: pickerMainView, view: self.view)
+    }    
+    
+    @IBAction func uploadIdCardBtnAction(_ sender: UIButton) {
+        ImagePickerManager().pickImage(self){ image in
+               //here is the image
+            let imageData: Data? = image.jpegData(compressionQuality: 0.5)
+            if let data = imageData {
+                self.imagedict["id_card"] = data
+            }
+        }
     }
     @IBAction func uploadBillAction(_ sender: UIButton) {
         ImagePickerManager().pickImage(self){ image in
                //here is the image
             let imageData: Data? = image.jpegData(compressionQuality: 0.5)
             if let data = imageData {
-                self.imagedict["utilityBillImage"] = data
+                self.imagedict["utility_bills"] = data
             }
         }
     }
@@ -116,7 +128,7 @@ class UploadDocumentsVC: BaseViewController {
                //here is the image
             let imageData: Data? = image.jpegData(compressionQuality: 0.5)
             if let data = imageData {
-                self.imagedict["bankStatementImage"] = data
+                self.imagedict["bank_statements"] = data
             }
         }
     }
@@ -126,7 +138,7 @@ class UploadDocumentsVC: BaseViewController {
                //here is the image
             let imageData: Data? = image.jpegData(compressionQuality: 0.5)
             if let data = imageData {
-                self.imagedict["sourceIncomeImage"] = data
+                self.imagedict["source_income"] = data
             }
         }
     }
@@ -136,7 +148,7 @@ class UploadDocumentsVC: BaseViewController {
                //here is the image
             let imageData: Data? = image.jpegData(compressionQuality: 0.5)
             if let data = imageData {
-                self.imagedict["paySlipImage"] = data
+                self.imagedict["pay_slips"] = data
             }
         }
     }
@@ -146,7 +158,7 @@ class UploadDocumentsVC: BaseViewController {
                //here is the image
             let imageData: Data? = image.jpegData(compressionQuality: 0.5)
             if let data = imageData {
-                self.imagedict["dobImage"] = data
+                self.imagedict["dob_proof"] = data
             }
         }
     }
@@ -194,13 +206,14 @@ class UploadDocumentsVC: BaseViewController {
         selecteddate = dateFormatter.string(from: sender.date)
     }
     @IBAction func verifyAction(_ sender: UIButton) {
-        if (idTextfield.text?.isEmpty ??  true) {
+        /*if (idTextfield.text?.isEmpty ??  true) {
             self.view.makeToast("Choose ID", duration: 3.0, position: .center)
         } else if (issueDate.text?.isEmpty ??  true) {
             self.view.makeToast("Issue date can't be empty", duration: 3.0, position: .center)
         } else if (endDate.text?.isEmpty ??  true) {
             self.view.makeToast("Expire date can't be empty", duration: 3.0, position: .center)
-        } else if imagedict.count<5{
+        } else*/
+        if imagedict.count<6{
             self.view.makeToast("Upload all documents", duration: 3.0, position: .center)
         } else {
             uploadDocuments()
@@ -218,24 +231,29 @@ extension UploadDocumentsVC {
     private func uploadDocuments(){
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
-            let uploadDocumentsUrl : String = URLNames.baseUrl + URLNames.uploadDocuments
+            let uploadDocumentsUrl : String = URLNames.baseUrl + URLNames.register
             let parameters = [
-                "userId":self.user.userModel.userID,
-                "documentType":idTextfield.text!,
-                "issueDate":issueDate.text!,
-                "expiryDate":endDate.text!,
-                "selectCountry":self.user.userModel.birthCountry,
-                "countryCode":self.user.usercountry.code,
-                "mNumber":self.user.userModel.userNumber,
+                "first_name":userModelObj.firstName,
+                "last_name":userModelObj.lastname,
+                "email":userModelObj.email,
+                "password":userModelObj.password,
+                "dob":userModelObj.userDOB,
+                "iso":userModelObj.userAddress.first?.countryModel.countryISOCode ?? "IN",
+                "country_id":userModelObj.userAddress.first?.countryModel.countryId ?? 99,
             ] as [String : Any]
             print(parameters)
-            NetworkManager.sharedInstance.uploadDocuments(url: uploadDocumentsUrl, method: .post, imagesDict: self.imagedict, parameters: parameters) { (json, status) in
+            let headers = [
+                "Accept": "application/json",
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.uploadDocuments(url: uploadDocumentsUrl, method: .post, imagesDict: self.imagedict, parameters: parameters,headers: headers) { (json, status) in
                 guard let jsonValue = json?.dictionaryValue else {
                    self.view.makeToast(status, duration: 3.0, position: .bottom)
                    self.dismissHUD(isAnimated: true)
                    return
                 }
-                if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+                if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
+                    Defaults.setUserLoggedIn(userLoggedIn: true)
                     self.moveToverification()
                 }
                 else {

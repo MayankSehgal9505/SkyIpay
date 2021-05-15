@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,8 +38,8 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QX-Fp-Loa">
-                            <rect key="frame" x="40" y="91.666666666666686" width="334" height="286.66666666666669"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QX-Fp-Loa">
+                            <rect key="frame" x="40" y="92" width="334" height="144"/>
                             <string key="text">We are reviewing your documents, it will justt take a few minutes.
 
 We will redirect you into your account once the reviewing of you document is done successfullly.</string>
@@ -47,12 +47,37 @@ We will redirect you into your account once the reviewing of you document is don
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-dC-Kje" customClass="CustomButton" customModule="Skyipay" customModuleProvider="target">
+                            <rect key="frame" x="147" y="338.33333333333331" width="120" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="41A-PP-bte"/>
+                                <constraint firstAttribute="width" constant="120" id="5Sr-bm-rhR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <state key="normal" title="Button"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Log Out"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="22"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                    <color key="value" red="0.88235294117647056" green="0.40392156862745099" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="lG9-RZ-Qei"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.88235294117647056" green="0.40392156862745099" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="Ana-dC-Kje" firstAttribute="centerX" secondItem="sgx-6u-D9v" secondAttribute="centerX" id="BgK-7x-TI8"/>
                         <constraint firstItem="1QX-Fp-Loa" firstAttribute="top" secondItem="xoM-JT-d8y" secondAttribute="bottom" id="INm-hr-vmQ"/>
-                        <constraint firstAttribute="bottom" secondItem="1QX-Fp-Loa" secondAttribute="bottom" constant="25" id="YMu-AU-8BJ"/>
                         <constraint firstItem="xoM-JT-d8y" firstAttribute="top" secondItem="sgx-6u-D9v" secondAttribute="top" constant="40" id="ZyL-w0-qQu"/>
+                        <constraint firstAttribute="bottom" secondItem="Ana-dC-Kje" secondAttribute="bottom" constant="20" id="ewH-HF-Pth"/>
                         <constraint firstItem="xoM-JT-d8y" firstAttribute="leading" secondItem="sgx-6u-D9v" secondAttribute="leading" constant="20" id="fub-H7-URF"/>
                         <constraint firstAttribute="trailing" secondItem="xoM-JT-d8y" secondAttribute="trailing" constant="20" id="qOu-pP-nto"/>
                         <constraint firstAttribute="trailing" secondItem="1QX-Fp-Loa" secondAttribute="trailing" constant="40" id="rrv-HA-GiM"/>
@@ -78,6 +103,11 @@ We will redirect you into your account once the reviewing of you document is don
             <point key="canvasLocation" x="18.840579710144929" y="87.723214285714278"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Ana-dC-Kje">
+            <size key="intrinsicContentSize" width="59" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="reviewScreen" width="210" height="136.33332824707031"/>
         <systemColor name="systemBackgroundColor">

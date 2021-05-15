@@ -7,16 +7,13 @@
 
 import Foundation
 struct URLNames {
-    static let baseUrl = "http://demo.equalinfotech.com/skyipay/api/Generals/"
-    static let sendOTPRegister = "registerPhone"
-    static let verifyOTPRegister = "verifyOtp"
-    static let loginWithNumber = "loginPhone"
-    static let loginVerification = "verifyLoginOtp"
-    static let countryList = "countryList"
-    static let getUserDetails = "getProfile"
-    static let userSignup = "userSignup"
-    static let uploadDocuments = "uploadDocuments"
-    static let updateUserDetails = "updateProfile"
-    static let uploadImage = "uploadImage"
-    static let activityList = "activityList"
+    static let baseUrl = "http://94.237.66.181/skpipay/api/"
+    static let verifyOTP = "user/otp-verfiy"
+    static let login = "user/login"
+    static let countryList = "common/countries"
+    static let getUserDetails = "user"
+    static let register = "user/register"
+    static let updateUserDetails = "user/update"
+    static let uploadImage = "user/avatar"
+    static let logout = "user/logout"
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class ValidateOTPVC: UIViewController {
 
     //MARK:- IBOutlets
@@ -81,14 +80,14 @@ class ValidateOTPVC: UIViewController {
         let registerVC = RegistrationVC()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
-
+    private func moveToVerificationPendingVC() {
+        let verificationVC = VerifictionPendingVC()
+        self.navigationController?.pushViewController(verificationVC, animated: true)
+    }
     //MARK:- IBActions
 
     @IBAction func resendOtpAction(_ sender: UIButton) {
-        switch typeOfScreen {
-            case .login: getOtpAgainForlogin()
-            default: getOtpAgainForRegister()
-        }
+        getOtpAgainForlogin()
         setupUI()
     }
     
@@ -96,12 +95,7 @@ class ValidateOTPVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func nextBtnAction(_ sender: UIButton) {
-        switch typeOfScreen {
-            case .login:
-                verifyOTP(user: userObj)
-            default:
-                verifyOTP(user: userObj)
-        }
+        verifyOTP(user: userObj)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
@@ -174,58 +168,57 @@ extension ValidateOTPVC:UITextFieldDelegate {
 extension ValidateOTPVC:GetOtp {
    
    func getOtpAgainForlogin() {
-    callLoginAPI(screenType: typeOfScreen, countryCode: user.usercountry.code, phoneNumber: user.userPhoneNumber){(userModel) in
-        self.userObj = userModel
+    callLoginAPI(screenType: typeOfScreen, countryCode: "\(user.usercountry.countryDialCode)", phoneNumber: user.userPhoneNumber){
         self.setupUI()
     }
-   }
-   
-   func getOtpAgainForRegister() {
-        registerAPI(screenType: typeOfScreen, countryCode: user.usercountry.code, phoneNumber: user.userPhoneNumber){(userModel) in
-            self.userObj = userModel
-            self.setupUI()
-        }
    }
     
     func verifyOTP(user:UserModel){
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
-            var verifyOTPURL = ""
-            switch self.typeOfScreen {
-            case .login:
-                verifyOTPURL = URLNames.baseUrl + URLNames.loginVerification
-            default:
-                verifyOTPURL = URLNames.baseUrl + URLNames.verifyOTPRegister
-            }
+            let verifyOTPURL = URLNames.baseUrl + URLNames.verifyOTP
             let parameters = [
-                "userId":user.userID,
-                "otpId":user.otpID,
-                "otp": getOTP()
+                "phone":user.userPhoneNumber,
+                "otp":"111111",
+                "device_token": Defaults.getDeviceToken(),
+                "device_type": DeviceType.ios.rawValue
             ] as [String : Any]
             print(parameters)
-            otpString = ""
-            NetworkManager.sharedInstance.commonApiCall(url: verifyOTPURL, method: .post, parameters: parameters, completionHandler: { (json, status) in
+            NetworkManager.sharedInstance.commonApiCall(url: verifyOTPURL, method: .post, parameters: parameters,headers: nil, completionHandler: { (json, status) in
              guard let jsonValue = json?.dictionaryValue else {
                 self.view.makeToast(status, duration: 3.0, position: .bottom)
                 self.dismissHUD(isAnimated: true)
                 return
              }
-             if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
-                 if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
-                    let userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
-                    self.user.userID = userModel.userID
-                    self.user.userPhoneNumber = userModel.userNumber
-                    self.user.userModel = userModel
-                    switch self.typeOfScreen {
-                    case .login:
-                        Defaults.setUserID(userID: userModel.userID)
-                        Defaults.setUserLoggedIn(userLoggedIn: true)
-                        Utility.setHomeRootVC()
-                    default:
-                        self.moveToRegistrationScreen()
+                if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
+                    if let dict =  jsonValue[APIFields.dataKey]?.dictionaryValue {
+                       if let accessToken = dict[APIFields.accessTokenKey]?.stringValue {
+                           Defaults.setAccessToken(accessToken: accessToken)
+                       }
+                       if let userIDValue = dict["user_id"]?.intValue {
+                           Defaults.setUserID(userID: userIDValue)
+                       }
+                        if let verificationDone = dict["is_verify"]?.intValue,let verificationStatus = VerificationStatus.init(rawValue: verificationDone), let haveDocuments = dict["have_documents"]?.intValue, let documentStatus = DocumentStatus.init(rawValue: haveDocuments) {
+                            switch (verificationStatus,documentStatus) {
+                            case (.verified,.docummentPresent):
+                                Defaults.setUserLoggedIn(userLoggedIn: true)
+                                Utility.setHomeRootVC()
+                            case (.verified,.docummentAbsent):
+                                Defaults.setUserLoggedIn(userLoggedIn: true)
+                                Utility.setHomeRootVC()
+                                break
+                            case (.ongoing, .docummentPresent):
+                                self.moveToVerificationPendingVC()
+                            case (.ongoing, .docummentAbsent):
+                                self.moveToRegistrationScreen()
+                            default:
+                                break
+                            }
+                        } else {
+                            self.moveToRegistrationScreen()
+                        }
                     }
-               }
-             }
+                }
              else {
                  self.view.makeToast(jsonValue["msg"]?.stringValue, duration: 3.0, position: .bottom)
 

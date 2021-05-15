@@ -30,12 +30,23 @@ class Defaults {
     static func setUserLoggedIn(userLoggedIn:Bool) {
         defaults.set(userLoggedIn, forKey: "isUserLoggedIn")
     }
-    
-    static func setUserID(userID:String) {
+    static func setDeviceToken(deviceToken:String) {
+        defaults.set(deviceToken, forKey: "deviceToken")
+    }
+    static func getDeviceToken()-> String {
+        defaults.string(forKey: "deviceToken") ?? "asdfsfsdfsdfdhdfghfghd54745645643546536"
+    }
+    static func setAccessToken(accessToken:String) {
+        defaults.set(accessToken, forKey: "accessToken")
+    }
+    static func getAccessToken()-> String {
+        defaults.string(forKey: "accessToken") ?? ""
+    }
+    static func setUserID(userID:Int) {
         defaults.set(userID, forKey: "userID")
     }
-    static func getUserID()-> String {
-        defaults.string(forKey: "userID") ?? ""
+    static func getUserID()-> Int? {
+        defaults.integer(forKey: "userID")
     }
     static func resetDefaults() {
         let dictionary = defaults.dictionaryRepresentation()
@@ -69,6 +80,13 @@ class Utility {
     static func loginRootVC() {
         let loginVC = LoginVC()
         let rootVC = UINavigationController(rootViewController: loginVC)
+        appDelegate.window?.rootViewController = rootVC
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
+    static func VerificationPendingRootVC() {
+        let verificationVC = VerifictionPendingVC()
+        let rootVC = UINavigationController(rootViewController: verificationVC)
         appDelegate.window?.rootViewController = rootVC
         appDelegate.window?.makeKeyAndVisible()
     }

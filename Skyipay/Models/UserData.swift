@@ -15,7 +15,7 @@ final class UserData: NSObject {
     //User properties
     var userPhoneNumber = ""
     var userName = ""
-    var userID = ""
+    var userID = 0
     var userModel = UserModel()
     var usercountry = Country()
     var rootVC: UIViewController = UIViewController()

@@ -40,11 +40,13 @@ class RegistrationVC: BaseViewController {
     let cp = CountryPickerView()
     private let user = UserData.sharedInstance
     private var dob = ""
+    var userModelObj = UserModel()
     //MARK:- Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTitle(navigationTitle: "Personal Details")
+        self.enableLeftBtn(withIcon: "")
         setupInitialUi()
     }
     override func viewWillLayoutSubviews() {
@@ -62,7 +64,7 @@ class RegistrationVC: BaseViewController {
         self.genderTxtFld.text = genderArray.first!.lowercased()
         setupCountryPicker()
         setPickerDataSourceDelegate(dataSourceArray: genderArray)
-        self.countryTxtFld.text = user.usercountry.name
+        self.countryTxtFld.text = user.usercountry.countryName
         dobPicker.maximumDate = Date()
     }
     /// set picker data source & delegates
@@ -84,6 +86,7 @@ class RegistrationVC: BaseViewController {
     
     private func moveToUploadDocuments() {
         let uploadDocument = UploadDocumentsVC()
+        uploadDocument.userModelObj =  self.userModelObj
         self.navigationController?.pushViewController(uploadDocument, animated: true)
     }
     
@@ -122,14 +125,23 @@ class RegistrationVC: BaseViewController {
             self.view.makeToast("Email should be valid", duration: 3.0, position: .center)
         } else if (passwordTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Password can't be empty", duration: 3.0, position: .center)
-        } else if (nationalityTxtFld.text?.isEmpty ??  true) {
+        } /*else if (nationalityTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Nationality can't be empty", duration: 3.0, position: .center)
-        } else if (dobTxtFld.text?.isEmpty ??  true) {
+        }*/ else if (dobTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Date of birth can't be empty", duration: 3.0, position: .center)
         } else if (countryTxtFld.text?.isEmpty ??  true) {
-            self.view.makeToast("Couuntry can't be empty", duration: 3.0, position: .center)
+            self.view.makeToast("Country can't be empty", duration: 3.0, position: .center)
         } else {
-            sendUserDetails()
+            userModelObj.firstName = firstNameTxtFld.text!
+            userModelObj.lastname = lastNameTxtFld.text!
+            userModelObj.email = emailTxtFld.text!
+            userModelObj.password = passwordTxtFld.text!
+            userModelObj.userDOB = dobTxtFld.text!
+            var address = AddressModel()
+            address.countryModel.countryISOCode = user.usercountry.countryISOCode
+            address.countryModel.countryId = user.usercountry.countryId
+            userModelObj.userAddress.append(address)
+            self.moveToUploadDocuments()
         }
     }
     
@@ -170,7 +182,7 @@ extension RegistrationVC: GenericPickerDataSourceDelegate {
 extension RegistrationVC: CountryPickerViewDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         user.usercountry = country
-        self.countryTxtFld.text = country.name
+        self.countryTxtFld.text = country.countryName
      }
  }
 
@@ -193,11 +205,11 @@ extension RegistrationVC: CountryPickerViewDataSource {
     }
  }
 //MARK:- API call
-extension RegistrationVC {
+/*extension RegistrationVC {
     private func sendUserDetails(){
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
-            let userSignupUrl : String = URLNames.baseUrl + URLNames.userSignup
+            let userSignupUrl : String = URLNames.baseUrl + URLNames.register
             let parameters = [
                 "userId":self.user.userModel.userID,
                 "firstname":firstNameTxtFld.text!,
@@ -216,7 +228,7 @@ extension RegistrationVC {
                 self.dismissHUD(isAnimated: true)
                 return
              }
-             if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+             if let apiSuccess = jsonValue[APIFields.co], apiSuccess == "true" {
                  if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
                     var userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
                     userModel.userNumber = self.user.userModel.userNumber
@@ -236,3 +248,4 @@ extension RegistrationVC {
      }
     }
 }
+*/

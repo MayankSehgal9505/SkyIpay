@@ -142,7 +142,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="920.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-vm-btd" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="879.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="807"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd9-Wj-bWj">
                                             <rect key="frame" x="15" y="15" width="384" height="17"/>
@@ -180,7 +180,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ap-3c-5fs">
-                                            <rect key="frame" x="0.0" y="184.5" width="414" height="685"/>
+                                            <rect key="frame" x="0.0" y="184.5" width="414" height="612.5"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIT-Cm-gt6" userLabel="FirstNameView">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
@@ -372,16 +372,17 @@ United kingdom has been set as issuing country of your documents.</string>
                                                         <constraint firstItem="xxP-gN-e96" firstAttribute="top" secondItem="rtG-qz-C7l" secondAttribute="top" constant="5" id="s32-w2-aZz"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-rZ-dAJ" userLabel="NationalityView">
+                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1k-rZ-dAJ" userLabel="NationalityView">
                                                     <rect key="frame" x="0.0" y="290" width="414" height="67.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nationality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-dX-t1T">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nationality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-dX-t1T">
                                                             <rect key="frame" x="20" y="5" width="374" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJJ-K3-J4F">
+                                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJJ-K3-J4F">
                                                             <rect key="frame" x="20" y="29.5" width="374" height="35"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -394,7 +395,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                                 <outlet property="delegate" destination="-1" id="zeN-co-N63"/>
                                                             </connections>
                                                         </textField>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e84-R3-Nt0">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e84-R3-Nt0">
                                                             <rect key="frame" x="20" y="66.5" width="374" height="1"/>
                                                             <color key="backgroundColor" systemColor="systemGray3Color"/>
                                                             <constraints>
@@ -404,20 +405,12 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="oJJ-K3-J4F" firstAttribute="leading" secondItem="z1k-rZ-dAJ" secondAttribute="leading" constant="20" id="G50-2k-2es"/>
-                                                        <constraint firstAttribute="trailing" secondItem="e84-R3-Nt0" secondAttribute="trailing" constant="20" id="Gt0-5K-TY4"/>
                                                         <constraint firstItem="oJJ-K3-J4F" firstAttribute="top" secondItem="LEL-dX-t1T" secondAttribute="bottom" constant="5" id="Ure-Wd-TM7"/>
-                                                        <constraint firstAttribute="trailing" secondItem="LEL-dX-t1T" secondAttribute="trailing" constant="20" id="V2b-Wo-9qQ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oJJ-K3-J4F" secondAttribute="trailing" constant="20" id="c9Q-ZC-kYX"/>
-                                                        <constraint firstItem="LEL-dX-t1T" firstAttribute="leading" secondItem="z1k-rZ-dAJ" secondAttribute="leading" constant="20" id="mIs-qg-5xg"/>
-                                                        <constraint firstItem="e84-R3-Nt0" firstAttribute="leading" secondItem="z1k-rZ-dAJ" secondAttribute="leading" constant="20" id="oax-ua-m5p"/>
-                                                        <constraint firstItem="LEL-dX-t1T" firstAttribute="top" secondItem="z1k-rZ-dAJ" secondAttribute="top" constant="5" id="obK-hU-IHK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="e84-R3-Nt0" secondAttribute="bottom" id="pMG-9o-78U"/>
                                                         <constraint firstItem="e84-R3-Nt0" firstAttribute="top" secondItem="oJJ-K3-J4F" secondAttribute="bottom" constant="2" id="vjt-rO-R2I"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs0-Pm-dvq" userLabel="DOBView">
-                                                    <rect key="frame" x="0.0" y="362.5" width="414" height="67.5"/>
+                                                    <rect key="frame" x="0.0" y="290" width="414" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D.O.B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbO-Qy-4V5">
                                                             <rect key="frame" x="20" y="5" width="374" height="19.5"/>
@@ -467,7 +460,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lks-8P-7yb" userLabel="CountryView">
-                                                    <rect key="frame" x="0.0" y="435" width="414" height="67.5"/>
+                                                    <rect key="frame" x="0.0" y="362.5" width="414" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZy-OF-0fP">
                                                             <rect key="frame" x="20" y="5" width="374" height="19.5"/>
@@ -526,7 +519,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oke-iF-mwv" userLabel="GenderView">
-                                                    <rect key="frame" x="0.0" y="507.5" width="414" height="67.5"/>
+                                                    <rect key="frame" x="0.0" y="435" width="414" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sky-sz-xOa">
                                                             <rect key="frame" x="20" y="5" width="374" height="19.5"/>
@@ -585,7 +578,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iw5-Zr-Uc5" customClass="CustomButton" customModule="Skyipay" customModuleProvider="target">
-                                                    <rect key="frame" x="132" y="600" width="150" height="60"/>
+                                                    <rect key="frame" x="132" y="527.5" width="150" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="AKR-fG-DC5"/>
                                                         <constraint firstAttribute="height" constant="60" id="DuZ-Q3-ReR"/>
@@ -611,9 +604,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="oke-iF-mwv" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="0gl-KS-Xih"/>
-                                                <constraint firstItem="Iw5-Zr-Uc5" firstAttribute="top" secondItem="oke-iF-mwv" secondAttribute="bottom" constant="25" id="1H1-aG-ekN"/>
                                                 <constraint firstItem="Lks-8P-7yb" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="2wE-Xm-Fdi"/>
-                                                <constraint firstItem="vs0-Pm-dvq" firstAttribute="top" secondItem="z1k-rZ-dAJ" secondAttribute="bottom" constant="5" id="4ua-GG-xuO"/>
                                                 <constraint firstItem="Iw5-Zr-Uc5" firstAttribute="centerX" secondItem="3ap-3c-5fs" secondAttribute="centerX" id="7bp-ck-Bfw"/>
                                                 <constraint firstAttribute="trailing" secondItem="YIT-Cm-gt6" secondAttribute="trailing" id="7xU-nA-UMi"/>
                                                 <constraint firstItem="YIT-Cm-gt6" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="8uy-ty-eWp"/>
@@ -621,8 +612,8 @@ United kingdom has been set as issuing country of your documents.</string>
                                                 <constraint firstAttribute="trailing" secondItem="vs0-Pm-dvq" secondAttribute="trailing" id="Ewb-YM-FxR"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lks-8P-7yb" secondAttribute="trailing" id="GDt-gs-V14"/>
                                                 <constraint firstItem="rtG-qz-C7l" firstAttribute="top" secondItem="U6B-3o-aBz" secondAttribute="bottom" constant="5" id="LUN-aY-wW1"/>
-                                                <constraint firstItem="z1k-rZ-dAJ" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="MvV-ru-AND"/>
                                                 <constraint firstItem="U6B-3o-aBz" firstAttribute="top" secondItem="PGF-Kg-7oR" secondAttribute="bottom" constant="5" id="SA2-lx-ue8"/>
+                                                <constraint firstItem="vs0-Pm-dvq" firstAttribute="top" secondItem="rtG-qz-C7l" secondAttribute="bottom" constant="5" id="W8X-GF-kAZ"/>
                                                 <constraint firstItem="PGF-Kg-7oR" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="Xlb-r8-5pN"/>
                                                 <constraint firstAttribute="trailing" secondItem="PGF-Kg-7oR" secondAttribute="trailing" id="YTW-Fv-alH"/>
                                                 <constraint firstItem="U6B-3o-aBz" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="dgt-ZV-KuH"/>
@@ -631,11 +622,12 @@ United kingdom has been set as issuing country of your documents.</string>
                                                 <constraint firstItem="Lks-8P-7yb" firstAttribute="top" secondItem="vs0-Pm-dvq" secondAttribute="bottom" constant="5" id="gOx-on-y4X"/>
                                                 <constraint firstAttribute="bottom" secondItem="Iw5-Zr-Uc5" secondAttribute="bottom" constant="25" id="goT-us-ARr"/>
                                                 <constraint firstAttribute="trailing" secondItem="rtG-qz-C7l" secondAttribute="trailing" id="hXA-gr-bUx"/>
-                                                <constraint firstItem="z1k-rZ-dAJ" firstAttribute="top" secondItem="rtG-qz-C7l" secondAttribute="bottom" constant="5" id="jJ3-9f-tlh"/>
-                                                <constraint firstAttribute="trailing" secondItem="z1k-rZ-dAJ" secondAttribute="trailing" id="pBN-1V-9Fp"/>
+                                                <constraint firstItem="oke-iF-mwv" firstAttribute="leading" secondItem="3ap-3c-5fs" secondAttribute="leading" id="kOn-Om-qfm"/>
+                                                <constraint firstAttribute="trailing" secondItem="oke-iF-mwv" secondAttribute="trailing" id="kft-iy-XWC"/>
                                                 <constraint firstAttribute="trailing" secondItem="oke-iF-mwv" secondAttribute="trailing" id="rLQ-RD-PBl"/>
+                                                <constraint firstItem="oke-iF-mwv" firstAttribute="top" secondItem="Lks-8P-7yb" secondAttribute="bottom" constant="5" id="sGp-kO-877"/>
                                                 <constraint firstAttribute="trailing" secondItem="U6B-3o-aBz" secondAttribute="trailing" id="soH-62-8Ov"/>
-                                                <constraint firstItem="oke-iF-mwv" firstAttribute="top" secondItem="Lks-8P-7yb" secondAttribute="bottom" constant="5" id="vWV-4S-po3"/>
+                                                <constraint firstItem="Iw5-Zr-Uc5" firstAttribute="top" secondItem="oke-iF-mwv" secondAttribute="bottom" constant="25" id="tce-Xr-yLP"/>
                                                 <constraint firstItem="YIT-Cm-gt6" firstAttribute="top" secondItem="3ap-3c-5fs" secondAttribute="top" id="y9l-Q3-Ya2"/>
                                             </constraints>
                                         </view>
@@ -693,7 +685,7 @@ United kingdom has been set as issuing country of your documents.</string>
     </objects>
     <designables>
         <designable name="Iw5-Zr-Uc5">
-            <size key="intrinsicContentSize" width="39" height="30"/>
+            <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
     </designables>
     <resources>

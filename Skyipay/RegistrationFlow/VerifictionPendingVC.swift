@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VerifictionPendingVC: UIViewController {
+class VerifictionPendingVC: UIViewController,LogOutCall {
 
     //MARK:- IBOutlets
     @IBOutlet weak var baseView: UIView!
@@ -20,7 +20,7 @@ class VerifictionPendingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        initializeTimer()
+        //initializeTimer()
     }
 
     override func viewWillLayoutSubviews() {
@@ -52,4 +52,20 @@ class VerifictionPendingVC: UIViewController {
         self.navigationController?.pushViewController(verificationDone, animated: true)
     }
     
+    private func logout() {
+        let logOutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to logout", preferredStyle: .alert)
+        let logoutButton = UIAlertAction(title: "Logout", style: .default) { _ in
+            self.callLogOutApi()
+        }
+        let cancelButton = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        logOutAlert.addAction(logoutButton)
+        logOutAlert.addAction(cancelButton)
+        self.present(logOutAlert, animated: true, completion: nil)
+    }
+    
+    //MARK:- IBActions
+    
+    @IBAction func logoutAction(_ sender: UIButton) {
+        logout()
+    }
 }

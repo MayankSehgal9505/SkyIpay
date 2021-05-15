@@ -26,6 +26,9 @@
 		4E262164262D70AA00C7D377 /* BaseTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E262163262D70AA00C7D377 /* BaseTabVC.swift */; };
 		4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3765A8262B0B50002FBBB7 /* UIView.swift */; };
 		4E4C43B62639324F002C4609 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4C43B52639324F002C4609 /* ActivityModel.swift */; };
+		4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED38264F86DC00A08AC2 /* Verification.swift */; };
+		4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */; };
+		4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */; };
 		4E87DDAB263019C70039EB72 /* GenericPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDAA263019C70039EB72 /* GenericPickerDataSource.swift */; };
 		4E87DDAD26301AE60039EB72 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDAC26301AE60039EB72 /* CommonMethods.swift */; };
 		4E87DDD4263136590039EB72 /* UploadDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDD2263136590039EB72 /* UploadDocumentsVC.swift */; };
@@ -38,8 +41,10 @@
 		4E942780262C07E50017CDE3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94277F262C07E50017CDE3 /* UIViewController.swift */; };
 		4E942782262C0AD50017CDE3 /* URLNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E942781262C0AD50017CDE3 /* URLNames.swift */; };
 		4E942785262C151C0017CDE3 /* APIFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E942784262C151C0017CDE3 /* APIFields.swift */; };
-		4E942787262C15C80017CDE3 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E942786262C15C80017CDE3 /* CountryModel.swift */; };
 		4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94279E262C84B70017CDE3 /* GetOtp.swift */; };
+		4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9AC580264DA39000C2B6A8 /* DataManager.swift */; };
+		4E9AC592264E5B1B00C2B6A8 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9AC591264E5B1B00C2B6A8 /* AddressModel.swift */; };
+		4E9AC594264E5F0A00C2B6A8 /* DocumentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9AC593264E5F0A00C2B6A8 /* DocumentsModel.swift */; };
 		4EA973E32629AAF5001A6446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA973E22629AAF5001A6446 /* AppDelegate.swift */; };
 		4EA973EA2629AAF5001A6446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA973E82629AAF5001A6446 /* Main.storyboard */; };
 		4EA973EC2629AAF6001A6446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EA973EB2629AAF6001A6446 /* Assets.xcassets */; };
@@ -54,6 +59,7 @@
 		4EA9741A262AC948001A6446 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA97418262AC947001A6446 /* LoginVC.swift */; };
 		4EA9741B262AC948001A6446 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA97419262AC947001A6446 /* LoginVC.xib */; };
 		4EA97420262AF92C001A6446 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA9741F262AF92C001A6446 /* CustomPageControl.swift */; };
+		4EB09316264D1A600094C957 /* CountryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EB09314264D1A600094C957 /* CountryModel.xcdatamodeld */; };
 		4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5B2922632A28A006F8B17 /* VerifictionPendingVC.swift */; };
 		4EB5B2952632A28A006F8B17 /* VerifictionPendingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5B2932632A28A006F8B17 /* VerifictionPendingVC.xib */; };
 		4EB5B2A12632E6A7006F8B17 /* VerificationDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5B29F2632E6A6006F8B17 /* VerificationDoneVC.swift */; };
@@ -103,6 +109,9 @@
 		4E3765A8262B0B50002FBBB7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4E3765B0262B0E37002FBBB7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4C43B52639324F002C4609 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		4E7BED38264F86DC00A08AC2 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
+		4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutProtocall.swift; sourceTree = "<group>"; };
 		4E87DDAA263019C70039EB72 /* GenericPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericPickerDataSource.swift; sourceTree = "<group>"; };
 		4E87DDAC26301AE60039EB72 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 		4E87DDD2263136590039EB72 /* UploadDocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDocumentsVC.swift; sourceTree = "<group>"; };
@@ -115,8 +124,10 @@
 		4E94277F262C07E50017CDE3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4E942781262C0AD50017CDE3 /* URLNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLNames.swift; sourceTree = "<group>"; };
 		4E942784262C151C0017CDE3 /* APIFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFields.swift; sourceTree = "<group>"; };
-		4E942786262C15C80017CDE3 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		4E94279E262C84B70017CDE3 /* GetOtp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOtp.swift; sourceTree = "<group>"; };
+		4E9AC580264DA39000C2B6A8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4E9AC591264E5B1B00C2B6A8 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		4E9AC593264E5F0A00C2B6A8 /* DocumentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsModel.swift; sourceTree = "<group>"; };
 		4EA973DF2629AAF5001A6446 /* Skyipay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skyipay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA973E22629AAF5001A6446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA973E92629AAF5001A6446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +144,7 @@
 		4EA97418262AC947001A6446 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4EA97419262AC947001A6446 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		4EA9741F262AF92C001A6446 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		4EB09315264D1A600094C957 /* CountryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CountryModel.xcdatamodel; sourceTree = "<group>"; };
 		4EB5B2922632A28A006F8B17 /* VerifictionPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifictionPendingVC.swift; sourceTree = "<group>"; };
 		4EB5B2932632A28A006F8B17 /* VerifictionPendingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifictionPendingVC.xib; sourceTree = "<group>"; };
 		4EB5B29F2632E6A6006F8B17 /* VerificationDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationDoneVC.swift; sourceTree = "<group>"; };
@@ -196,6 +208,7 @@
 				4EA97415262AA0C4001A6446 /* Walkthrough */,
 				4EB5B2BC2633580E006F8B17 /* UserProfile */,
 				4EC2EC08264320D200EE1F71 /* BenificiaryList */,
+				4E9AC580264DA39000C2B6A8 /* DataManager.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -260,8 +273,11 @@
 				4E26215B262D2D2000C7D377 /* UserData.swift */,
 				4E26215D262D30A500C7D377 /* UserModel.swift */,
 				4EA974042629BCBD001A6446 /* WalkthroughModel.swift */,
-				4E942786262C15C80017CDE3 /* CountryModel.swift */,
 				4E4C43B52639324F002C4609 /* ActivityModel.swift */,
+				4E9AC591264E5B1B00C2B6A8 /* AddressModel.swift */,
+				4E9AC593264E5F0A00C2B6A8 /* DocumentsModel.swift */,
+				4E7BED38264F86DC00A08AC2 /* Verification.swift */,
+				4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +285,7 @@
 		4EA973D62629AAF5001A6446 = {
 			isa = PBXGroup;
 			children = (
+				4EB09314264D1A600094C957 /* CountryModel.xcdatamodeld */,
 				4EA973E12629AAF5001A6446 /* Skyipay */,
 				4EA973E02629AAF5001A6446 /* Products */,
 				F9284737E4B0978B1A78B833 /* Pods */,
@@ -324,6 +341,7 @@
 				4E942764262BF73E0017CDE3 /* ValidateOTPVC.swift */,
 				4E942765262BF73E0017CDE3 /* ValidateOTPVC.xib */,
 				4E94279E262C84B70017CDE3 /* GetOtp.swift */,
+				4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -495,6 +513,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */,
+				4E9AC592264E5B1B00C2B6A8 /* AddressModel.swift in Sources */,
 				4EB5B2A12632E6A7006F8B17 /* VerificationDoneVC.swift in Sources */,
 				4EA97412262AA0BA001A6446 /* WalkthroughCell.swift in Sources */,
 				4E942766262BF73E0017CDE3 /* ValidateOTPVC.swift in Sources */,
@@ -510,13 +530,17 @@
 				4E262154262CB9D300C7D377 /* SideMenu.swift in Sources */,
 				4E87DDAD26301AE60039EB72 /* CommonMethods.swift in Sources */,
 				4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */,
+				4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */,
 				4E26215C262D2D2000C7D377 /* UserData.swift in Sources */,
+				4EB09316264D1A600094C957 /* CountryModel.xcdatamodeld in Sources */,
 				4EB5B2AF26335807006F8B17 /* UserProfileVC.swift in Sources */,
 				4E0BD7C4262D77BC00CBC046 /* TrackVC.swift in Sources */,
 				4EA973E32629AAF5001A6446 /* AppDelegate.swift in Sources */,
 				4EE2D4EA2631F9BC00B6A4DA /* ImagePickerManager.swift in Sources */,
+				4E9AC594264E5F0A00C2B6A8 /* DocumentsModel.swift in Sources */,
 				4E942782262C0AD50017CDE3 /* URLNames.swift in Sources */,
 				4EA97420262AF92C001A6446 /* CustomPageControl.swift in Sources */,
+				4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */,
 				4E942785262C151C0017CDE3 /* APIFields.swift in Sources */,
 				4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */,
 				4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */,
@@ -526,13 +550,13 @@
 				4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */,
 				4E262147262CAB4D00C7D377 /* Utility.swift in Sources */,
 				4EA9741A262AC948001A6446 /* LoginVC.swift in Sources */,
+				4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */,
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
 				4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */,
 				4EA973FE2629AD32001A6446 /* WalkthroughVC.swift in Sources */,
 				4E0BD7C2262D77A800CBC046 /* RecipientsVC.swift in Sources */,
 				4E87DDAB263019C70039EB72 /* GenericPickerDataSource.swift in Sources */,
 				4EA974022629AF46001A6446 /* CustomButton.swift in Sources */,
-				4E942787262C15C80017CDE3 /* CountryModel.swift in Sources */,
 				4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */,
 				4E87DDD4263136590039EB72 /* UploadDocumentsVC.swift in Sources */,
 				4E262164262D70AA00C7D377 /* BaseTabVC.swift in Sources */,
@@ -685,13 +709,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT6D3A3626;
+				DEVELOPMENT_TEAM = ZE38D2D95S;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -708,13 +733,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XT6D3A3626;
+				DEVELOPMENT_TEAM = ZE38D2D95S;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -745,6 +771,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4EB09314264D1A600094C957 /* CountryModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4EB09315264D1A600094C957 /* CountryModel.xcdatamodel */,
+			);
+			currentVersion = 4EB09315264D1A600094C957 /* CountryModel.xcdatamodel */;
+			path = CountryModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4EA973D72629AAF5001A6446 /* Project object */;
 }

@@ -180,7 +180,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFW-Pk-Zfr">
                                 <rect key="frame" x="0.0" y="141" width="414" height="672"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-Kx-Svd">
+                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-Kx-Svd">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqk-vB-b7m" userLabel="ContentView">
@@ -373,7 +373,7 @@
     </scenes>
     <designables>
         <designable name="2DQ-TB-sUb">
-            <size key="intrinsicContentSize" width="99" height="30"/>
+            <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
     </designables>
     <resources>

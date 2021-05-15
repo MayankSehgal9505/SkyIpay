@@ -2,13 +2,9 @@ PODS:
   - Alamofire (4.9.1)
   - CountryPickerView (3.2.0)
   - IQKeyboardManager (6.5.6)
-  - JVFloatLabeledTextField (1.2.2)
+  - Kingfisher (4.10.1)
   - MBProgressHUD (1.2.0)
   - RESideMenu (4.0.7)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
-  - SkyFloatingLabelTextField (4.0.0)
   - SwiftyJSON (5.0.1)
   - Toast-Swift (5.0.1)
 
@@ -16,11 +12,9 @@ DEPENDENCIES:
   - Alamofire
   - CountryPickerView
   - IQKeyboardManager
-  - JVFloatLabeledTextField
+  - Kingfisher
   - MBProgressHUD
   - RESideMenu
-  - SDWebImage
-  - SkyFloatingLabelTextField
   - SwiftyJSON
   - Toast-Swift
 
@@ -29,11 +23,9 @@ SPEC REPOS:
     - Alamofire
     - CountryPickerView
     - IQKeyboardManager
-    - JVFloatLabeledTextField
+    - Kingfisher
     - MBProgressHUD
     - RESideMenu
-    - SDWebImage
-    - SkyFloatingLabelTextField
     - SwiftyJSON
     - Toast-Swift
 
@@ -41,14 +33,12 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   CountryPickerView: 9b093bfffb4b06a69ba6185a798cadbf863720e7
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  JVFloatLabeledTextField: df48598472ee015701d509f43e59492a0d4ca208
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: a505e0f09aecac956c0f22922514692f4fdb3428
+PODFILE CHECKSUM: 82ba9a1442a2f0c4caa1a13fe7fe6ae3871d900f
 
 COCOAPODS: 1.10.1

@@ -27,7 +27,8 @@ class ActivitesVC: BaseTabVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupNavigationBar()
-        getActvites()
+        self.view.makeToast("Coming Soon", duration: 3.0, position: .center)
+        //getActvites()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -76,7 +77,7 @@ extension ActivitesVC: UITableViewDelegate {
 }
 
 //MARK:- API Call Methods
-extension ActivitesVC {
+/*extension ActivitesVC {
     func getActvites(){
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
@@ -118,4 +119,4 @@ extension ActivitesVC {
          self.showNoInternetAlert()
      }
     }
-}
+}*/

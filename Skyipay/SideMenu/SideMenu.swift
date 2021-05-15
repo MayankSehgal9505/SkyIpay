@@ -7,7 +7,8 @@
 
 import UIKit
 typealias menuItem = (itemName:String, itemImage:String)
-class SideMenu: UIViewController {
+import Kingfisher
+class SideMenu: UIViewController,LogOutCall {
 
     //MARK:- IBOUtlets
     @IBOutlet weak var userImage: UIImageView! {
@@ -17,6 +18,7 @@ class SideMenu: UIViewController {
     }
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var appVersionLbl: UILabel!
     
     //MARK:- Local Variables
     private var menuItems:[menuItem] = [("Send Money","sendMoney"),("Transactions","transactions"),("My Beneficiary","myBeneficary"),("Notifications","Notifications"),("Enquiry","Enquiry"),("Share App","shareApp"),("Help & Support","help&Support"),("FAQ","FAQ"),("Logout","")]
@@ -26,6 +28,12 @@ class SideMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersionLbl.text = "v\(appVersion)"
+            appVersionLbl.isHidden = false
+        } else {
+            appVersionLbl.isHidden = true
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(updateAccepted(notification:)), name: NSNotification.Name(rawValue: "updateUserInfo"), object: nil)
 
     }
@@ -42,14 +50,18 @@ class SideMenu: UIViewController {
     }
     //MARK:- Internal Methods
     private func setupUserUI() {
-        userName.text = "\(user.userModel.firstName) \(user.userModel.lastname)"
+        userName.text = user.userModel.userName
+        if let imageURL = URL.init(string: user.userModel.userImageUrl) {
+            userImage.kf.setImage(with: imageURL, placeholder: UIImage(named: "UserProfile"), options: nil, progressBlock: nil, completionHandler: nil)
+        } else {
+            userImage.image = UIImage(named: "UserProfile")
+        }
     }
     
     private func logout() {
         let logOutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to logout", preferredStyle: .alert)
         let logoutButton = UIAlertAction(title: "Logout", style: .default) { _ in
-            Defaults.resetDefaults()
-            Utility.loginRootVC()
+            self.callLogOutApi()
         }
         let cancelButton = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         logOutAlert.addAction(logoutButton)
@@ -110,12 +122,12 @@ extension SideMenu: UITableViewDelegate {
                 self.tabBarController?.selectedIndex = 2
                 self.sideMenuViewController.hideViewController()
             }
-        case 2:
-            DispatchQueue.main.async {
-                self.moveToBeneficiaryVC()
-                self.sideMenuViewController.hideViewController()
-            }
-        case 1,3..<menuItems.count-1:
+//        case 2:
+//            DispatchQueue.main.async {
+//                self.moveToBeneficiaryVC()
+//                self.sideMenuViewController.hideViewController()
+//            }
+        case 1..<menuItems.count-1:
             self.view.makeToast("Coming soon", duration: 1.0, position: .center)
             DispatchQueue.main.async {
                 self.sideMenuViewController.hideViewController()
@@ -123,5 +135,27 @@ extension SideMenu: UITableViewDelegate {
         default:
             logout()
         }
+    }
+}
+//MARK:- API call Methods
+
+extension SideMenu {
+    private func logoutApiCall() {
+        if NetworkManager.sharedInstance.isInternetAvailable(){
+            self.showHUD(progressLabel: AlertField.loaderString)
+            let verifyOTPURL = URLNames.baseUrl + URLNames.verifyOTP
+            let headers = [
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: verifyOTPURL, method: .get, parameters: nil,headers: headers, completionHandler: { (json, status) in
+                Defaults.resetDefaults()
+                Utility.loginRootVC()
+                self.dismissHUD(isAnimated: true)
+         })
+     }else{
+        Defaults.resetDefaults()
+        Utility.loginRootVC()
+     }
+        
     }
 }

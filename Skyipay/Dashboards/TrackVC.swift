@@ -18,6 +18,7 @@ class TrackVC: BaseTabVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupNavigationBar()
+        self.view.makeToast("Coming Soon", duration: 3.0, position: .center)
     }
     
     override func viewWillLayoutSubviews() {

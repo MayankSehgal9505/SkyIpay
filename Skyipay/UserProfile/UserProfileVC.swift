@@ -7,7 +7,6 @@
 
 import UIKit
 import CountryPickerView
-import SDWebImage
 class UserProfileVC: BaseViewController {
     //MARK:- enums
     enum ProfileMode {
@@ -38,6 +37,7 @@ class UserProfileVC: BaseViewController {
     @IBOutlet weak var datepickerMainView: UIView!
     @IBOutlet weak var datpickerview: UIDatePicker!
     @IBOutlet weak var countryCodeLbl: UILabel!
+    @IBOutlet weak var dobButton: UIButton!
     
     //MARK:- Local Variables
     private var profileMode: ProfileMode = .viewMode
@@ -49,6 +49,7 @@ class UserProfileVC: BaseViewController {
     var dispatchgp = DispatchGroup()
     var imagedict:[String:Data] = [:]
     var screenOpendBy:ScreenOpenedBy = .setRoot
+    var userModel = UserModel()
     //MARK:- Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class UserProfileVC: BaseViewController {
         enableLeftBtn(withIcon: "leftArrow")
         btnVisibility(profileMode: profileMode)
         setupCountryPicker()
+        datpickerview.maximumDate = Date()
     }
     
     private func setUpNavigationBar(updatetitle:Bool = false) {
@@ -86,19 +88,34 @@ class UserProfileVC: BaseViewController {
     private func btnVisibility(profileMode:ProfileMode) {
         editIcons.forEach { $0.isHidden = profileMode == .viewMode }
         chooseImgBtn.isHidden = profileMode == .viewMode
-        self.userEmailTxtFld.isUserInteractionEnabled = false
-        self.userGenderTxtFld.isUserInteractionEnabled = false
+        userNameTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        userEmailTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        phoneNumberTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        userGenderTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        dobTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        couuntryTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        languagesTxtFld.isUserInteractionEnabled = profileMode != .viewMode
+        dobButton.isUserInteractionEnabled = profileMode != .viewMode
     }
     
-    private func updateUI(userInfo:UserModel) {
-        self.userNameTxtFld.text = userInfo.firstName + " " + userInfo.lastname
-        self.userEmailTxtFld.text = userInfo.email
-        countryCodeLbl.text = "(\(userInfo.countryCode))-"
-        self.phoneNumberTxtFld.text = "\(userInfo.userNumber)"
-        self.userGenderTxtFld.text = userInfo.gender
-        self.dobTxtFld.text = userInfo.dob
-        self.couuntryTxtFld.text = userInfo.birthCountry
-        self.languagesTxtFld.text = userInfo.languages
+    private func updateUI() {
+        self.userNameTxtFld.text = userModel.userName
+        self.userEmailTxtFld.text = userModel.email
+        countryCodeLbl.text = "(\(userModel.dialCode))-"
+        self.phoneNumberTxtFld.text = userModel.userPhoneNumber
+        self.userGenderTxtFld.text = userModel.userGender
+        self.dobTxtFld.text = userModel.userDOB
+        self.couuntryTxtFld.text = userModel.userAddress.first?.countryModel.countryName ?? ""
+        self.languagesTxtFld.text = ""
+        if let imageURL = URL.init(string: userModel.userImageUrl) {
+            userProfileImg.kf.setImage(with: imageURL, placeholder: UIImage(named: "UserProfile"), options: nil, progressBlock: nil, completionHandler: nil)
+        } else {
+            userProfileImg.image = UIImage(named: "UserProfile")
+        }
+        let imageData: Data? = userProfileImg.image?.pngData()
+        if let data = imageData {
+            self.imagedict["profile_image"] = data
+        }
     }
     
     private func getFirstLastName(firstNameRequire:Bool) -> String{
@@ -106,12 +123,25 @@ class UserProfileVC: BaseViewController {
         let lastName =  self.userNameTxtFld.text?.components(separatedBy: " ").last ?? ""
         return firstNameRequire ? firstName : lastName
     }
+    
+    private func updateSignleton() {
+        self.user.userID = userModel.userID
+        self.user.userPhoneNumber = userModel.userPhoneNumber
+        self.user.userModel = userModel
+    }
     /// Hiding Picker View
     private func hidePickerView(){
         datepickerMainView.isHidden = true
         vibrantView?.removeFromSuperview()
         effectView?.removeFromSuperview()
     }
+    
+    func image(getImage: UIImage, isEqualTo currentImage: UIImage) -> Bool {
+        let data1: Data = getImage.pngData()!
+        let data2: Data = currentImage.pngData()!
+        return data1 == data2
+    }
+    
     //MARK:- IBActions
     override func leftButtonAction() {
         switch screenOpendBy {
@@ -120,9 +150,8 @@ class UserProfileVC: BaseViewController {
         default:
             self.navigationController?.popViewController(animated: true)
         }
-//        user.rootVC = Utility.appDelegate.window?.rootViewController as! UINavigationController
-//        let navigationController = UINavigationController.init(rootViewController: updateProfile)
     }
+    
     @objc private func editBtnAction() {
         profileMode = .editMode
         btnVisibility(profileMode: profileMode)
@@ -185,9 +214,9 @@ class UserProfileVC: BaseViewController {
         ImagePickerManager().pickImage(self){ image in
                //here is the image
             self.userProfileImg.image = image
-            let imageData: Data? = image.jpegData(compressionQuality: 0.8)
+            let imageData: Data? = image.pngData()
             if let data = imageData {
-                self.imagedict["profileImage"] = data
+                self.imagedict["profile_image"] = data
             }
         }
 
@@ -200,35 +229,20 @@ extension UserProfileVC {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
             let getUserProfileUrl = URLNames.baseUrl + URLNames.getUserDetails
-            let parameters = [
-                "userId": !user.userModel.userID.isEmpty ? user.userModel.userID : Defaults.getUserID()
-            ] as [String : Any]
-            print(parameters)
-            NetworkManager.sharedInstance.commonApiCall(url: getUserProfileUrl, method: .post, parameters: parameters, completionHandler: { (json, status) in
+            let headers = [
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: getUserProfileUrl, method: .get, parameters: nil, headers: headers,completionHandler: { (json, status) in
              guard let jsonValue = json?.dictionaryValue else {
                 self.view.makeToast(status, duration: 3.0, position: .bottom)
                 self.dismissHUD(isAnimated: true)
                 return
              }
-             if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+             if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
                  if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
                     let userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
-                    SDWebImageManager.shared.loadImage(with: URL.init(string: userModel.userImageUrl), options: .highPriority, progress: nil, completed: { [weak self](image, data, error, cacheType, finished, url) in
-                        guard let sself = self else { return }
-                        if let _ = error {
-                            // Do something with the error
-                            return
-                        }
-                        guard let img = image else {
-                            // No image handle this error
-                            return
-                        }
-                        sself.userProfileImg.image = img
-                    })
-                    self.user.userID = userModel.userID
-                    self.user.userPhoneNumber = userModel.userNumber
-                    self.user.userModel = userModel
-                    self.updateUI(userInfo:userModel)
+                    self.userModel = userModel
+                    self.updateUI()
                }
              }
              else {
@@ -245,18 +259,17 @@ extension UserProfileVC {
         self.dispatchgp.enter()
         if NetworkManager.sharedInstance.isInternetAvailable(){
             let uploadImgUrl : String = URLNames.baseUrl + URLNames.uploadImage
-            let parameters = [
-                "userId":!user.userModel.userID.isEmpty ? user.userModel.userID : Defaults.getUserID(),
-            ] as [String : Any]
-            print(parameters)
-            NetworkManager.sharedInstance.uploadDocuments(url: uploadImgUrl, method: .post, imagesDict: self.imagedict, parameters: parameters) { (json, status) in
+            let headers = [
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.uploadDocuments(url: uploadImgUrl, method: .post, imagesDict: self.imagedict, parameters: nil,headers: headers) { (json, status) in
                 self.dispatchgp.leave()
                 guard let jsonValue = json?.dictionaryValue else {
                    self.view.makeToast(status, duration: 3.0, position: .bottom)
                    self.dismissHUD(isAnimated: true)
                    return
                 }
-                if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+                if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
                 }
                 else {
                     self.view.makeToast(jsonValue["msg"]?.stringValue, duration: 3.0, position: .bottom)
@@ -274,31 +287,31 @@ extension UserProfileVC {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             let updateUserProfileUrl = URLNames.baseUrl + URLNames.updateUserDetails
             let parameters = [
-                "user_id": !user.userModel.userID.isEmpty ? user.userModel.userID : Defaults.getUserID(),
-                "firstname": self.getFirstLastName(firstNameRequire: true),
-                "lastname": self.getFirstLastName(firstNameRequire: false),
+                "first_name": self.getFirstLastName(firstNameRequire: true),
+                "last_name": self.getFirstLastName(firstNameRequire: false),
                 "email": self.userEmailTxtFld.text!,
-                "country_code": !user.usercountry.phoneCode.isEmpty ? user.usercountry.phoneCode : user.userModel.countryCode,
-                "phonenumber": self.phoneNumberTxtFld.text!,
-                "dob":self.dobTxtFld.text!,
-                "country_birth":self.couuntryTxtFld.text!,
-                "languages": ""
+                "dial_code": "\(String(describing: user.userModel.userAddress.first!.countryModel.countryDialCode))" ,
+                "phone": self.phoneNumberTxtFld.text!,
+                "dob":"1990-12-20",
+                "gender":"Male",
+                "languages": "English",
+                "iso": user.userModel.userAddress.first?.countryModel.countryISOCode ?? "",
+                "country_id": "\(String(describing: user.userModel.userAddress.first!.countryModel.countryId))"
             ] as [String : Any]
             print(parameters)
-            NetworkManager.sharedInstance.commonApiCall(url: updateUserProfileUrl, method: .post, parameters: parameters, completionHandler: { (json, status) in
+            let headers = [
+                "Accept": "application/json",
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: updateUserProfileUrl, method: .post, parameters: parameters,headers: headers, completionHandler: { (json, status) in
                 self.dispatchgp.leave()
              guard let jsonValue = json?.dictionaryValue else {
                 self.view.makeToast(status, duration: 3.0, position: .bottom)
                 self.dismissHUD(isAnimated: true)
                 return
              }
-             if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+             if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
                  if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
-                    let userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
-                    self.user.userID = userModel.userID
-                    self.user.userPhoneNumber = userModel.userNumber
-                    self.user.userModel = userModel
-                    self.updateUI(userInfo:userModel)
                }
              }
              else {
@@ -316,8 +329,8 @@ extension UserProfileVC {
 extension UserProfileVC: CountryPickerViewDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         user.usercountry = country
-        self.couuntryTxtFld.text = country.name
-        self.countryCodeLbl.text = "(\(country.phoneCode))-"
+        self.couuntryTxtFld.text = country.countryName
+        self.countryCodeLbl.text = "(\(country.countryDialCode))-"
      }
  }
 

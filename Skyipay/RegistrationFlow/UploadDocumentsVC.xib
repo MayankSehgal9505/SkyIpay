@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,6 +33,7 @@
                 <outletCollection property="allSubViews" destination="eTS-JN-OM0" collectionClass="NSMutableArray" id="AI8-Sz-XUU"/>
                 <outletCollection property="allSubViews" destination="ZgM-Ax-TCn" collectionClass="NSMutableArray" id="v4F-BQ-mkj"/>
                 <outletCollection property="allSubViews" destination="1ry-OE-EBj" collectionClass="NSMutableArray" id="biu-7m-lSU"/>
+                <outletCollection property="allSubViews" destination="B1T-up-RFQ" collectionClass="NSMutableArray" id="RDW-rP-xsJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -145,7 +146,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f47-5d-aVI" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="699.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-fT-B3v">
                                             <rect key="frame" x="15" y="15" width="384" height="17"/>
@@ -183,9 +184,9 @@ United kingdom has been set as issuing country of your documents.</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-VQ-lY4">
-                                            <rect key="frame" x="0.0" y="209.5" width="414" height="539.5"/>
+                                            <rect key="frame" x="0.0" y="209.5" width="414" height="480"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-qH-ug2" userLabel="Choose ID View">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-qH-ug2" userLabel="Choose ID View">
                                                     <rect key="frame" x="20" y="10" width="374" height="74.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTk-IO-dmv">
@@ -244,7 +245,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                         <constraint firstItem="Snq-tZ-uuW" firstAttribute="leading" secondItem="Dcm-qH-ug2" secondAttribute="leading" constant="20" id="vFk-BF-a6d"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ry-OE-EBj" userLabel="IssueEndDateView">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ry-OE-EBj" userLabel="IssueEndDateView">
                                                     <rect key="frame" x="20" y="94.5" width="374" height="35"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="glS-Pb-VZ8">
@@ -325,8 +326,54 @@ United kingdom has been set as issuing country of your documents.</string>
                                                         <constraint firstItem="glS-Pb-VZ8" firstAttribute="top" secondItem="1ry-OE-EBj" secondAttribute="top" id="cG6-qH-C8b"/>
                                                     </constraints>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1T-up-RFQ" userLabel="UploadIDCardView">
+                                                    <rect key="frame" x="20" y="20" width="374" height="50"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="utilityBills" translatesAutoresizingMaskIntoConstraints="NO" id="Pdi-1X-Vww">
+                                                            <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="81z-yh-ZtW"/>
+                                                                <constraint firstAttribute="height" constant="30" id="Qrq-2R-cVF"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your ID Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUF-cK-NPO">
+                                                            <rect key="frame" x="50" y="15" width="274" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploaddiconn" translatesAutoresizingMaskIntoConstraints="NO" id="9zt-a1-cfj">
+                                                            <rect key="frame" x="334" y="10" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="CeV-ud-hEs"/>
+                                                                <constraint firstAttribute="width" constant="30" id="bSN-BR-9tS"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfe-ac-uVS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                            <connections>
+                                                                <action selector="uploadIdCardBtnAction:" destination="-1" eventType="touchUpInside" id="ZSx-FX-sP9"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Xfe-ac-uVS" firstAttribute="leading" secondItem="B1T-up-RFQ" secondAttribute="leading" id="4sy-u3-BAg"/>
+                                                        <constraint firstItem="9zt-a1-cfj" firstAttribute="centerY" secondItem="B1T-up-RFQ" secondAttribute="centerY" id="8ic-zt-MtZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9zt-a1-cfj" secondAttribute="trailing" constant="10" id="EW9-Ej-Voo"/>
+                                                        <constraint firstItem="Xfe-ac-uVS" firstAttribute="top" secondItem="B1T-up-RFQ" secondAttribute="top" id="MyN-dG-sni"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Pim-4c-4m8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Xfe-ac-uVS" secondAttribute="bottom" id="Xgs-gu-bbp"/>
+                                                        <constraint firstItem="oUF-cK-NPO" firstAttribute="leading" secondItem="Pdi-1X-Vww" secondAttribute="trailing" constant="10" id="YUT-sz-nnN"/>
+                                                        <constraint firstItem="Pdi-1X-Vww" firstAttribute="centerY" secondItem="B1T-up-RFQ" secondAttribute="centerY" id="Z75-Wr-Bnt"/>
+                                                        <constraint firstItem="oUF-cK-NPO" firstAttribute="centerY" secondItem="B1T-up-RFQ" secondAttribute="centerY" id="fho-nH-Exe"/>
+                                                        <constraint firstItem="Pdi-1X-Vww" firstAttribute="leading" secondItem="B1T-up-RFQ" secondAttribute="leading" constant="10" id="hV6-sE-gwg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Xfe-ac-uVS" secondAttribute="trailing" id="mHa-Yc-ikf"/>
+                                                        <constraint firstItem="9zt-a1-cfj" firstAttribute="leading" secondItem="oUF-cK-NPO" secondAttribute="trailing" constant="10" id="r2E-NY-3Gn"/>
+                                                    </constraints>
+                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkL-y7-fah" userLabel="UtilityBillsView">
-                                                    <rect key="frame" x="20" y="139.5" width="374" height="50"/>
+                                                    <rect key="frame" x="20" y="80" width="374" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="utilityBills" translatesAutoresizingMaskIntoConstraints="NO" id="fhb-DB-6vv">
                                                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -351,7 +398,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-1W-Bet">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                             <connections>
-                                                                <action selector="uploadBillAction:" destination="-1" eventType="touchUpInside" id="PW5-8n-fRy"/>
+                                                                <action selector="uploadBillAction:" destination="-1" eventType="touchUpInside" id="Gde-Ul-EuT"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -372,7 +419,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJE-sB-VFt" userLabel="BankStatementView">
-                                                    <rect key="frame" x="20" y="199.5" width="374" height="50"/>
+                                                    <rect key="frame" x="20" y="140" width="374" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankStatement" translatesAutoresizingMaskIntoConstraints="NO" id="GOb-iK-2Ib">
                                                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -418,7 +465,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8q-hR-9Ka" userLabel="SourceOfIncome">
-                                                    <rect key="frame" x="20" y="259.5" width="374" height="50"/>
+                                                    <rect key="frame" x="20" y="200" width="374" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SourceOfIncome" translatesAutoresizingMaskIntoConstraints="NO" id="os0-dc-jyq">
                                                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -464,7 +511,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTS-JN-OM0" userLabel="PaySlipsView">
-                                                    <rect key="frame" x="20" y="319.5" width="374" height="50"/>
+                                                    <rect key="frame" x="20" y="260" width="374" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payslips" translatesAutoresizingMaskIntoConstraints="NO" id="Nko-0W-MeJ">
                                                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -510,7 +557,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgM-Ax-TCn" userLabel="dobView">
-                                                    <rect key="frame" x="20" y="379.5" width="374" height="50"/>
+                                                    <rect key="frame" x="20" y="320" width="374" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dobProof" translatesAutoresizingMaskIntoConstraints="NO" id="cGf-od-CsK">
                                                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -556,7 +603,7 @@ United kingdom has been set as issuing country of your documents.</string>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efO-D2-cxU" customClass="CustomButton" customModule="Skyipay" customModuleProvider="target">
-                                                    <rect key="frame" x="132" y="454.5" width="150" height="60"/>
+                                                    <rect key="frame" x="132" y="395" width="150" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="Bls-Zd-yWG"/>
                                                         <constraint firstAttribute="height" constant="60" id="IFf-AF-ySW"/>
@@ -592,19 +639,22 @@ United kingdom has been set as issuing country of your documents.</string>
                                                 <constraint firstItem="CkL-y7-fah" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" id="KII-i3-RO3"/>
                                                 <constraint firstItem="t8q-hR-9Ka" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" id="OZ1-tb-1Aw"/>
                                                 <constraint firstItem="efO-D2-cxU" firstAttribute="centerX" secondItem="cQ1-VQ-lY4" secondAttribute="centerX" id="Oc3-Qg-GVz"/>
+                                                <constraint firstItem="CkL-y7-fah" firstAttribute="top" secondItem="B1T-up-RFQ" secondAttribute="bottom" constant="10" id="Qyy-UU-xwx"/>
                                                 <constraint firstItem="1ry-OE-EBj" firstAttribute="top" secondItem="Dcm-qH-ug2" secondAttribute="bottom" constant="10" id="R9c-Zp-IG5"/>
                                                 <constraint firstItem="efO-D2-cxU" firstAttribute="top" secondItem="ZgM-Ax-TCn" secondAttribute="bottom" constant="25" id="Wg5-Ub-CNK"/>
                                                 <constraint firstAttribute="trailing" secondItem="t8q-hR-9Ka" secondAttribute="trailing" constant="20" id="Yhg-0s-hYA"/>
+                                                <constraint firstItem="B1T-up-RFQ" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" symbolic="YES" id="cJP-Cl-iFg"/>
                                                 <constraint firstItem="Dcm-qH-ug2" firstAttribute="top" secondItem="cQ1-VQ-lY4" secondAttribute="top" constant="10" id="d7A-EW-c69"/>
+                                                <constraint firstItem="B1T-up-RFQ" firstAttribute="top" secondItem="cQ1-VQ-lY4" secondAttribute="top" constant="20" id="fwI-Sy-B1O"/>
                                                 <constraint firstItem="1ry-OE-EBj" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" id="nBk-UM-jCX"/>
                                                 <constraint firstItem="pJE-sB-VFt" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" id="ok9-As-OOg"/>
                                                 <constraint firstItem="eTS-JN-OM0" firstAttribute="top" secondItem="t8q-hR-9Ka" secondAttribute="bottom" constant="10" id="ovc-CF-HnC"/>
-                                                <constraint firstItem="CkL-y7-fah" firstAttribute="top" secondItem="1ry-OE-EBj" secondAttribute="bottom" constant="10" id="qDJ-5X-I4y"/>
                                                 <constraint firstAttribute="bottom" secondItem="efO-D2-cxU" secondAttribute="bottom" constant="25" id="rpC-zD-31W"/>
                                                 <constraint firstAttribute="trailing" secondItem="eTS-JN-OM0" secondAttribute="trailing" constant="20" id="sV1-Ja-BUp"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dcm-qH-ug2" secondAttribute="trailing" constant="20" id="tuc-B1-5HJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="pJE-sB-VFt" secondAttribute="trailing" constant="20" id="vOe-x2-4kS"/>
                                                 <constraint firstItem="ZgM-Ax-TCn" firstAttribute="leading" secondItem="cQ1-VQ-lY4" secondAttribute="leading" constant="20" id="xtn-LQ-1IO"/>
+                                                <constraint firstAttribute="trailing" secondItem="B1T-up-RFQ" secondAttribute="trailing" constant="20" symbolic="YES" id="zDb-Td-1T6"/>
                                             </constraints>
                                         </view>
                                     </subviews>

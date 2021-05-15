@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryM" representedClassName="CountryM" syncable="YES" codeGenerationType="class">
+        <attribute name="countryCurrency" optional="YES" attributeType="String"/>
+        <attribute name="countryDialCode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countryId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countryISOCode" optional="YES" attributeType="String"/>
+        <attribute name="countryName" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CountryM" positionX="-63" positionY="-18" width="128" height="118"/>
+    </elements>
+</model>

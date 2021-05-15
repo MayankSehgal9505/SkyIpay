@@ -12,8 +12,6 @@ target 'Skyipay' do
   pod 'MBProgressHUD'
   pod 'Toast-Swift'
   pod 'CountryPickerView'
-  pod 'JVFloatLabeledTextField'
   pod 'RESideMenu'
-  pod 'SkyFloatingLabelTextField'
-  pod 'SDWebImage'
+  pod 'Kingfisher'
 end

@@ -66,23 +66,26 @@ extension SendMoneyVC {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
             let getUserDetails : String = URLNames.baseUrl + URLNames.getUserDetails
-//            let parameters = [
-//                "userId":user.userID,
-//            ] as [String : Any]
-            let userID = !user.userModel.userID.isEmpty ? user.userModel.userID : Defaults.getUserID()
-            let parameters = [
-                "userId":userID,
-            ] as [String : Any]
-            NetworkManager.sharedInstance.commonApiCall(url: getUserDetails, method: .post, parameters: parameters, completionHandler: { (json, status) in
+            let headers = [
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: getUserDetails, method: .get, parameters: nil,headers: headers, completionHandler: { (json, status) in
              guard let jsonValue = json?.dictionaryValue else {
-//                self.view.makeToast(status, duration: 3.0, position: .bottom)
                 self.dismissHUD(isAnimated: true)
                 return
              }
-             if let apiSuccess = jsonValue[APIFields.successKey], apiSuccess == "true" {
+             if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
                  if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
                     let userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
                     self.user.userModel = userModel
+                    switch userModel.userVerified {
+                    case .ongoing:
+                        Utility.VerificationPendingRootVC()
+                    case .verified:
+                        break
+                    case .failed:
+                        Utility.loginRootVC()
+                    }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateUserInfo"), object: self)
                }
              }
