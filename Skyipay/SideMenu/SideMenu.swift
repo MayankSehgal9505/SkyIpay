@@ -9,7 +9,25 @@ import UIKit
 typealias menuItem = (itemName:String, itemImage:String)
 import Kingfisher
 class SideMenu: UIViewController,LogOutCall {
-
+    //MARK:- Enums
+    enum RowType: Int, CaseIterable {
+        case sendMoney = 0
+        case transactions, beneficiaries, notifications, enquiry,shareApp, helpSupport,faq,logout
+        
+        var rowItems: menuItem {
+            switch self {
+            case .sendMoney: return ("Send Money","sendMoney")
+            case .transactions: return ("Transactions","transactions")
+            case .beneficiaries: return ("My Beneficiary","myBeneficary")
+            case .notifications: return ("Notifications","Notifications")
+            case .enquiry: return ("Enquiry","Enquiry")
+            case .shareApp: return ("Share App","shareApp")
+            case .helpSupport: return ("Help & Support","help&Support")
+            case .faq: return ("FAQ","FAQ")
+            case .logout: return ("Logout","logout")
+            }
+        }
+    }
     //MARK:- IBOUtlets
     @IBOutlet weak var userImage: UIImageView! {
         didSet {
@@ -21,7 +39,6 @@ class SideMenu: UIViewController,LogOutCall {
     @IBOutlet weak var appVersionLbl: UILabel!
     
     //MARK:- Local Variables
-    private var menuItems:[menuItem] = [("Send Money","sendMoney"),("Transactions","transactions"),("My Beneficiary","myBeneficary"),("Notifications","Notifications"),("Enquiry","Enquiry"),("Share App","shareApp"),("Help & Support","help&Support"),("FAQ","FAQ"),("Logout","")]
     private let user = UserData.sharedInstance
 
     //MARK:- LifeCycle Methods
@@ -83,6 +100,22 @@ class SideMenu: UIViewController,LogOutCall {
         Utility.appDelegate.window?.rootViewController = navigationController
         self.present(navigationController, animated: true, completion: nil)
     }
+    
+    private func moveToFAQVC() {
+        let faqVC = FAQVC()
+        user.rootVC = (Utility.appDelegate.window?.rootViewController)!
+        let navigationController = UINavigationController.init(rootViewController: faqVC)
+        Utility.appDelegate.window?.rootViewController = navigationController
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    private func moveToEnquiryVC() {
+        let enquiryVC = EnquiryVC()
+        user.rootVC = (Utility.appDelegate.window?.rootViewController)!
+        let navigationController = UINavigationController.init(rootViewController: enquiryVC)
+        Utility.appDelegate.window?.rootViewController = navigationController
+        self.present(navigationController, animated: true, completion: nil)
+    }
     //MARK:- IBActions
 
     @IBAction func userProfileBtnTapped(_ sender: UIButton) {
@@ -97,16 +130,15 @@ class SideMenu: UIViewController,LogOutCall {
 //MARK:- UITableViewDataSource Methods
 
 extension SideMenu: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
+        return RowType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let itemCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTVC", for: indexPath) as! SideMenuTVC
-        itemCell.setupCell(menuItem: menuItems[indexPath.row])
+        guard let rowType = RowType.init(rawValue: indexPath.row) else {return itemCell}
+        itemCell.setupCell(menuItem: rowType.rowItems)
         return itemCell
     }
 }
@@ -116,27 +148,39 @@ extension SideMenu: UITableViewDataSource {
 extension SideMenu: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            DispatchQueue.main.async {
-                self.tabBarController?.selectedIndex = 2
-                self.sideMenuViewController.hideViewController()
-            }
-//        case 2:
-//            DispatchQueue.main.async {
-//                self.moveToBeneficiaryVC()
-//                self.sideMenuViewController.hideViewController()
-//            }
-        case 1..<menuItems.count-1:
-            self.view.makeToast("Coming soon", duration: 1.0, position: .center)
-            DispatchQueue.main.async {
-                self.sideMenuViewController.hideViewController()
-            }
-        default:
+        guard let rowType = RowType.init(rawValue: indexPath.row) else {return }
+        switch rowType {
+            case .sendMoney:
+                DispatchQueue.main.async {
+                    self.tabBarController?.selectedIndex = 2
+                    self.sideMenuViewController.hideViewController()
+                }
+            case .transactions:
+            break
+            case .beneficiaries:
+            break
+            case .notifications:
+            break
+            case .enquiry:
+                DispatchQueue.main.async {
+                    self.moveToEnquiryVC()
+                    self.sideMenuViewController.hideViewController()
+                }
+            case .shareApp:
+            break
+            case .helpSupport:
+            break
+            case .faq:
+                DispatchQueue.main.async {
+                    self.moveToFAQVC()
+                    self.sideMenuViewController.hideViewController()
+                }
+            case .logout:
             logout()
         }
     }
 }
+    
 //MARK:- API call Methods
 
 extension SideMenu {

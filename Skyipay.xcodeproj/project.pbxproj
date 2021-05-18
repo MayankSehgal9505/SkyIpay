@@ -66,6 +66,13 @@
 		4EB5B2A22632E6A7006F8B17 /* VerificationDoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5B2A02632E6A6006F8B17 /* VerificationDoneVC.xib */; };
 		4EB5B2AF26335807006F8B17 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5B2AD26335807006F8B17 /* UserProfileVC.swift */; };
 		4EB5B2B026335807006F8B17 /* UserProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5B2AE26335807006F8B17 /* UserProfileVC.xib */; };
+		4EBDD1F72652EC66008A8119 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDD1F32652EC66008A8119 /* FAQVC.swift */; };
+		4EBDD1F82652EC66008A8119 /* FAQTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBDD1F42652EC66008A8119 /* FAQTVC.xib */; };
+		4EBDD1F92652EC66008A8119 /* FAQTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDD1F52652EC66008A8119 /* FAQTVC.swift */; };
+		4EBDD1FA2652EC66008A8119 /* FAQVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBDD1F62652EC66008A8119 /* FAQVC.xib */; };
+		4EBDD1FD2652F360008A8119 /* FAQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDD1FC2652F360008A8119 /* FAQModel.swift */; };
+		4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDD1FE2652FB3E008A8119 /* EnquiryVC.swift */; };
+		4EBDD2012652FB3E008A8119 /* EnquiryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBDD1FF2652FB3E008A8119 /* EnquiryVC.xib */; };
 		4EC2EC012643018000EE1F71 /* BeneficiariesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EBFF2643018000EE1F71 /* BeneficiariesVC.swift */; };
 		4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */; };
 		4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */; };
@@ -151,6 +158,13 @@
 		4EB5B2A02632E6A6006F8B17 /* VerificationDoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationDoneVC.xib; sourceTree = "<group>"; };
 		4EB5B2AD26335807006F8B17 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		4EB5B2AE26335807006F8B17 /* UserProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileVC.xib; sourceTree = "<group>"; };
+		4EBDD1F32652EC66008A8119 /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
+		4EBDD1F42652EC66008A8119 /* FAQTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQTVC.xib; sourceTree = "<group>"; };
+		4EBDD1F52652EC66008A8119 /* FAQTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQTVC.swift; sourceTree = "<group>"; };
+		4EBDD1F62652EC66008A8119 /* FAQVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQVC.xib; sourceTree = "<group>"; };
+		4EBDD1FC2652F360008A8119 /* FAQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQModel.swift; sourceTree = "<group>"; };
+		4EBDD1FE2652FB3E008A8119 /* EnquiryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnquiryVC.swift; sourceTree = "<group>"; };
+		4EBDD1FF2652FB3E008A8119 /* EnquiryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnquiryVC.xib; sourceTree = "<group>"; };
 		4EC2EBFF2643018000EE1F71 /* BeneficiariesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiariesVC.swift; sourceTree = "<group>"; };
 		4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiariesVC.xib; sourceTree = "<group>"; };
 		4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryTVC.swift; sourceTree = "<group>"; };
@@ -200,6 +214,7 @@
 		4E0BD7D4262DD74200CBC046 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4EBDD1FB2652EC76008A8119 /* Faq */,
 				4E0BD7BE262D776700CBC046 /* Dashboards */,
 				4E262156262CB9DF00C7D377 /* SideMenu */,
 				4E262165262D70B800C7D377 /* BaseVCs */,
@@ -209,6 +224,7 @@
 				4EB5B2BC2633580E006F8B17 /* UserProfile */,
 				4EC2EC08264320D200EE1F71 /* BenificiaryList */,
 				4E9AC580264DA39000C2B6A8 /* DataManager.swift */,
+				4E8FF62D2653B1D900C8FCAA /* Enquiry */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +273,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4E8FF62D2653B1D900C8FCAA /* Enquiry */ = {
+			isa = PBXGroup;
+			children = (
+				4EBDD1FE2652FB3E008A8119 /* EnquiryVC.swift */,
+				4EBDD1FF2652FB3E008A8119 /* EnquiryVC.xib */,
+			);
+			path = Enquiry;
+			sourceTree = "<group>";
+		};
 		4E942783262C14FB0017CDE3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +303,7 @@
 				4E9AC593264E5F0A00C2B6A8 /* DocumentsModel.swift */,
 				4E7BED38264F86DC00A08AC2 /* Verification.swift */,
 				4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */,
+				4EBDD1FC2652F360008A8119 /* FAQModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +379,17 @@
 				4EB5B2AE26335807006F8B17 /* UserProfileVC.xib */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		4EBDD1FB2652EC76008A8119 /* Faq */ = {
+			isa = PBXGroup;
+			children = (
+				4EBDD1F52652EC66008A8119 /* FAQTVC.swift */,
+				4EBDD1F42652EC66008A8119 /* FAQTVC.xib */,
+				4EBDD1F32652EC66008A8119 /* FAQVC.swift */,
+				4EBDD1F62652EC66008A8119 /* FAQVC.xib */,
+			);
+			path = Faq;
 			sourceTree = "<group>";
 		};
 		4EC2EC08264320D200EE1F71 /* BenificiaryList */ = {
@@ -444,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBDD2012652FB3E008A8119 /* EnquiryVC.xib in Resources */,
 				4EA9741B262AC948001A6446 /* LoginVC.xib in Resources */,
 				4EB5B2A22632E6A7006F8B17 /* VerificationDoneVC.xib in Resources */,
 				4EA973EF2629AAF6001A6446 /* LaunchScreen.storyboard in Resources */,
@@ -451,6 +489,7 @@
 				4EA97413262AA0BA001A6446 /* WalkthroughCell.xib in Resources */,
 				4EB5B2B026335807006F8B17 /* UserProfileVC.xib in Resources */,
 				4EC2EC0626430CDB00EE1F71 /* BeneficiaryTVC.xib in Resources */,
+				4EBDD1FA2652EC66008A8119 /* FAQVC.xib in Resources */,
 				4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */,
 				4E26215A262CC07A00C7D377 /* SideMenuTVC.xib in Resources */,
 				4E87DDD5263136590039EB72 /* UploadDocumentsVC.xib in Resources */,
@@ -460,6 +499,7 @@
 				4E262155262CB9D300C7D377 /* SideMenu.xib in Resources */,
 				4EA973FF2629AD32001A6446 /* WalkthroughVC.xib in Resources */,
 				4EB5B2952632A28A006F8B17 /* VerifictionPendingVC.xib in Resources */,
+				4EBDD1F82652EC66008A8119 /* FAQTVC.xib in Resources */,
 				4E262142262C9DBF00C7D377 /* RegistrationVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,12 +575,14 @@
 				4EB09316264D1A600094C957 /* CountryModel.xcdatamodeld in Sources */,
 				4EB5B2AF26335807006F8B17 /* UserProfileVC.swift in Sources */,
 				4E0BD7C4262D77BC00CBC046 /* TrackVC.swift in Sources */,
+				4EBDD1F92652EC66008A8119 /* FAQTVC.swift in Sources */,
 				4EA973E32629AAF5001A6446 /* AppDelegate.swift in Sources */,
 				4EE2D4EA2631F9BC00B6A4DA /* ImagePickerManager.swift in Sources */,
 				4E9AC594264E5F0A00C2B6A8 /* DocumentsModel.swift in Sources */,
 				4E942782262C0AD50017CDE3 /* URLNames.swift in Sources */,
 				4EA97420262AF92C001A6446 /* CustomPageControl.swift in Sources */,
 				4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */,
+				4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */,
 				4E942785262C151C0017CDE3 /* APIFields.swift in Sources */,
 				4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */,
 				4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */,
@@ -552,7 +594,9 @@
 				4EA9741A262AC948001A6446 /* LoginVC.swift in Sources */,
 				4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */,
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
+				4EBDD1F72652EC66008A8119 /* FAQVC.swift in Sources */,
 				4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */,
+				4EBDD1FD2652F360008A8119 /* FAQModel.swift in Sources */,
 				4EA973FE2629AD32001A6446 /* WalkthroughVC.swift in Sources */,
 				4E0BD7C2262D77A800CBC046 /* RecipientsVC.swift in Sources */,
 				4E87DDAB263019C70039EB72 /* GenericPickerDataSource.swift in Sources */,
@@ -709,6 +753,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZE38D2D95S;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -716,7 +761,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -733,6 +778,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZE38D2D95S;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -740,7 +786,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

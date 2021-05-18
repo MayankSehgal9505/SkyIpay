@@ -34,7 +34,6 @@ class RegistrationVC: BaseViewController {
     //MARK:- Local variables
     private var effectView,vibrantView : UIVisualEffectView?
     private var pickerDataSource: GenericPickerDataSource?
-    let genderArray = ["Male", "Female", "Other"]
     private var selectedItem = ""
     private var pickerType: PickerType = .dobPickerView
     let cp = CountryPickerView()
@@ -61,9 +60,9 @@ class RegistrationVC: BaseViewController {
         cp.delegate = self
     }
     private func setupInitialUi(){
-        self.genderTxtFld.text = genderArray.first!.lowercased()
+        self.genderTxtFld.text = Common.genderArray.first!.lowercased()
         setupCountryPicker()
-        setPickerDataSourceDelegate(dataSourceArray: genderArray)
+        setPickerDataSourceDelegate(dataSourceArray: Common.genderArray)
         self.countryTxtFld.text = user.usercountry.countryName
         dobPicker.maximumDate = Date()
     }
@@ -204,48 +203,3 @@ extension RegistrationVC: CountryPickerViewDataSource {
         return false
     }
  }
-//MARK:- API call
-/*extension RegistrationVC {
-    private func sendUserDetails(){
-        if NetworkManager.sharedInstance.isInternetAvailable(){
-            self.showHUD(progressLabel: AlertField.loaderString)
-            let userSignupUrl : String = URLNames.baseUrl + URLNames.register
-            let parameters = [
-                "userId":self.user.userModel.userID,
-                "firstname":firstNameTxtFld.text!,
-                "lastname":lastNameTxtFld.text!,
-                "email":emailTxtFld.text!,
-                "password":passwordTxtFld.text!,
-                "dob":dobTxtFld.text!,
-                "gender":genderTxtFld.text!,
-                "country_birth":countryTxtFld.text!,
-                "nationality":nationalityTxtFld.text!
-            ] as [String : Any]
-            print(parameters)
-            NetworkManager.sharedInstance.commonApiCall(url: userSignupUrl, method: .post, parameters: parameters, completionHandler: { (json, status) in
-             guard let jsonValue = json?.dictionaryValue else {
-                self.view.makeToast(status, duration: 3.0, position: .bottom)
-                self.dismissHUD(isAnimated: true)
-                return
-             }
-             if let apiSuccess = jsonValue[APIFields.co], apiSuccess == "true" {
-                 if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
-                    var userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
-                    userModel.userNumber = self.user.userModel.userNumber
-                    userModel.userID = self.user.userModel.userID
-                    self.user.userModel = userModel
-                    self.moveToUploadDocuments()
-               }
-             }
-             else {
-                 self.view.makeToast(jsonValue["msg"]?.stringValue, duration: 3.0, position: .bottom)
-
-             }
-             self.dismissHUD(isAnimated: true)
-         })
-     }else{
-         self.showNoInternetAlert()
-     }
-    }
-}
-*/

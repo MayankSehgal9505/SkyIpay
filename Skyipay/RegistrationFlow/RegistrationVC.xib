@@ -61,7 +61,7 @@
                                 </barButtonItem>
                             </items>
                         </toolbar>
-                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="E47-bK-a3Q">
+                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="E47-bK-a3Q">
                             <rect key="frame" x="0.0" y="48" width="414" height="162"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
@@ -685,7 +685,7 @@ United kingdom has been set as issuing country of your documents.</string>
     </objects>
     <designables>
         <designable name="Iw5-Zr-Uc5">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="39" height="30"/>
         </designable>
     </designables>
     <resources>

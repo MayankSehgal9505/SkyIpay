@@ -16,4 +16,7 @@ struct URLNames {
     static let updateUserDetails = "user/update"
     static let uploadImage = "user/avatar"
     static let logout = "user/logout"
+    static let faq = "common/faqs"
+    static let enquiry = "user/enquiry"
+
 }

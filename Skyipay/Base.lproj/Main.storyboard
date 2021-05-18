@@ -373,7 +373,7 @@
     </scenes>
     <designables>
         <designable name="2DQ-TB-sUb">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="99" height="30"/>
         </designable>
     </designables>
     <resources>

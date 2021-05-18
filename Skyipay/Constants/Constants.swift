@@ -37,4 +37,10 @@ struct ValidateOTPUI {
 
 struct Common {
     static let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    static let genderArray = ["Male", "Female", "Other"]
+}
+
+struct EnquiyVC {
+    static let messsagePlaceHolder = "Please write your message here"
+    static let enquirySuccessfull = "Enquiry sent successfully"
 }
