@@ -16,7 +16,7 @@ class BeneficiaryTVC: UITableViewCell {
     @IBOutlet weak var beneficaryName: UILabel!
     @IBOutlet weak var beneficiaryImage: UIImageView!{didSet {
         beneficiaryImage.makeCircularView(withBorderColor: .clear, withBorderWidth: 0.0, withCustomCornerRadiusRequired: false)
-        beneficiaryImage.dropShadow(color: .gray, opacity: 0.3, offSet: CGSize(width: 0, height: 1), radius: 8, scale: true)
+        beneficiaryImage.dropShadow(color: .gray, opacity: 0.8, offSet: CGSize(width: -1, height: 1), radius: 8, scale: true)
         }}
     @IBOutlet weak var beneficiaryStatus: UILabel!
     @IBOutlet weak var beneficiaryStatusImg: UIImageView!
@@ -31,13 +31,13 @@ class BeneficiaryTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupCell() {
-        beneficaryName.text = "Kunbi"
-        beneficiaryStatus.text = "Verified"
-        beneficiaryStatusImg.image = UIImage.init(named: "success")
-        accountNumber.text = "(AC 0220052482)"
-        beneficiaryID.text = "ID: 00"
-        beneficiaryBank.text = "ECO Bank, ($NGN)"
+    func setupCell(_ beneficiaryModel: BeneficiaryModel) {
+        beneficaryName.text = beneficiaryModel.beneficiaryName
+        beneficiaryStatus.text = beneficiaryModel.beneficiaryStatus.beneficiaryStatusText
+        beneficiaryStatusImg.image = UIImage.init(named: beneficiaryModel.beneficiaryStatus.beneficiaryStatusImg)
+        accountNumber.text = "(AC \(beneficiaryModel.beneficiaryAccountNumber))"
+        beneficiaryID.text = "ID: \(beneficiaryModel.beneficiaryID)"
+        beneficiaryBank.text = beneficiaryModel.beneficiaryBankName
         
     }
 }

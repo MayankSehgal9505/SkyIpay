@@ -11,6 +11,7 @@
 		4E0BD7C2262D77A800CBC046 /* RecipientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BD7C1262D77A800CBC046 /* RecipientsVC.swift */; };
 		4E0BD7C4262D77BC00CBC046 /* TrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BD7C3262D77BC00CBC046 /* TrackVC.swift */; };
 		4E0BD7C6262D77CB00CBC046 /* LocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BD7C5262D77CB00CBC046 /* LocationsVC.swift */; };
+		4E18CE8B2655873300D9F424 /* BeneficiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E18CE8A2655873300D9F424 /* BeneficiaryModel.swift */; };
 		4E262141262C9DBF00C7D377 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26213F262C9DBF00C7D377 /* RegistrationVC.swift */; };
 		4E262142262C9DBF00C7D377 /* RegistrationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E262140262C9DBF00C7D377 /* RegistrationVC.xib */; };
 		4E262145262CA09200C7D377 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E262144262CA09200C7D377 /* BaseViewController.swift */; };
@@ -100,6 +101,7 @@
 		4E0BD7C1262D77A800CBC046 /* RecipientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientsVC.swift; sourceTree = "<group>"; };
 		4E0BD7C3262D77BC00CBC046 /* TrackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackVC.swift; sourceTree = "<group>"; };
 		4E0BD7C5262D77CB00CBC046 /* LocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsVC.swift; sourceTree = "<group>"; };
+		4E18CE8A2655873300D9F424 /* BeneficiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryModel.swift; sourceTree = "<group>"; };
 		4E26213F262C9DBF00C7D377 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		4E262140262C9DBF00C7D377 /* RegistrationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVC.xib; sourceTree = "<group>"; };
 		4E262144262CA09200C7D377 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				4E7BED38264F86DC00A08AC2 /* Verification.swift */,
 				4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */,
 				4EBDD1FC2652F360008A8119 /* FAQModel.swift */,
+				4E18CE8A2655873300D9F424 /* BeneficiaryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
 				4EBDD1F72652EC66008A8119 /* FAQVC.swift in Sources */,
 				4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */,
+				4E18CE8B2655873300D9F424 /* BeneficiaryModel.swift in Sources */,
 				4EBDD1FD2652F360008A8119 /* FAQModel.swift in Sources */,
 				4EA973FE2629AD32001A6446 /* WalkthroughVC.swift in Sources */,
 				4E0BD7C2262D77A800CBC046 /* RecipientsVC.swift in Sources */,

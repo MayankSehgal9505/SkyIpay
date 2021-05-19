@@ -18,5 +18,6 @@ struct URLNames {
     static let logout = "user/logout"
     static let faq = "common/faqs"
     static let enquiry = "user/enquiry"
-
+    static let beneficiaryList = "user/beneficiary"
+    static let addBeneficiary = "user/add-beneficiary"
 }

@@ -12,7 +12,6 @@ class CommonMethods {
     class func isDeviceiPad() -> Bool {
         return (UI_USER_INTERFACE_IDIOM() == .pad)
     }
-    
     class func showPopUpWithVibrancyView(on controller: Any) -> Array<UIView> {
         var vibrantView = UIVisualEffectView()
         var effectView = UIVisualEffectView()

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct AlertField {
     static let okString = "OK"
     static let noInternetString = "No Internet found"
@@ -43,4 +44,11 @@ struct Common {
 struct EnquiyVC {
     static let messsagePlaceHolder = "Please write your message here"
     static let enquirySuccessfull = "Enquiry sent successfully"
+}
+struct BeneficiaryVCConstants {
+    static let verified = "Verified"
+    static let notVerified = "Not Verified"
+}
+struct Color {
+    static let silver = UIColor.init(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
 }

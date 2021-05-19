@@ -158,7 +158,10 @@ extension SideMenu: UITableViewDelegate {
             case .transactions:
             break
             case .beneficiaries:
-            break
+                DispatchQueue.main.async {
+                    self.moveToBeneficiaryVC()
+                    self.sideMenuViewController.hideViewController()
+                }
             case .notifications:
             break
             case .enquiry:
