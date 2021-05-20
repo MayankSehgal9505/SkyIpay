@@ -180,6 +180,39 @@ class BeneficiariesVC: BaseViewController {
 
 // MARK: API Call
 extension BeneficiariesVC {
+    private func removeBeneficiary(beneficiaryModel:BeneficiaryModel) {
+        if NetworkManager.sharedInstance.isInternetAvailable(){
+            let updateUserProfileUrl = URLNames.baseUrl + URLNames.addBeneficiary
+            let parameters = [
+                "id":beneficiaryModel.beneficiaryID,
+            ] as [String : Any]
+            print(parameters)
+            let headers = [
+                "Accept": "application/json",
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: updateUserProfileUrl, method: .post, parameters: parameters,headers: headers, completionHandler: { (json, status) in
+             guard let jsonValue = json?.dictionaryValue else {
+                self.view.makeToast(status, duration: 3.0, position: .bottom)
+                self.dismissHUD(isAnimated: true)
+                return
+             }
+             if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
+                 if let _ =  jsonValue[APIFields.dataKey]?.array {
+                    self.hideBeneficiaryPopup()
+                    self.getBeneficiariesList()
+               }
+             }
+             else {
+                 self.view.makeToast(jsonValue["msg"]?.stringValue, duration: 3.0, position: .bottom)
+             }
+             self.dismissHUD(isAnimated: true)
+         })
+     }else{
+         self.showNoInternetAlert()
+     }
+    }
+    
     private func getBeneficiariesList() {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)

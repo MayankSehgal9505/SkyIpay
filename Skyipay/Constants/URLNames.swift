@@ -20,4 +20,8 @@ struct URLNames {
     static let enquiry = "user/enquiry"
     static let beneficiaryList = "user/beneficiary"
     static let addBeneficiary = "user/add-beneficiary"
+    static let removeBeneficiary = "user/remove-beneficiary"
+    static let bankList = "user/banks"
+    static let receivePaymentMethodUrl = "user/receive-payment-method"
+
 }
