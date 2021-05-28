@@ -16,7 +16,8 @@ class BeneficiariesVC: BaseViewController {
     // add beneficiary PopUp
     @IBOutlet weak var addBeneficiaryBaseView: UIView!
     @IBOutlet weak var addBeneficiaryPopUp: UIView! {didSet {
-        addBeneficiaryPopUp.makeCircularView(withBorderColor: .clear, withBorderWidth: 0.0, withCustomCornerRadiusRequired: true, withCustomCornerRadius: 8.0)
+        addBeneficiaryPopUp.makeCircularView(withBorderColor: Color.silver, withBorderWidth: 1.0, withCustomCornerRadiusRequired: true, withCustomCornerRadius: 8.0)
+        addBeneficiaryPopUp.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 10, scale: true)
     }}
     @IBOutlet weak var mobileNumView: UIView!{didSet {
         mobileNumView.makeCircularView(withBorderColor: Color.silver, withBorderWidth: 1.0, withCustomCornerRadiusRequired: true, withCustomCornerRadius: 23)
@@ -314,6 +315,9 @@ extension BeneficiariesVC: UITableViewDataSource {
 // MARK: API Call
 extension BeneficiariesVC: UITableViewDelegate  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let beneficiaryDetailVC = BeneficiaryDetailVC()
+        beneficiaryDetailVC.beneficiaryModel = beneficiaries[indexPath.row]
+        self.navigationController?.pushViewController(beneficiaryDetailVC, animated: true)
     }
 }
 

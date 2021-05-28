@@ -14,14 +14,16 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-        let blackView = UIView.init(frame: self.view.frame)
-        blackView.backgroundColor = .black
-        blackView.alpha = 0.8
-        self.view.insertSubview(blackView, at: 1)
+        DispatchQueue.main.async {
+            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = UIImage(named: "background")
+            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+            let blackView = UIView.init(frame: self.view.frame)
+            blackView.backgroundColor = .black
+            blackView.alpha = 0.8
+            self.view.insertSubview(backgroundImage, at: 0)
+            self.view.insertSubview(blackView, at: 1)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

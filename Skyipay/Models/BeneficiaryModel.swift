@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+import CountryPickerView
 
 struct BeneficiaryModel {
 
@@ -42,6 +43,7 @@ struct BeneficiaryModel {
     var beneficiaryStatus:BeneficiaryStatus = .notVerified
     var beneficiaryCreationDate = ""
     var beneficiaryUpdateDate = ""
+    var countryModel: Country = Country()
     //MARK: Lifecycle
     init() {
     }
@@ -65,5 +67,8 @@ struct BeneficiaryModel {
         }
         self.beneficiaryCreationDate = json["created_at"].stringValue
         self.beneficiaryUpdateDate = json["updated_at"].stringValue
+        countryModel = Utility.loadAllCountries().filter({ (country) -> Bool in
+            "\(country.countryId)" == self.beneficiaryCountryID
+        }).first!
     }
 }

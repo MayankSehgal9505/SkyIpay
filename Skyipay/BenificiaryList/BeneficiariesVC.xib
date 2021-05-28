@@ -50,10 +50,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aps-z4-bWp">
-                            <rect key="frame" x="20.5" y="89.5" width="373" height="717"/>
+                            <rect key="frame" x="20.5" y="149" width="373" height="627.5"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-8T-ngZ">
-                                    <rect key="frame" x="0.0" y="5" width="373" height="712"/>
+                                    <rect key="frame" x="0.0" y="5" width="373" height="622.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f35-JG-Uua" userLabel="ContentView">
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="1092.5"/>
@@ -479,9 +479,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="aps-z4-bWp" firstAttribute="width" secondItem="FrT-pk-Z0n" secondAttribute="width" multiplier="0.9" id="Goy-OE-KTq"/>
-                        <constraint firstItem="aps-z4-bWp" firstAttribute="centerY" secondItem="FrT-pk-Z0n" secondAttribute="centerY" id="Mzz-on-qb1"/>
+                        <constraint firstItem="aps-z4-bWp" firstAttribute="centerY" secondItem="FrT-pk-Z0n" secondAttribute="centerY" multiplier="1.1" constant="-30" id="Mzz-on-qb1"/>
                         <constraint firstItem="aps-z4-bWp" firstAttribute="centerX" secondItem="FrT-pk-Z0n" secondAttribute="centerX" id="REs-Qp-Zuc"/>
-                        <constraint firstItem="aps-z4-bWp" firstAttribute="height" secondItem="FrT-pk-Z0n" secondAttribute="height" multiplier="0.8" id="YqF-Zk-bG4"/>
+                        <constraint firstItem="aps-z4-bWp" firstAttribute="height" secondItem="FrT-pk-Z0n" secondAttribute="height" multiplier="0.7" id="YqF-Zk-bG4"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-wE-QjG">

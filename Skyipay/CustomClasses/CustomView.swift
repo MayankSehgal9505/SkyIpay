@@ -1,14 +1,15 @@
 //
-//  CustomButton.swift
+//  CustomView.swift
 //  Skyipay
 //
-//  Created by Mayank Sehgal on 16/04/21.
+//  Created by Mayank Sehgal on 27/05/21.
 //
 
+import Foundation
 import UIKit
 @IBDesignable
 
-final class CustomButton: UIButton {
+final class CustomView: UIButton {
     
 
     @IBInspectable var titleText: String? {

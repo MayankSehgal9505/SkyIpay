@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RESideMenu
+import CountryPickerView
 
 class Defaults {
     static let defaults = UserDefaults.standard
@@ -89,5 +90,34 @@ class Utility {
         let rootVC = UINavigationController(rootViewController: verificationVC)
         appDelegate.window?.rootViewController = rootVC
         appDelegate.window?.makeKeyAndVisible()
+    }
+    
+    static func loadAllCountries() -> Array<Country>{
+        var countries = [Country]()
+        let bundle = Bundle(for: CountryPickerView.self)
+        guard let jsonPath = bundle.path(forResource: "CountryPickerView.bundle/Data/CountryCodes", ofType: "json"),
+            let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
+                return countries
+        }
+        
+        if let jsonObjects = (try? JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization
+            .ReadingOptions.allowFragments)) as? Array<Any> {
+            
+            for jsonObject in jsonObjects {
+                
+                guard let countryObj = jsonObject as? Dictionary<String, Any> else {
+                    continue
+                }
+                guard let id = countryObj["id"] as? Int, let isoCode = countryObj["iso"] as? String,
+                    let name = countryObj["nicename"] as? String,
+                    let dialCode = countryObj["dial_code"] as? Int, let currency = countryObj["currency"] as? String else {
+                        continue
+                }
+                
+                let country = Country(countryId: id, countryISOCode: isoCode, countryName: name, countryDialCode: dialCode, countryCurrency: currency)
+                countries.append(country)
+            }
+        }
+        return countries
     }
 }

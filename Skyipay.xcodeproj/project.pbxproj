@@ -26,6 +26,8 @@
 		4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E262161262D699900C7D377 /* SendMoneyVC.swift */; };
 		4E262164262D70AA00C7D377 /* BaseTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E262163262D70AA00C7D377 /* BaseTabVC.swift */; };
 		4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3765A8262B0B50002FBBB7 /* UIView.swift */; };
+		4E3CC3FD265C9E0500F32744 /* BeneficiaryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC3FB265C9E0500F32744 /* BeneficiaryDetailVC.swift */; };
+		4E3CC3FE265C9E0500F32744 /* BeneficiaryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */; };
 		4E4C43B62639324F002C4609 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4C43B52639324F002C4609 /* ActivityModel.swift */; };
 		4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED38264F86DC00A08AC2 /* Verification.swift */; };
 		4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */; };
@@ -36,6 +38,15 @@
 		4E87DDD5263136590039EB72 /* UploadDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87DDD3263136590039EB72 /* UploadDocumentsVC.xib */; };
 		4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDF3263166070039EB72 /* ActivityTVC.swift */; };
 		4E87DDF6263166080039EB72 /* ActivityTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87DDF4263166070039EB72 /* ActivityTVC.xib */; };
+		4E8AC3342660230C00A1F98E /* SendMoneyNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */; };
+		4E8AC3372660252400A1F98E /* BankDepositDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */; };
+		4E8AC3382660252400A1F98E /* BankDepositDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */; };
+		4E8AC33B266029D000A1F98E /* AdditionalDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */; };
+		4E8AC33C266029D000A1F98E /* AdditionalDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC33A266029D000A1F98E /* AdditionalDetailVC.xib */; };
+		4E8AC33F26602DA100A1F98E /* PaymentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC33D26602DA100A1F98E /* PaymentDetailVC.swift */; };
+		4E8AC34026602DA100A1F98E /* PaymentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC33E26602DA100A1F98E /* PaymentDetailVC.xib */; };
+		4E8AC3432660318D00A1F98E /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC3412660318D00A1F98E /* ReviewVC.swift */; };
+		4E8AC3442660318D00A1F98E /* ReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC3422660318D00A1F98E /* ReviewVC.xib */; };
 		4E94275B262BF2D30017CDE3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94275A262BF2D30017CDE3 /* NetworkManager.swift */; };
 		4E942766262BF73E0017CDE3 /* ValidateOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E942764262BF73E0017CDE3 /* ValidateOTPVC.swift */; };
 		4E942767262BF73E0017CDE3 /* ValidateOTPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E942765262BF73E0017CDE3 /* ValidateOTPVC.xib */; };
@@ -78,7 +89,14 @@
 		4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */; };
 		4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */; };
 		4EC2EC0626430CDB00EE1F71 /* BeneficiaryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0426430CDB00EE1F71 /* BeneficiaryTVC.xib */; };
+		4EE18C312660AF8500FC7270 /* SendMoneyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */; };
+		4EE18C322660AF8500FC7270 /* SendMoneyTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */; };
 		4EE2D4EA2631F9BC00B6A4DA /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D4E92631F9BC00B6A4DA /* ImagePickerManager.swift */; };
+		4EEF8CAB265ECF42005E805E /* TransferDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8CA9265ECF42005E805E /* TransferDetailVC.swift */; };
+		4EEF8CAC265ECF42005E805E /* TransferDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF8CAA265ECF42005E805E /* TransferDetailVC.xib */; };
+		4EEF8CAE265EDC29005E805E /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8CAD265EDC29005E805E /* CustomView.swift */; };
+		4EEF8CB1265EDC87005E805E /* RecepientDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */; };
+		4EEF8CB2265EDC87005E805E /* RecepientDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */; };
 		AB60B83871150F084CC8C969 /* Pods_Skyipay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E162205C1BD076792F3017 /* Pods_Skyipay.framework */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +135,8 @@
 		4E262163262D70AA00C7D377 /* BaseTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabVC.swift; sourceTree = "<group>"; };
 		4E3765A8262B0B50002FBBB7 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4E3765B0262B0E37002FBBB7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3CC3FB265C9E0500F32744 /* BeneficiaryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryDetailVC.swift; sourceTree = "<group>"; };
+		4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiaryDetailVC.xib; sourceTree = "<group>"; };
 		4E4C43B52639324F002C4609 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		4E7BED38264F86DC00A08AC2 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
@@ -127,6 +147,15 @@
 		4E87DDD3263136590039EB72 /* UploadDocumentsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadDocumentsVC.xib; sourceTree = "<group>"; };
 		4E87DDF3263166070039EB72 /* ActivityTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTVC.swift; sourceTree = "<group>"; };
 		4E87DDF4263166070039EB72 /* ActivityTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTVC.xib; sourceTree = "<group>"; };
+		4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNC.swift; sourceTree = "<group>"; };
+		4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDepositDetailVC.swift; sourceTree = "<group>"; };
+		4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankDepositDetailVC.xib; sourceTree = "<group>"; };
+		4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailVC.swift; sourceTree = "<group>"; };
+		4E8AC33A266029D000A1F98E /* AdditionalDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdditionalDetailVC.xib; sourceTree = "<group>"; };
+		4E8AC33D26602DA100A1F98E /* PaymentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailVC.swift; sourceTree = "<group>"; };
+		4E8AC33E26602DA100A1F98E /* PaymentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentDetailVC.xib; sourceTree = "<group>"; };
+		4E8AC3412660318D00A1F98E /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
+		4E8AC3422660318D00A1F98E /* ReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewVC.xib; sourceTree = "<group>"; };
 		4E94275A262BF2D30017CDE3 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4E942764262BF73E0017CDE3 /* ValidateOTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateOTPVC.swift; sourceTree = "<group>"; };
 		4E942765262BF73E0017CDE3 /* ValidateOTPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidateOTPVC.xib; sourceTree = "<group>"; };
@@ -171,7 +200,14 @@
 		4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiariesVC.xib; sourceTree = "<group>"; };
 		4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryTVC.swift; sourceTree = "<group>"; };
 		4EC2EC0426430CDB00EE1F71 /* BeneficiaryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiaryTVC.xib; sourceTree = "<group>"; };
+		4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMoneyTabView.swift; sourceTree = "<group>"; };
+		4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMoneyTabView.xib; sourceTree = "<group>"; };
 		4EE2D4E92631F9BC00B6A4DA /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		4EEF8CA9265ECF42005E805E /* TransferDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailVC.swift; sourceTree = "<group>"; };
+		4EEF8CAA265ECF42005E805E /* TransferDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferDetailVC.xib; sourceTree = "<group>"; };
+		4EEF8CAD265EDC29005E805E /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepientDetailsVC.swift; sourceTree = "<group>"; };
+		4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepientDetailsVC.xib; sourceTree = "<group>"; };
 		523D2C7D0E7482F5A1CE4978 /* Pods-Skyipay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skyipay.debug.xcconfig"; path = "Target Support Files/Pods-Skyipay/Pods-Skyipay.debug.xcconfig"; sourceTree = "<group>"; };
 		56E162205C1BD076792F3017 /* Pods_Skyipay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skyipay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +227,8 @@
 		4E0BD7BE262D776700CBC046 /* Dashboards */ = {
 			isa = PBXGroup;
 			children = (
+				4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */,
+				4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */,
 				4E262161262D699900C7D377 /* SendMoneyVC.swift */,
 				4E0BD7BF262D778F00CBC046 /* ActivitesVC.swift */,
 				4E0BD7C1262D77A800CBC046 /* RecipientsVC.swift */,
@@ -198,6 +236,19 @@
 				4E0BD7C5262D77CB00CBC046 /* LocationsVC.swift */,
 				4E87DDF3263166070039EB72 /* ActivityTVC.swift */,
 				4E87DDF4263166070039EB72 /* ActivityTVC.xib */,
+				4EEF8CA9265ECF42005E805E /* TransferDetailVC.swift */,
+				4EEF8CAA265ECF42005E805E /* TransferDetailVC.xib */,
+				4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */,
+				4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */,
+				4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */,
+				4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */,
+				4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */,
+				4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */,
+				4E8AC33A266029D000A1F98E /* AdditionalDetailVC.xib */,
+				4E8AC33D26602DA100A1F98E /* PaymentDetailVC.swift */,
+				4E8AC33E26602DA100A1F98E /* PaymentDetailVC.xib */,
+				4E8AC3412660318D00A1F98E /* ReviewVC.swift */,
+				4E8AC3422660318D00A1F98E /* ReviewVC.xib */,
 			);
 			path = Dashboards;
 			sourceTree = "<group>";
@@ -209,6 +260,7 @@
 				4EA9741F262AF92C001A6446 /* CustomPageControl.swift */,
 				4EA974012629AF46001A6446 /* CustomButton.swift */,
 				4E26215F262D3B3A00C7D377 /* OtpTextfield.swift */,
+				4EEF8CAD265EDC29005E805E /* CustomView.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -402,6 +454,8 @@
 				4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */,
 				4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */,
 				4EC2EC0426430CDB00EE1F71 /* BeneficiaryTVC.xib */,
+				4E3CC3FB265C9E0500F32744 /* BeneficiaryDetailVC.swift */,
+				4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */,
 			);
 			path = BenificiaryList;
 			sourceTree = "<group>";
@@ -485,20 +539,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EBDD2012652FB3E008A8119 /* EnquiryVC.xib in Resources */,
+				4E8AC3442660318D00A1F98E /* ReviewVC.xib in Resources */,
+				4EEF8CB2265EDC87005E805E /* RecepientDetailsVC.xib in Resources */,
 				4EA9741B262AC948001A6446 /* LoginVC.xib in Resources */,
 				4EB5B2A22632E6A7006F8B17 /* VerificationDoneVC.xib in Resources */,
+				4E8AC34026602DA100A1F98E /* PaymentDetailVC.xib in Resources */,
 				4EA973EF2629AAF6001A6446 /* LaunchScreen.storyboard in Resources */,
+				4EE18C322660AF8500FC7270 /* SendMoneyTabView.xib in Resources */,
 				4E87DDF6263166080039EB72 /* ActivityTVC.xib in Resources */,
 				4EA97413262AA0BA001A6446 /* WalkthroughCell.xib in Resources */,
 				4EB5B2B026335807006F8B17 /* UserProfileVC.xib in Resources */,
+				4E8AC3382660252400A1F98E /* BankDepositDetailVC.xib in Resources */,
 				4EC2EC0626430CDB00EE1F71 /* BeneficiaryTVC.xib in Resources */,
+				4E8AC33C266029D000A1F98E /* AdditionalDetailVC.xib in Resources */,
 				4EBDD1FA2652EC66008A8119 /* FAQVC.xib in Resources */,
 				4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */,
 				4E26215A262CC07A00C7D377 /* SideMenuTVC.xib in Resources */,
 				4E87DDD5263136590039EB72 /* UploadDocumentsVC.xib in Resources */,
+				4EEF8CAC265ECF42005E805E /* TransferDetailVC.xib in Resources */,
 				4EA973EC2629AAF6001A6446 /* Assets.xcassets in Resources */,
 				4EA973EA2629AAF5001A6446 /* Main.storyboard in Resources */,
 				4E942767262BF73E0017CDE3 /* ValidateOTPVC.xib in Resources */,
+				4E3CC3FE265C9E0500F32744 /* BeneficiaryDetailVC.xib in Resources */,
 				4E262155262CB9D300C7D377 /* SideMenu.xib in Resources */,
 				4EA973FF2629AD32001A6446 /* WalkthroughVC.xib in Resources */,
 				4EB5B2952632A28A006F8B17 /* VerifictionPendingVC.xib in Resources */,
@@ -556,7 +618,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8AC3372660252400A1F98E /* BankDepositDetailVC.swift in Sources */,
 				4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */,
+				4E8AC33F26602DA100A1F98E /* PaymentDetailVC.swift in Sources */,
+				4E3CC3FD265C9E0500F32744 /* BeneficiaryDetailVC.swift in Sources */,
 				4E9AC592264E5B1B00C2B6A8 /* AddressModel.swift in Sources */,
 				4EB5B2A12632E6A7006F8B17 /* VerificationDoneVC.swift in Sources */,
 				4EA97412262AA0BA001A6446 /* WalkthroughCell.swift in Sources */,
@@ -564,6 +629,7 @@
 				4E262159262CC07A00C7D377 /* SideMenuTVC.swift in Sources */,
 				4E942780262C07E50017CDE3 /* UIViewController.swift in Sources */,
 				4EA974052629BCBD001A6446 /* WalkthroughModel.swift in Sources */,
+				4EEF8CB1265EDC87005E805E /* RecepientDetailsVC.swift in Sources */,
 				4E262141262C9DBF00C7D377 /* RegistrationVC.swift in Sources */,
 				4E262145262CA09200C7D377 /* BaseViewController.swift in Sources */,
 				4E0BD7C6262D77CB00CBC046 /* LocationsVC.swift in Sources */,
@@ -573,9 +639,11 @@
 				4E262154262CB9D300C7D377 /* SideMenu.swift in Sources */,
 				4E87DDAD26301AE60039EB72 /* CommonMethods.swift in Sources */,
 				4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */,
+				4E8AC3342660230C00A1F98E /* SendMoneyNC.swift in Sources */,
 				4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */,
 				4E26215C262D2D2000C7D377 /* UserData.swift in Sources */,
 				4EB09316264D1A600094C957 /* CountryModel.xcdatamodeld in Sources */,
+				4E8AC3432660318D00A1F98E /* ReviewVC.swift in Sources */,
 				4EB5B2AF26335807006F8B17 /* UserProfileVC.swift in Sources */,
 				4E0BD7C4262D77BC00CBC046 /* TrackVC.swift in Sources */,
 				4EBDD1F92652EC66008A8119 /* FAQTVC.swift in Sources */,
@@ -587,6 +655,7 @@
 				4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */,
 				4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */,
 				4E942785262C151C0017CDE3 /* APIFields.swift in Sources */,
+				4EE18C312660AF8500FC7270 /* SendMoneyTabView.swift in Sources */,
 				4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */,
 				4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */,
 				4E0BD7C0262D778F00CBC046 /* ActivitesVC.swift in Sources */,
@@ -597,6 +666,7 @@
 				4EA9741A262AC948001A6446 /* LoginVC.swift in Sources */,
 				4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */,
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
+				4EEF8CAB265ECF42005E805E /* TransferDetailVC.swift in Sources */,
 				4EBDD1F72652EC66008A8119 /* FAQVC.swift in Sources */,
 				4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */,
 				4E18CE8B2655873300D9F424 /* BeneficiaryModel.swift in Sources */,
@@ -604,6 +674,8 @@
 				4EA973FE2629AD32001A6446 /* WalkthroughVC.swift in Sources */,
 				4E0BD7C2262D77A800CBC046 /* RecipientsVC.swift in Sources */,
 				4E87DDAB263019C70039EB72 /* GenericPickerDataSource.swift in Sources */,
+				4E8AC33B266029D000A1F98E /* AdditionalDetailVC.swift in Sources */,
+				4EEF8CAE265EDC29005E805E /* CustomView.swift in Sources */,
 				4EA974022629AF46001A6446 /* CustomButton.swift in Sources */,
 				4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */,
 				4E87DDD4263136590039EB72 /* UploadDocumentsVC.swift in Sources */,

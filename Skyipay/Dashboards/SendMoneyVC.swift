@@ -9,6 +9,14 @@ import UIKit
 import CountryPickerView
 
 class SendMoneyVC: BaseTabVC {
+    //MARK:- Enums
+    enum PickerType {
+        case moneyObtainOptions
+        case bankOptions
+    }
+    
+    //MARK:- IBOutlets
+    @IBOutlet weak var sendMoneyContainerView: UIView!
     @IBOutlet weak var logoView: UIView! {
         didSet {
             logoView.makeCircularView(withBorderColor: .lightGray, withBorderWidth: 1.0, withCustomCornerRadiusRequired: true, withCustomCornerRadius: 5)
@@ -20,28 +28,13 @@ class SendMoneyVC: BaseTabVC {
             baseView.dropShadow(color: .lightGray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 10, scale: true)
         }
     }
-    //UITextfields
-    @IBOutlet weak var countryTxtfld: UITextField!
-    @IBOutlet weak var sendAmountTxtFld: UITextField!
-    @IBOutlet weak var currenyCountryLbl: UILabel!
-    @IBOutlet weak var recepientAmountTxtFld: UITextField!
-    @IBOutlet weak var recepientGetMoneyTxtFld: UITextField!
-    @IBOutlet weak var senderSendMoneyTxtFld: UITextField!
-    @IBOutlet weak var bankNameTxtFld: UITextField!
-    @IBOutlet weak var countryCurrenyView: UIView!{
-        didSet {
-            countryCurrenyView.makeCircularView(withBorderColor: .clear, withBorderWidth: 0.0, withCustomCornerRadiusRequired: true, withCustomCornerRadius: 5)
-        }
-    }
     //MARK:- Local Variables
     private let user = UserData.sharedInstance
-    private let cp = CountryPickerView()
-    private var countryModel = Country()
-
     //MARK:- Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserDetails()
+        //getUserDetails()
+        setNewNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,14 +43,28 @@ class SendMoneyVC: BaseTabVC {
     }
     
     //MARK:- Internal Methods
+    private func setNewNavigation() {
+//        let transferDetailVC = TransferDetailVC()
+//        transferDetailVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+//        transferDetailVC.view.frame = sendMoneyContainerView.bounds
+//        user.sendMoneyNavController = UINavigationController.init(rootViewController: transferDetailVC)
+//        user.sendMoneyNavController!.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+//        user.sendMoneyNavController!.view.frame = sendMoneyContainerView.bounds
+//        sendMoneyContainerView.addSubview(user.sendMoneyNavController!.view)
+        
+        let transferDetailVC = TransferDetailVC()
+        transferDetailVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        transferDetailVC.view.frame = sendMoneyContainerView.bounds
+        user.sendMoneyNavController = SendMoneyNC.init(rootViewController: transferDetailVC)
+        user.sendMoneyNavController!.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        user.sendMoneyNavController!.view.frame = sendMoneyContainerView.bounds
+        sendMoneyContainerView.addSubview(user.sendMoneyNavController!.view)
+        
+    }
     private func setupUI(){
         setupNavigationBar()
-        setupCountryPicker()
-        setUserCountryCurrrencyUI()
     }
-    private func setUserCountryCurrrencyUI() {
-        currenyCountryLbl.text = user.userModel.userAddress.first?.countryModel.countryCurrency ?? countryModel.countryCurrency
-    }
+
     func setupNavigationBar() {
         setTitle(navigationTitle:"Send Money")
         self.enableRightBtn()
@@ -83,20 +90,10 @@ class SendMoneyVC: BaseTabVC {
     @objc private func notificationAction() {
         
     }
-    private func setupCountryPicker() {
-        cp.hostViewController = self
-        cp.dataSource = self
-        cp.delegate = self
-        countryModel = cp.selectedCountry
-    }
-    
+
     //MARK:- IBActions
-
-    @IBAction func continueBtnAction(_ sender: UIButton) {
-    }
-    
 }
-
+//MARK:- API Call
 extension SendMoneyVC {
     func getUserDetails(){
         if NetworkManager.sharedInstance.isInternetAvailable(){
@@ -117,8 +114,7 @@ extension SendMoneyVC {
                     switch userModel.userVerified {
                     case .ongoing:
                         Utility.VerificationPendingRootVC()
-                    case .verified:
-                        self.setUserCountryCurrrencyUI()
+                    case .verified: break
                     case .failed:
                         Utility.loginRootVC()
                     }
@@ -136,26 +132,3 @@ extension SendMoneyVC {
      }
     }
 }
-
-//MARK:- CountryPickerViewDataSource & CountryPickerViewDelegateMethods
-extension SendMoneyVC: CountryPickerViewDataSource, CountryPickerViewDelegate {
-    func navigationTitle(in countryPickerView: CountryPickerView) -> String? {
-        return "Select a Country"
-    }
-         
-    func searchBarPosition(in countryPickerView: CountryPickerView) -> SearchBarPosition {
-        return .tableViewHeader
-    }
-     
-    func showPhoneCodeInList(in countryPickerView: CountryPickerView) -> Bool {
-        return false
-    }
-     
-    func showCountryCodeInList(in countryPickerView: CountryPickerView) -> Bool {
-        return false
-    }
-    
-    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
-        countryModel = country
-     }
- }

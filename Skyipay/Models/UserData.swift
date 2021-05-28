@@ -19,5 +19,10 @@ final class UserData: NSObject {
     var userModel = UserModel()
     var usercountry = Country()
     var rootVC: UIViewController = UIViewController()
+    //var sendMoneyNavController: UINavigationController?
+    
+    var sendMoneyNavController: SendMoneyNC?
+    
+    
    private override init() { }
 }
