@@ -103,6 +103,7 @@ class BeneficiariesVC: BaseViewController {
         beneficiaryCountryTxtFld.text = countryModel.countryName
     }
     private func hideBeneficiaryPopup() {
+        clearPopUPData()
         self.addBeneficiaryBaseView.isHidden = true
         self.view.sendSubviewToBack(addBeneficiaryBaseView)
         self.navigationController?.navigationBar.isUserInteractionEnabled = true
@@ -117,6 +118,18 @@ class BeneficiariesVC: BaseViewController {
         dobPickerMainView.isHidden = true
         vibrantView?.removeFromSuperview()
         effectView?.removeFromSuperview()
+    }
+    private func clearPopUPData() {
+        self.view.endEditing(true)
+        beneficiaryMobileNumTxtFld.text = ""
+        beneficiaryNameTxtFld.text = ""
+        beneficiaryBankNameTxtfld.text = ""
+        beneficiaryAccNoTxtFld.text = ""
+        beneficiaryEmailTxtFld.text = ""
+        beneficiaryDOBTxtFld.text = ""
+        countryModel = cp.selectedCountry
+        beneficiaryDialCode.text = "+\(countryModel.countryDialCode)"
+        beneficiaryCountryTxtFld.text = countryModel.countryName
     }
     //MARK:- IBActions
     override func leftButtonAction() {
@@ -259,6 +272,7 @@ extension BeneficiariesVC {
     }
     private func addBeneficiaryCall(){
         if NetworkManager.sharedInstance.isInternetAvailable(){
+            self.showHUD(progressLabel: AlertField.loaderString)
             let updateUserProfileUrl = URLNames.baseUrl + URLNames.addBeneficiary
             let parameters = [
                 "name":beneficiaryNameTxtFld.text!,
