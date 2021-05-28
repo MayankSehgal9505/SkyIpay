@@ -33,7 +33,7 @@ class SendMoneyVC: BaseTabVC {
     //MARK:- Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getUserDetails()
+        getUserDetails()
         setNewNavigation()
     }
     
