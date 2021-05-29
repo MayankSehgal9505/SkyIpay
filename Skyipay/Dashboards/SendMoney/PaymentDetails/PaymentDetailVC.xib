@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentDetailVC" customModule="Skyipay" customModuleProvider="target">
             <connections>
-                <outlet property="continueBtn" destination="eSK-sk-5Aa" id="aQB-AG-FhN"/>
+                <outlet property="continueBtn" destination="eSK-sk-5Aa" id="5wL-oJ-Ksz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -32,13 +32,13 @@
 		4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED38264F86DC00A08AC2 /* Verification.swift */; };
 		4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */; };
 		4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */; };
+		4E7CA78C2662A6B700BAA846 /* SendMoneyNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7CA78B2662A6B700BAA846 /* SendMoneyNavigator.swift */; };
 		4E87DDAB263019C70039EB72 /* GenericPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDAA263019C70039EB72 /* GenericPickerDataSource.swift */; };
 		4E87DDAD26301AE60039EB72 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDAC26301AE60039EB72 /* CommonMethods.swift */; };
 		4E87DDD4263136590039EB72 /* UploadDocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDD2263136590039EB72 /* UploadDocumentsVC.swift */; };
 		4E87DDD5263136590039EB72 /* UploadDocumentsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87DDD3263136590039EB72 /* UploadDocumentsVC.xib */; };
 		4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E87DDF3263166070039EB72 /* ActivityTVC.swift */; };
 		4E87DDF6263166080039EB72 /* ActivityTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E87DDF4263166070039EB72 /* ActivityTVC.xib */; };
-		4E8AC3342660230C00A1F98E /* SendMoneyNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */; };
 		4E8AC3372660252400A1F98E /* BankDepositDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */; };
 		4E8AC3382660252400A1F98E /* BankDepositDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */; };
 		4E8AC33B266029D000A1F98E /* AdditionalDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */; };
@@ -141,13 +141,13 @@
 		4E7BED38264F86DC00A08AC2 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
 		4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutProtocall.swift; sourceTree = "<group>"; };
+		4E7CA78B2662A6B700BAA846 /* SendMoneyNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNavigator.swift; sourceTree = "<group>"; };
 		4E87DDAA263019C70039EB72 /* GenericPickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericPickerDataSource.swift; sourceTree = "<group>"; };
 		4E87DDAC26301AE60039EB72 /* CommonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethods.swift; sourceTree = "<group>"; };
 		4E87DDD2263136590039EB72 /* UploadDocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDocumentsVC.swift; sourceTree = "<group>"; };
 		4E87DDD3263136590039EB72 /* UploadDocumentsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadDocumentsVC.xib; sourceTree = "<group>"; };
 		4E87DDF3263166070039EB72 /* ActivityTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTVC.swift; sourceTree = "<group>"; };
 		4E87DDF4263166070039EB72 /* ActivityTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTVC.xib; sourceTree = "<group>"; };
-		4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyNC.swift; sourceTree = "<group>"; };
 		4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDepositDetailVC.swift; sourceTree = "<group>"; };
 		4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankDepositDetailVC.xib; sourceTree = "<group>"; };
 		4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalDetailVC.swift; sourceTree = "<group>"; };
@@ -227,28 +227,13 @@
 		4E0BD7BE262D776700CBC046 /* Dashboards */ = {
 			isa = PBXGroup;
 			children = (
-				4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */,
-				4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */,
-				4E262161262D699900C7D377 /* SendMoneyVC.swift */,
+				4E7CA7832662A57900BAA846 /* SendMoney */,
 				4E0BD7BF262D778F00CBC046 /* ActivitesVC.swift */,
 				4E0BD7C1262D77A800CBC046 /* RecipientsVC.swift */,
 				4E0BD7C3262D77BC00CBC046 /* TrackVC.swift */,
 				4E0BD7C5262D77CB00CBC046 /* LocationsVC.swift */,
 				4E87DDF3263166070039EB72 /* ActivityTVC.swift */,
 				4E87DDF4263166070039EB72 /* ActivityTVC.xib */,
-				4EEF8CA9265ECF42005E805E /* TransferDetailVC.swift */,
-				4EEF8CAA265ECF42005E805E /* TransferDetailVC.xib */,
-				4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */,
-				4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */,
-				4E8AC3332660230C00A1F98E /* SendMoneyNC.swift */,
-				4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */,
-				4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */,
-				4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */,
-				4E8AC33A266029D000A1F98E /* AdditionalDetailVC.xib */,
-				4E8AC33D26602DA100A1F98E /* PaymentDetailVC.swift */,
-				4E8AC33E26602DA100A1F98E /* PaymentDetailVC.xib */,
-				4E8AC3412660318D00A1F98E /* ReviewVC.swift */,
-				4E8AC3422660318D00A1F98E /* ReviewVC.xib */,
 			);
 			path = Dashboards;
 			sourceTree = "<group>";
@@ -325,6 +310,85 @@
 				4E94277F262C07E50017CDE3 /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E7CA7832662A57900BAA846 /* SendMoney */ = {
+			isa = PBXGroup;
+			children = (
+				4E7CA78A2662A67200BAA846 /* SendMoneyTabView */,
+				4E262161262D699900C7D377 /* SendMoneyVC.swift */,
+				4E7CA7842662A59600BAA846 /* TransferDetailsVC */,
+				4E7CA7852662A5DE00BAA846 /* RecepientDetailsVC */,
+				4E7CA7862662A5FF00BAA846 /* BankDepositDetails */,
+				4E7CA7872662A62100BAA846 /* AdditionalDetails */,
+				4E7CA7882662A63900BAA846 /* PaymentDetails */,
+				4E7CA7892662A65300BAA846 /* ReviewVC */,
+				4E7CA78B2662A6B700BAA846 /* SendMoneyNavigator.swift */,
+			);
+			path = SendMoney;
+			sourceTree = "<group>";
+		};
+		4E7CA7842662A59600BAA846 /* TransferDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4EEF8CA9265ECF42005E805E /* TransferDetailVC.swift */,
+				4EEF8CAA265ECF42005E805E /* TransferDetailVC.xib */,
+			);
+			path = TransferDetailsVC;
+			sourceTree = "<group>";
+		};
+		4E7CA7852662A5DE00BAA846 /* RecepientDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */,
+				4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */,
+			);
+			path = RecepientDetailsVC;
+			sourceTree = "<group>";
+		};
+		4E7CA7862662A5FF00BAA846 /* BankDepositDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4E8AC3352660252400A1F98E /* BankDepositDetailVC.swift */,
+				4E8AC3362660252400A1F98E /* BankDepositDetailVC.xib */,
+			);
+			path = BankDepositDetails;
+			sourceTree = "<group>";
+		};
+		4E7CA7872662A62100BAA846 /* AdditionalDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4E8AC339266029D000A1F98E /* AdditionalDetailVC.swift */,
+				4E8AC33A266029D000A1F98E /* AdditionalDetailVC.xib */,
+			);
+			path = AdditionalDetails;
+			sourceTree = "<group>";
+		};
+		4E7CA7882662A63900BAA846 /* PaymentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4E8AC33D26602DA100A1F98E /* PaymentDetailVC.swift */,
+				4E8AC33E26602DA100A1F98E /* PaymentDetailVC.xib */,
+			);
+			path = PaymentDetails;
+			sourceTree = "<group>";
+		};
+		4E7CA7892662A65300BAA846 /* ReviewVC */ = {
+			isa = PBXGroup;
+			children = (
+				4E8AC3412660318D00A1F98E /* ReviewVC.swift */,
+				4E8AC3422660318D00A1F98E /* ReviewVC.xib */,
+			);
+			path = ReviewVC;
+			sourceTree = "<group>";
+		};
+		4E7CA78A2662A67200BAA846 /* SendMoneyTabView */ = {
+			isa = PBXGroup;
+			children = (
+				4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */,
+				4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */,
+			);
+			path = SendMoneyTabView;
 			sourceTree = "<group>";
 		};
 		4E8FF62D2653B1D900C8FCAA /* Enquiry */ = {
@@ -639,7 +703,6 @@
 				4E262154262CB9D300C7D377 /* SideMenu.swift in Sources */,
 				4E87DDAD26301AE60039EB72 /* CommonMethods.swift in Sources */,
 				4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */,
-				4E8AC3342660230C00A1F98E /* SendMoneyNC.swift in Sources */,
 				4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */,
 				4E26215C262D2D2000C7D377 /* UserData.swift in Sources */,
 				4EB09316264D1A600094C957 /* CountryModel.xcdatamodeld in Sources */,
@@ -667,6 +730,7 @@
 				4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */,
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
 				4EEF8CAB265ECF42005E805E /* TransferDetailVC.swift in Sources */,
+				4E7CA78C2662A6B700BAA846 /* SendMoneyNavigator.swift in Sources */,
 				4EBDD1F72652EC66008A8119 /* FAQVC.swift in Sources */,
 				4E262162262D699900C7D377 /* SendMoneyVC.swift in Sources */,
 				4E18CE8B2655873300D9F424 /* BeneficiaryModel.swift in Sources */,

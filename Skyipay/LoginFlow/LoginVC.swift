@@ -60,7 +60,10 @@ class LoginVC: UIViewController {
         numberTxtFld.leftViewMode = .always
         cp.dataSource = self
         cp.delegate = self
-        user.usercountry = cp.selectedCountry
+        //user.usercountry = cp.selectedCountry
+        var addressModelObj = AddressModel()
+        addressModelObj.countryModel = cp.selectedCountry
+        user.userModel.userAddress = [addressModelObj]
     }
     
     private func moveToValidateScreen() {

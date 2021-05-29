@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewVC" customModule="Skyipay" customModuleProvider="target">
             <connections>
+                <outlet property="continueBtn" destination="PKq-SB-tdm" id="s1w-Jb-0rZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -380,16 +381,16 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3M-oM-1un">
-                                                                            <rect key="frame" x="0.0" y="50" width="354" height="51.666666666666657"/>
+                                                                            <rect key="frame" x="0.0" y="50" width="354" height="21"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyr-o2-SVY">
-                                                                                    <rect key="frame" x="0.0" y="2" width="42" height="47.666666666666664"/>
+                                                                                    <rect key="frame" x="0.0" y="2" width="42" height="17"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Skyipay User" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O9-LK-m0V">
-                                                                                    <rect key="frame" x="52" y="17.333333333333371" width="302" height="17"/>
+                                                                                    <rect key="frame" x="52" y="2" width="302" height="17"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -406,16 +407,16 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Mb-Wg-CTX">
-                                                                            <rect key="frame" x="0.0" y="101.66666666666663" width="354" height="37"/>
+                                                                            <rect key="frame" x="0.0" y="71" width="354" height="67.666666666666686"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqV-dc-hHd">
-                                                                                    <rect key="frame" x="0.0" y="5" width="59.333333333333336" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="20.333333333333371" width="59.333333333333336" height="17"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Skyipay Office" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63t-Uv-Xkl">
-                                                                                    <rect key="frame" x="69.333333333333343" y="5" width="284.66666666666663" height="17"/>
+                                                                                    <rect key="frame" x="69.333333333333343" y="5" width="284.66666666666663" height="47.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -684,10 +685,10 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="354" height="532"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRK-KL-FCg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="269.33333333333331"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="249"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Consumer Fraud Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfB-DQ-aCU">
-                                                                                    <rect key="frame" x="0.0" y="10.000000000000014" width="354" height="244.33333333333337"/>
+                                                                                    <rect key="frame" x="0.0" y="10" width="354" height="224"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -702,7 +703,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMS-WA-oQp">
-                                                                            <rect key="frame" x="0.0" y="269.33333333333326" width="354" height="21"/>
+                                                                            <rect key="frame" x="0.0" y="249" width="354" height="21"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Don't send money to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D93-Oq-Cml">
                                                                                     <rect key="frame" x="0.0" y="2" width="354" height="17"/>
@@ -720,7 +721,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-hU-xDn">
-                                                                            <rect key="frame" x="0.0" y="290.33333333333326" width="354" height="241.66666666666663"/>
+                                                                            <rect key="frame" x="0.0" y="270" width="354" height="262"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="● A stranger- in this country or anywhere else." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rL-n2-fLy">
                                                                                     <rect key="frame" x="0.0" y="5" width="354" height="17"/>
@@ -747,31 +748,31 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="● Someone who asks you to deposit a check and send some of the money back." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kt-9u-JJU">
-                                                                                    <rect key="frame" x="0.0" y="126.3333333333335" width="354" height="33.666666666666671"/>
+                                                                                    <rect key="frame" x="0.0" y="126.33333333333327" width="354" height="33.666666666666671"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                     <color key="textColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE5-cG-rvE">
-                                                                                    <rect key="frame" x="0.0" y="175" width="354" height="46.666666666666657"/>
+                                                                                    <rect key="frame" x="0.0" y="175" width="354" height="67"/>
                                                                                     <attributedString key="attributedText">
                                                                                         <fragment>
                                                                                             <string key="content">If you believe you may be the victim of a scam, DO NOT PROCEED WITH THIS TRANSFER. please contact our fraud prevention Department at </string>
                                                                                             <attributes>
                                                                                                 <color key="NSColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                             </attributes>
                                                                                         </fragment>
                                                                                         <fragment content="6779 685 665">
                                                                                             <attributes>
                                                                                                 <color key="NSColor" red="0.057779165850704264" green="0.082564597188732436" blue="0.78976090000563381" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                             </attributes>
                                                                                         </fragment>
                                                                                         <fragment content="  ext. 5234">
                                                                                             <attributes>
                                                                                                 <color key="NSColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                                <font key="NSFont" size="14" name=".SFNS-Regular"/>
+                                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                             </attributes>
                                                                                         </fragment>
                                                                                     </attributedString>
@@ -961,9 +962,6 @@
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="XRe-oT-oXK"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jj-qp-Y5u">
                                                     <rect key="frame" x="132" y="90" width="150" height="40"/>
@@ -987,9 +985,6 @@
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="cW6-hG-8pR"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1036,8 +1031,20 @@
         </view>
     </objects>
     <designables>
+        <designable name="67k-L3-4bQ">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="PKq-SB-tdm">
-            <size key="intrinsicContentSize" width="54" height="34"/>
+            <size key="intrinsicContentSize" width="101" height="34"/>
+        </designable>
+        <designable name="S4j-Qu-8NW">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="eyb-Ch-aYt">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="zvm-WS-fp0">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

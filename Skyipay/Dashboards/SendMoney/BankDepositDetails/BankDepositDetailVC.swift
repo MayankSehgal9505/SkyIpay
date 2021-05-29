@@ -7,16 +7,17 @@
 
 import UIKit
 
-class BankDepositDetailVC: UIViewController {
+class BankDepositDetailVC: SendMoneySuperVC {
 
-    private let user = UserData.sharedInstance
+    private let userInfo = UserData.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func continueAction(_ sender: UIButton) {
-        let additionalDetailsVC = AdditionalDetailVC()
-        user.sendMoneyNavController!.pushViewController(additionalDetailsVC, animated: false)
+        userInfo.selectedTab = .additional
+        subVCdelegate?.continueButtonTapped()
+
     }
 }

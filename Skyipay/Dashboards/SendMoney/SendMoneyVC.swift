@@ -16,6 +16,7 @@ class SendMoneyVC: BaseTabVC {
     }
     
     //MARK:- IBOutlets
+    @IBOutlet weak var sendMoneyTabView: SendMoneyTabView!
     @IBOutlet weak var sendMoneyContainerView: UIView!
     @IBOutlet weak var logoView: UIView! {
         didSet {
@@ -29,37 +30,33 @@ class SendMoneyVC: BaseTabVC {
         }
     }
     //MARK:- Local Variables
-    private let user = UserData.sharedInstance
+    private let userInfo = UserData.sharedInstance
+    lazy var transferDetailVC: TransferDetailVC = TransferDetailVC()
+    lazy var recepientDetailVC: RecepientDetailsVC = RecepientDetailsVC()
+    lazy var bankDetailVC: BankDepositDetailVC = BankDepositDetailVC()
+    lazy var additionalDetailVC: AdditionalDetailVC = AdditionalDetailVC()
+    lazy var paymentDetailVC: PaymentDetailVC = PaymentDetailVC()
+    lazy var reviewVC: ReviewVC = ReviewVC()
     //MARK:- Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserDetails()
-        setNewNavigation()
+        setupContainerView()
+        sendMoneyTabView.tabDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        //getUserDetails()
         setupUI()
     }
     
     //MARK:- Internal Methods
-    private func setNewNavigation() {
-//        let transferDetailVC = TransferDetailVC()
-//        transferDetailVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        transferDetailVC.view.frame = sendMoneyContainerView.bounds
-//        user.sendMoneyNavController = UINavigationController.init(rootViewController: transferDetailVC)
-//        user.sendMoneyNavController!.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        user.sendMoneyNavController!.view.frame = sendMoneyContainerView.bounds
-//        sendMoneyContainerView.addSubview(user.sendMoneyNavController!.view)
-        
-        let transferDetailVC = TransferDetailVC()
-        transferDetailVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        transferDetailVC.view.frame = sendMoneyContainerView.bounds
-        user.sendMoneyNavController = SendMoneyNC.init(rootViewController: transferDetailVC)
-        user.sendMoneyNavController!.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        user.sendMoneyNavController!.view.frame = sendMoneyContainerView.bounds
-        sendMoneyContainerView.addSubview(user.sendMoneyNavController!.view)
-        
+    private func setupContainerView() {
+        sendMoneyTabView.updateUI()
+        let classType = Utility.classFromString(userInfo.selectedTab.associatedClass) as! SendMoneySuperVC.Type
+        let classInstance = classType.init()
+        classInstance.subVCdelegate = self
+        ViewEmbedder.embed(parent: self, container: sendMoneyContainerView, child: classInstance, childClassName: userInfo.selectedTab.associatedClass , previous: nil)
     }
     private func setupUI(){
         setupNavigationBar()
@@ -90,9 +87,32 @@ class SendMoneyVC: BaseTabVC {
     @objc private func notificationAction() {
         
     }
-
-    //MARK:- IBActions
 }
+//MARK:- SendMoneySuperVCNavigator Delegate Methods
+extension SendMoneyVC:SendMoneySuperVCNavigator {
+    func continueButtonTapped() {
+        setupContainerView()
+    }
+}
+//MARK:- SendMoneySuperVCNavigator Delegate Methods
+
+extension SendMoneyVC:SendMoneyTabProtocol {
+    func tabBtnTapped() {
+        var senMoneySuperVC = SendMoneySuperVC()
+        if let cachedClass = userInfo.cachedControllers.filter({ (controllerDict) -> Bool in
+            return controllerDict.keys.contains(userInfo.selectedTab.associatedClass)
+        }).first {
+            senMoneySuperVC = cachedClass[userInfo.selectedTab.associatedClass] as! SendMoneySuperVC
+        } else {
+            let myclass = Utility.classFromString(userInfo.selectedTab.associatedClass) as! SendMoneySuperVC.Type
+            senMoneySuperVC = myclass.init()
+        }
+        senMoneySuperVC.subVCdelegate = self
+        ViewEmbedder.embed(parent: self, container: sendMoneyContainerView, child: senMoneySuperVC, childClassName: userInfo.selectedTab.associatedClass, previous: transferDetailVC)
+
+    }
+}
+
 //MARK:- API Call
 extension SendMoneyVC {
     func getUserDetails(){
@@ -110,7 +130,7 @@ extension SendMoneyVC {
              if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
                  if let _ =  jsonValue[APIFields.dataKey]?.dictionaryValue {
                     let userModel = UserModel.init(JsonDashBoard: jsonValue[APIFields.dataKey]!)
-                    self.user.userModel = userModel
+                    self.userInfo.userModel = userModel
                     switch userModel.userVerified {
                     case .ongoing:
                         Utility.VerificationPendingRootVC()
@@ -132,3 +152,5 @@ extension SendMoneyVC {
      }
     }
 }
+
+

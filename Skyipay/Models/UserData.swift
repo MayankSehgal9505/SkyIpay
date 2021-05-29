@@ -19,10 +19,8 @@ final class UserData: NSObject {
     var userModel = UserModel()
     var usercountry = Country()
     var rootVC: UIViewController = UIViewController()
-    //var sendMoneyNavController: UINavigationController?
-    
-    var sendMoneyNavController: SendMoneyNC?
-    
-    
+    //SendMoney In Singleton classes
+    var cachedControllers = [[String:UIViewController]]()
+    var selectedTab:Tabs = .transfer
    private override init() { }
 }

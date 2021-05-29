@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecepientDetailsVC" customModule="Skyipay" customModuleProvider="target">
             <connections>
+                <outlet property="continueBtn" destination="5xW-Ht-hrg" id="Z5b-hy-9Bl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -556,8 +557,32 @@
         </view>
     </objects>
     <designables>
+        <designable name="3Ru-mg-0bX">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="5xW-Ht-hrg">
-            <size key="intrinsicContentSize" width="51" height="33"/>
+            <size key="intrinsicContentSize" width="69" height="33"/>
+        </designable>
+        <designable name="Dfg-dq-CGB">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="Kdz-6L-b1N">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="V23-j8-6PK">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="XgL-Sp-UTf">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="baY-Bf-cSl">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="umB-6s-Dsf">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="upN-gv-UYL">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

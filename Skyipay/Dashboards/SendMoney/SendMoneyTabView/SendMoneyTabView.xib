@@ -9,7 +9,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VlanTabView" customModule="Skyipay" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendMoneyTabView" customModule="Skyipay" customModuleProvider="target">
+            <connections>
+                <outletCollection property="tabBtns" destination="PeT-rW-1ee" collectionClass="NSMutableArray" id="1xX-48-59f"/>
+                <outletCollection property="tabBtns" destination="0J4-ja-Xcr" collectionClass="NSMutableArray" id="C6n-ZS-YOy"/>
+                <outletCollection property="tabBtns" destination="XA0-lx-XS4" collectionClass="NSMutableArray" id="5y5-Uh-MT1"/>
+                <outletCollection property="tabBtns" destination="Lyz-xR-Xfq" collectionClass="NSMutableArray" id="arN-C1-3cy"/>
+                <outletCollection property="tabBtns" destination="Sel-lw-Hag" collectionClass="NSMutableArray" id="qy2-Sp-Zhg"/>
+                <outletCollection property="tabBtns" destination="Wkx-IB-2bj" collectionClass="NSMutableArray" id="WrC-NK-TLh"/>
+                <outletCollection property="tabsImgs" destination="upP-Ii-JYl" collectionClass="NSMutableArray" id="Dec-N0-6nq"/>
+                <outletCollection property="tabsImgs" destination="Yml-ij-fVc" collectionClass="NSMutableArray" id="OzP-To-MIV"/>
+                <outletCollection property="tabsImgs" destination="4Nt-mW-kL2" collectionClass="NSMutableArray" id="OGN-S5-SuR"/>
+                <outletCollection property="tabsImgs" destination="BsM-Gi-Nbb" collectionClass="NSMutableArray" id="bUV-tr-BNy"/>
+                <outletCollection property="tabsImgs" destination="2dN-OA-SbT" collectionClass="NSMutableArray" id="Pu8-mS-K0O"/>
+                <outletCollection property="tabsImgs" destination="l44-ga-bUk" collectionClass="NSMutableArray" id="hZs-bP-mdY"/>
+                <outletCollection property="tabsLinesView" destination="lcw-Vf-AdS" collectionClass="NSMutableArray" id="VKm-fc-rMv"/>
+                <outletCollection property="tabsLinesView" destination="Jsy-YW-lRB" collectionClass="NSMutableArray" id="zm9-xV-mba"/>
+                <outletCollection property="tabsLinesView" destination="aC3-an-7He" collectionClass="NSMutableArray" id="tZI-QH-Hbl"/>
+                <outletCollection property="tabsLinesView" destination="7Be-Cq-1dN" collectionClass="NSMutableArray" id="kGI-NU-BEP"/>
+                <outletCollection property="tabsLinesView" destination="0yN-up-Erz" collectionClass="NSMutableArray" id="0mz-ID-NDd"/>
+                <outletCollection property="tabsLabel" destination="pZg-ND-VcW" collectionClass="NSMutableArray" id="uPq-OY-wCS"/>
+                <outletCollection property="tabsLabel" destination="0J9-xi-0dw" collectionClass="NSMutableArray" id="jk4-Vg-FD2"/>
+                <outletCollection property="tabsLabel" destination="Fpz-JB-jHp" collectionClass="NSMutableArray" id="G1J-fz-lGf"/>
+                <outletCollection property="tabsLabel" destination="mCp-Mw-9l3" collectionClass="NSMutableArray" id="n95-yj-ViN"/>
+                <outletCollection property="tabsLabel" destination="HNb-24-f1L" collectionClass="NSMutableArray" id="2gx-yu-trg"/>
+                <outletCollection property="tabsLabel" destination="cOZ-df-IWV" collectionClass="NSMutableArray" id="nKu-z0-Og0"/>
+                <outletCollection property="tabsLinesView" destination="jFD-3D-oaj" collectionClass="NSMutableArray" id="XzO-yu-t64"/>
+            </connections>
+        </placeholder>
         <view contentMode="scaleToFill" id="BJc-XK-nI6">
             <rect key="frame" x="0.0" y="0.0" width="318" height="138"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,14 +85,26 @@
                                                         <constraint firstAttribute="height" constant="2" id="v7R-ly-bmw"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeT-rW-1ee">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="7He-3g-1hR"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="ftE-do-Wff"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="upP-Ii-JYl" firstAttribute="centerY" secondItem="AFx-sL-Sex" secondAttribute="centerY" id="DTa-Ey-uOd"/>
+                                                <constraint firstItem="PeT-rW-1ee" firstAttribute="top" secondItem="AFx-sL-Sex" secondAttribute="top" id="ESV-UD-jd3"/>
                                                 <constraint firstItem="lcw-Vf-AdS" firstAttribute="centerY" secondItem="upP-Ii-JYl" secondAttribute="centerY" id="Itb-gA-5pT"/>
+                                                <constraint firstAttribute="bottom" secondItem="PeT-rW-1ee" secondAttribute="bottom" id="SqL-Dq-5eR"/>
                                                 <constraint firstAttribute="trailing" secondItem="lcw-Vf-AdS" secondAttribute="trailing" id="cHJ-dl-G5W"/>
                                                 <constraint firstItem="lcw-Vf-AdS" firstAttribute="leading" secondItem="upP-Ii-JYl" secondAttribute="trailing" id="k42-Mr-WCE"/>
                                                 <constraint firstItem="upP-Ii-JYl" firstAttribute="leading" secondItem="AFx-sL-Sex" secondAttribute="leading" id="nCE-58-7Qj"/>
+                                                <constraint firstItem="PeT-rW-1ee" firstAttribute="leading" secondItem="upP-Ii-JYl" secondAttribute="leading" id="q92-bs-JMC"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qzb-hb-OEp">
@@ -85,14 +124,26 @@
                                                         <constraint firstAttribute="height" constant="2" id="xH2-mU-tgS"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J4-ja-Xcr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="Qxk-WD-IBa"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="dSk-I3-fVx"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="Jsy-YW-lRB" firstAttribute="leading" secondItem="Yml-ij-fVc" secondAttribute="trailing" id="DGl-Js-HNS"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jsy-YW-lRB" secondAttribute="trailing" id="ESs-rO-aIv"/>
                                                 <constraint firstItem="Yml-ij-fVc" firstAttribute="centerY" secondItem="Qzb-hb-OEp" secondAttribute="centerY" id="N6w-9f-gVZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="0J4-ja-Xcr" secondAttribute="bottom" id="NH5-pq-2mY"/>
                                                 <constraint firstItem="Yml-ij-fVc" firstAttribute="leading" secondItem="Qzb-hb-OEp" secondAttribute="leading" id="aGP-4m-TvP"/>
+                                                <constraint firstItem="0J4-ja-Xcr" firstAttribute="leading" secondItem="Qzb-hb-OEp" secondAttribute="leading" id="kn2-FE-hHB"/>
                                                 <constraint firstItem="Jsy-YW-lRB" firstAttribute="centerY" secondItem="Yml-ij-fVc" secondAttribute="centerY" id="nad-Ym-FF2"/>
+                                                <constraint firstItem="0J4-ja-Xcr" firstAttribute="top" secondItem="Qzb-hb-OEp" secondAttribute="top" id="xlU-vp-eqe"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgU-pL-6Ve">
@@ -112,14 +163,26 @@
                                                         <constraint firstAttribute="height" constant="2" id="QL4-5z-pU4"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XA0-lx-XS4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="Qeo-0u-Wcq"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="n97-aq-RmI"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="XA0-lx-XS4" firstAttribute="leading" secondItem="ZgU-pL-6Ve" secondAttribute="leading" id="Cj8-cN-dxl"/>
                                                 <constraint firstItem="4Nt-mW-kL2" firstAttribute="centerY" secondItem="ZgU-pL-6Ve" secondAttribute="centerY" id="GJI-1M-3SK"/>
                                                 <constraint firstItem="aC3-an-7He" firstAttribute="centerY" secondItem="4Nt-mW-kL2" secondAttribute="centerY" id="PtQ-O0-J5E"/>
                                                 <constraint firstAttribute="trailing" secondItem="aC3-an-7He" secondAttribute="trailing" id="QeR-Xx-UUl"/>
                                                 <constraint firstItem="aC3-an-7He" firstAttribute="leading" secondItem="4Nt-mW-kL2" secondAttribute="trailing" id="WEL-Dd-aas"/>
+                                                <constraint firstAttribute="bottom" secondItem="XA0-lx-XS4" secondAttribute="bottom" id="Zee-YH-4yO"/>
                                                 <constraint firstItem="4Nt-mW-kL2" firstAttribute="leading" secondItem="ZgU-pL-6Ve" secondAttribute="leading" id="h5e-EQ-xsS"/>
+                                                <constraint firstItem="XA0-lx-XS4" firstAttribute="top" secondItem="ZgU-pL-6Ve" secondAttribute="top" id="hVv-yA-HSW"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-TW-dYG">
@@ -139,6 +202,15 @@
                                                         <constraint firstAttribute="height" constant="2" id="Qk4-g8-NHD"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyz-xR-Xfq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="xUI-y2-OS9"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="bBT-Mm-WSW"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -146,7 +218,10 @@
                                                 <constraint firstItem="BsM-Gi-Nbb" firstAttribute="centerY" secondItem="YDq-TW-dYG" secondAttribute="centerY" id="1Db-lU-rSD"/>
                                                 <constraint firstItem="BsM-Gi-Nbb" firstAttribute="leading" secondItem="YDq-TW-dYG" secondAttribute="leading" id="3mz-Fk-HeQ"/>
                                                 <constraint firstItem="7Be-Cq-1dN" firstAttribute="leading" secondItem="BsM-Gi-Nbb" secondAttribute="trailing" id="MZ7-oA-OQX"/>
+                                                <constraint firstItem="Lyz-xR-Xfq" firstAttribute="top" secondItem="YDq-TW-dYG" secondAttribute="top" id="R3U-oN-CH6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lyz-xR-Xfq" secondAttribute="bottom" id="YlZ-gZ-ff2"/>
                                                 <constraint firstAttribute="trailing" secondItem="7Be-Cq-1dN" secondAttribute="trailing" id="lej-BO-fG5"/>
+                                                <constraint firstItem="Lyz-xR-Xfq" firstAttribute="leading" secondItem="YDq-TW-dYG" secondAttribute="leading" id="wcB-D7-m5A"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLN-KK-WzW">
@@ -166,11 +241,23 @@
                                                         <constraint firstAttribute="height" constant="2" id="8yP-HE-YgF"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-lw-Hag">
+                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="D4v-OS-K0p"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="ryd-Ac-8AB"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="Sel-lw-Hag" firstAttribute="leading" secondItem="pLN-KK-WzW" secondAttribute="leading" id="94O-5q-Lw8"/>
                                                 <constraint firstItem="2dN-OA-SbT" firstAttribute="leading" secondItem="pLN-KK-WzW" secondAttribute="leading" id="KBC-Pr-kbN"/>
                                                 <constraint firstItem="2dN-OA-SbT" firstAttribute="centerY" secondItem="pLN-KK-WzW" secondAttribute="centerY" id="RnX-hl-MZc"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sel-lw-Hag" secondAttribute="bottom" id="W8x-HL-TRG"/>
+                                                <constraint firstItem="Sel-lw-Hag" firstAttribute="top" secondItem="pLN-KK-WzW" secondAttribute="top" id="hdP-R7-whZ"/>
                                                 <constraint firstItem="0yN-up-Erz" firstAttribute="leading" secondItem="2dN-OA-SbT" secondAttribute="trailing" id="iIX-Mn-HF3"/>
                                                 <constraint firstItem="0yN-up-Erz" firstAttribute="centerY" secondItem="2dN-OA-SbT" secondAttribute="centerY" id="tms-iK-A6l"/>
                                                 <constraint firstAttribute="trailing" secondItem="0yN-up-Erz" secondAttribute="trailing" id="yAh-Zg-9Vd"/>
@@ -192,12 +279,35 @@
                                                 <constraint firstAttribute="height" constant="10" id="yV5-QP-GFm"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-3D-oaj">
+                                            <rect key="frame" x="10" y="10" width="0.0" height="0.0"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" id="G1w-L3-65F"/>
+                                                <constraint firstAttribute="height" id="xsd-Gk-34H"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-IB-2bj">
+                                            <rect key="frame" x="-8" y="0.0" width="25" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="X9s-JV-kHQ"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="tabBtnClicked:" destination="-1" eventType="touchUpInside" id="kXv-8S-5E0"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="l44-ga-bUk" firstAttribute="centerY" secondItem="ZgP-oh-qCT" secondAttribute="centerY" id="2au-Sw-CCu"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wkx-IB-2bj" secondAttribute="bottom" id="DCf-tX-i1B"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wkx-IB-2bj" secondAttribute="trailing" constant="-7" id="NBl-GA-Umu"/>
+                                        <constraint firstItem="Wkx-IB-2bj" firstAttribute="leading" secondItem="ZgP-oh-qCT" secondAttribute="leading" constant="-8" id="Sz9-jZ-5ML"/>
+                                        <constraint firstItem="Wkx-IB-2bj" firstAttribute="top" secondItem="ZgP-oh-qCT" secondAttribute="top" id="coI-xv-Ecg"/>
                                         <constraint firstAttribute="trailing" secondItem="l44-ga-bUk" secondAttribute="trailing" id="f4D-tK-jOv"/>
                                         <constraint firstItem="l44-ga-bUk" firstAttribute="leading" secondItem="ZgP-oh-qCT" secondAttribute="leading" id="oKJ-Aa-HIl"/>
+                                        <constraint firstItem="jFD-3D-oaj" firstAttribute="leading" secondItem="l44-ga-bUk" secondAttribute="trailing" id="pjo-b9-38s"/>
+                                        <constraint firstItem="jFD-3D-oaj" firstAttribute="centerY" secondItem="l44-ga-bUk" secondAttribute="centerY" id="srW-cY-6Gx"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipient Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J9-xi-0dw">

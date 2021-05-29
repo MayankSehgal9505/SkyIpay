@@ -121,19 +121,18 @@
                                                     <constraint firstAttribute="height" constant="80" id="21n-A3-9tM"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CL-nC-VPb">
-                                                <rect key="frame" x="0.0" y="130" width="364" height="519"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeD-Oo-GZb">
+                                                <rect key="frame" x="0.0" y="130" width="364" height="514"/>
+                                            </containerView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8CL-nC-VPb" secondAttribute="trailing" id="87y-hH-BdV"/>
+                                            <constraint firstAttribute="trailing" secondItem="AeD-Oo-GZb" secondAttribute="trailing" id="1pA-w8-eDC"/>
+                                            <constraint firstItem="AeD-Oo-GZb" firstAttribute="top" secondItem="qsU-wb-lME" secondAttribute="bottom" id="9UJ-2e-mlt"/>
                                             <constraint firstItem="qsU-wb-lME" firstAttribute="leading" secondItem="fzU-0m-UdK" secondAttribute="leading" id="PgR-uu-yh1"/>
                                             <constraint firstAttribute="trailing" secondItem="qsU-wb-lME" secondAttribute="trailing" id="Pov-GC-Hik"/>
-                                            <constraint firstItem="8CL-nC-VPb" firstAttribute="leading" secondItem="fzU-0m-UdK" secondAttribute="leading" id="Uha-wE-YcO"/>
-                                            <constraint firstItem="8CL-nC-VPb" firstAttribute="top" secondItem="qsU-wb-lME" secondAttribute="bottom" id="osl-Lv-3ql"/>
-                                            <constraint firstAttribute="bottom" secondItem="8CL-nC-VPb" secondAttribute="bottom" constant="10" id="tbY-iC-Ph9"/>
+                                            <constraint firstItem="AeD-Oo-GZb" firstAttribute="leading" secondItem="fzU-0m-UdK" secondAttribute="leading" id="S7p-Mj-c3l"/>
+                                            <constraint firstAttribute="bottom" secondItem="AeD-Oo-GZb" secondAttribute="bottom" constant="15" id="fbJ-Rj-p2y"/>
                                             <constraint firstItem="qsU-wb-lME" firstAttribute="top" secondItem="fzU-0m-UdK" secondAttribute="top" constant="50" id="xVU-fL-c2k"/>
                                         </constraints>
                                     </view>
@@ -184,7 +183,8 @@
                     <connections>
                         <outlet property="baseView" destination="fzU-0m-UdK" id="u8G-mX-q97"/>
                         <outlet property="logoView" destination="syD-MZ-wbf" id="ckh-91-UUI"/>
-                        <outlet property="sendMoneyContainerView" destination="8CL-nC-VPb" id="vuY-oi-Q2z"/>
+                        <outlet property="sendMoneyContainerView" destination="AeD-Oo-GZb" id="LnD-M1-W5N"/>
+                        <outlet property="sendMoneyTabView" destination="qsU-wb-lME" id="Kjt-Lj-lLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKd-cc-mQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
