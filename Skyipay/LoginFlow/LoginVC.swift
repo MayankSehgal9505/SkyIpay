@@ -23,7 +23,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginRegisterBtn: UIButton!
     @IBOutlet weak var numberTxtFld: UITextField!
     //MARK:- Local Variables
-    typealias screenType = ScreenType
     var typeOfScreen: ScreenType = .login
     private let user = UserData.sharedInstance
     private var userObj = UserModel()
@@ -32,7 +31,6 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         setupCountryPickerView()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,20 +58,13 @@ class LoginVC: UIViewController {
         numberTxtFld.leftViewMode = .always
         cp.dataSource = self
         cp.delegate = self
-        //user.usercountry = cp.selectedCountry
         var addressModelObj = AddressModel()
         addressModelObj.countryModel = cp.selectedCountry
-        user.userModel.userAddress = [addressModelObj]
+        userObj.userAddress = [addressModelObj]
     }
     
     private func moveToValidateScreen() {
         let validateOtpVC = ValidateOTPVC()
-        switch typeOfScreen {
-        case .login:
-            validateOtpVC.typeOfScreen = .login
-        default:
-            validateOtpVC.typeOfScreen = .register
-        }
         validateOtpVC.userObj = userObj
         self.navigationController?.pushViewController(validateOtpVC, animated: true)
     }
@@ -92,7 +83,6 @@ class LoginVC: UIViewController {
         } else if (self.numberTxtFld.text!.count < 10 || self.numberTxtFld.text!.count > 10) {
              self.view.makeToast(AlertField.invalidNumber, duration: 3.0, position: .bottom)
         }else {
-            user.userPhoneNumber = self.numberTxtFld.text!
             userObj.userPhoneNumber = self.numberTxtFld.text!
             self.loginAPI()
         }
@@ -119,7 +109,7 @@ class LoginVC: UIViewController {
  extension LoginVC:GetOtp {
     
     func loginAPI() {
-        callLoginAPI(screenType: typeOfScreen, countryCode: "\(user.usercountry.countryDialCode)", phoneNumber: user.userPhoneNumber){ 
+        callLoginAPI(userModelObj:userObj){
             self.moveToValidateScreen()
         }
     }
@@ -127,7 +117,9 @@ class LoginVC: UIViewController {
 
 extension LoginVC: CountryPickerViewDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
-        user.usercountry = country
+        var addressModelObj = AddressModel()
+        addressModelObj.countryModel = country
+        userObj.userAddress = [addressModelObj]
      }
  }
 

@@ -9,18 +9,17 @@ import Foundation
 import UIKit
 import SwiftyJSON
 protocol GetOtp: class  {
-    associatedtype screenType
 }
 
 extension GetOtp where Self:UIViewController {
-    func callLoginAPI(screenType:ScreenType,countryCode:String, phoneNumber: String,completionHandler:@escaping ()->Void){
+    func callLoginAPI(userModelObj:UserModel,completionHandler:@escaping ()->Void){
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
             let loginURL : String = URLNames.baseUrl + URLNames.login
             let parameters = [
-                "dial_code":"\(UserData.sharedInstance.usercountry.countryDialCode)",
-                "iso":UserData.sharedInstance.usercountry.countryISOCode,
-                "phone":phoneNumber
+                "dial_code":"\(userModelObj.userAddress.first?.countryModel.countryDialCode ?? 0)",
+                "iso":userModelObj.userAddress.first?.countryModel.countryISOCode ?? "",
+                "phone":userModelObj.userPhoneNumber
             ] as [String : Any]
             print(parameters)
             NetworkManager.sharedInstance.commonApiCall(url: loginURL, method: .post, parameters: parameters, completionHandler: { (json, status) in

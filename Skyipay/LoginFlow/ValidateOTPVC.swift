@@ -17,8 +17,6 @@ class ValidateOTPVC: UIViewController {
     @IBOutlet var otpTxtFlds: [OTPTextField]!
     
     //MARK:- Local Properties
-    typealias screenType = ScreenType
-    var typeOfScreen: ScreenType = .login
     private var timer : Timer?
     private var timelimit = 0
     private let user = UserData.sharedInstance
@@ -37,7 +35,7 @@ class ValidateOTPVC: UIViewController {
     private func setupUI() {
         resentOtp.isEnabled =  false
         nextBtn.isEnabled = false
-        verificationOtpString.text = String(format: ValidateOTPUI.validateOTPMsg,user.userPhoneNumber)
+        verificationOtpString.text = String(format: ValidateOTPUI.validateOTPMsg,userObj.userPhoneNumber)
         initializeTimer()
     }
     
@@ -168,7 +166,7 @@ extension ValidateOTPVC:UITextFieldDelegate {
 extension ValidateOTPVC:GetOtp {
    
    func getOtpAgainForlogin() {
-    callLoginAPI(screenType: typeOfScreen, countryCode: "\(user.usercountry.countryDialCode)", phoneNumber: user.userPhoneNumber){
+    callLoginAPI(userModelObj:userObj){
         self.setupUI()
     }
    }

@@ -13,11 +13,8 @@ final class UserData: NSObject {
    static let sharedInstance = UserData()
 
     //User properties
-    var userPhoneNumber = ""
-    var userName = ""
     var userID = 0
     var userModel = UserModel()
-    var usercountry = Country()
     var rootVC: UIViewController = UIViewController()
     //SendMoney In Singleton classes
     var cachedControllers = [[String:UIViewController]]()

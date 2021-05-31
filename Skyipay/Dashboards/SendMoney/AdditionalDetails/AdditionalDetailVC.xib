@@ -8,10 +8,19 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Medium.otf">
+            <string>SFUIText-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdditionalDetailVC" customModule="Skyipay" customModuleProvider="target">
             <connections>
                 <outlet property="continueBtn" destination="uKV-ol-mhF" id="WcP-JT-bjh"/>
+                <outlet property="pickersParentView" destination="I76-CD-924" id="Jp2-tg-4fA"/>
+                <outlet property="reasonForTransferLbl" destination="Oho-uJ-P4R" id="hbz-0m-jM5"/>
+                <outlet property="transferPickerView" destination="tKS-wg-yMd" id="htS-7u-WSC"/>
+                <outlet property="transferReasonBtn" destination="ofS-TC-aMw" id="aX8-h5-tZg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,6 +29,53 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I76-CD-924">
+                    <rect key="frame" x="0.0" y="478" width="414" height="258"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKS-wg-yMd">
+                            <rect key="frame" x="0.0" y="44" width="414" height="214"/>
+                        </pickerView>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFV-Ve-llr">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="HI7-qy-gQ1"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem systemItem="cancel" id="DqI-tb-D1w">
+                                    <connections>
+                                        <action selector="pickerCancelAction:" destination="-1" id="csz-ll-HjL"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="l2U-iD-O4l"/>
+                                <barButtonItem systemItem="done" id="yQv-jH-ERv">
+                                    <connections>
+                                        <action selector="pickerDoneAction:" destination="-1" id="rcr-7B-xPr"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="254" placeholderIntrinsicHeight="21" text="Reason For Transfer " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aX-6A-aG8">
+                            <rect key="frame" x="80" y="11.666666666666686" width="254" height="21"/>
+                            <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="p0M-FJ-zcf"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="0aX-6A-aG8" firstAttribute="centerY" secondItem="qFV-Ve-llr" secondAttribute="centerY" id="2d1-a2-OOs"/>
+                        <constraint firstItem="tKS-wg-yMd" firstAttribute="top" secondItem="qFV-Ve-llr" secondAttribute="bottom" id="51u-3c-BnB"/>
+                        <constraint firstItem="qFV-Ve-llr" firstAttribute="leading" secondItem="I76-CD-924" secondAttribute="leading" id="BKS-8B-p0M"/>
+                        <constraint firstItem="0aX-6A-aG8" firstAttribute="centerX" secondItem="qFV-Ve-llr" secondAttribute="centerX" id="KzX-vX-msy"/>
+                        <constraint firstItem="tKS-wg-yMd" firstAttribute="trailing" secondItem="p0M-FJ-zcf" secondAttribute="trailing" id="VEW-mz-iCe"/>
+                        <constraint firstItem="tKS-wg-yMd" firstAttribute="leading" secondItem="p0M-FJ-zcf" secondAttribute="leading" id="eJE-LC-WmM"/>
+                        <constraint firstAttribute="bottom" secondItem="tKS-wg-yMd" secondAttribute="bottom" id="fHf-Ex-o7h"/>
+                        <constraint firstAttribute="height" constant="258" id="hnH-gV-GZO"/>
+                        <constraint firstItem="qFV-Ve-llr" firstAttribute="top" secondItem="I76-CD-924" secondAttribute="top" id="nmw-dQ-9bZ"/>
+                        <constraint firstAttribute="trailing" secondItem="qFV-Ve-llr" secondAttribute="trailing" id="tSV-om-jd3"/>
+                    </constraints>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSx-9P-D0z">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
@@ -84,6 +140,9 @@
                                                                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="transferBtnAction:" destination="-1" eventType="touchUpInside" id="Luh-SE-n8k"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -171,9 +230,12 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="I76-CD-924" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TEi-Md-Sye"/>
                 <constraint firstItem="ZSx-9P-D0z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="caL-do-GLT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZSx-9P-D0z" secondAttribute="bottom" id="czc-Wn-JzQ"/>
+                <constraint firstItem="I76-CD-924" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="sM8-Vv-a2o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZSx-9P-D0z" secondAttribute="trailing" id="tKM-dx-wQW"/>
+                <constraint firstItem="I76-CD-924" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tlm-Th-ANR"/>
                 <constraint firstItem="ZSx-9P-D0z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uJt-Fc-Z80"/>
             </constraints>
             <point key="canvasLocation" x="-107.24637681159422" y="87.228260869565219"/>

@@ -52,11 +52,19 @@ class SendMoneyVC: BaseTabVC {
     
     //MARK:- Internal Methods
     private func setupContainerView() {
-        sendMoneyTabView.updateUI()
-        let classType = Utility.classFromString(userInfo.selectedTab.associatedClass) as! SendMoneySuperVC.Type
-        let classInstance = classType.init()
-        classInstance.subVCdelegate = self
-        ViewEmbedder.embed(parent: self, container: sendMoneyContainerView, child: classInstance, childClassName: userInfo.selectedTab.associatedClass , previous: nil)
+        var senMoneySuperVC = SendMoneySuperVC()
+        if let cachedClass = userInfo.cachedControllers.filter({ (controllerDict) -> Bool in
+            return controllerDict.keys.contains(userInfo.selectedTab.associatedClass)
+        }).first {
+            senMoneySuperVC = cachedClass[userInfo.selectedTab.associatedClass] as! SendMoneySuperVC
+        } else {
+            let myclass = Utility.classFromString(userInfo.selectedTab.associatedClass) as! SendMoneySuperVC.Type
+            senMoneySuperVC = myclass.init()
+            sendMoneyTabView.updateUI()
+
+        }
+        senMoneySuperVC.subVCdelegate = self
+        ViewEmbedder.embed(parent: self, container: sendMoneyContainerView, child: senMoneySuperVC, childClassName: userInfo.selectedTab.associatedClass, previous: transferDetailVC)
     }
     private func setupUI(){
         setupNavigationBar()
@@ -98,18 +106,7 @@ extension SendMoneyVC:SendMoneySuperVCNavigator {
 
 extension SendMoneyVC:SendMoneyTabProtocol {
     func tabBtnTapped() {
-        var senMoneySuperVC = SendMoneySuperVC()
-        if let cachedClass = userInfo.cachedControllers.filter({ (controllerDict) -> Bool in
-            return controllerDict.keys.contains(userInfo.selectedTab.associatedClass)
-        }).first {
-            senMoneySuperVC = cachedClass[userInfo.selectedTab.associatedClass] as! SendMoneySuperVC
-        } else {
-            let myclass = Utility.classFromString(userInfo.selectedTab.associatedClass) as! SendMoneySuperVC.Type
-            senMoneySuperVC = myclass.init()
-        }
-        senMoneySuperVC.subVCdelegate = self
-        ViewEmbedder.embed(parent: self, container: sendMoneyContainerView, child: senMoneySuperVC, childClassName: userInfo.selectedTab.associatedClass, previous: transferDetailVC)
-
+        setupContainerView()
     }
 }
 

@@ -121,16 +121,25 @@ extension UIViewController {
         }
         return base
     }
+}
+
+extension Utility{
     
-//    func makeRootViewController(){
-//            let homeVcObj = DashBoardVC.init(nibName: DashBoardVC.className(), bundle: nil)
-//            let centrenav  = UINavigationController(rootViewController:homeVcObj)
-//            let sideMenuVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: SideMenuVC.className()) as! SideMenuVC
-//            let container = REFrostedViewController(contentViewController: centrenav, menuViewController: sideMenuVc)
-//            container?.direction = .left
-//            container?.limitMenuViewSize = true
-//            container?.panGestureEnabled = true
-//            container?.menuViewSize = CGSize(width: UIScreen.main.bounds.size.width * 0.73 , height: UIScreen.main.bounds.size.height)
-//        self.navigationController?.pushViewController(container!, animated: true)
-//    }
+    /// Showing loader on API call
+    ///
+    /// - Parameter progressLabel: Loader message
+    class func showHUDOnWindow(progressLabel:String){
+        let window = (UIApplication.shared.delegate?.window)!
+        let progressHUD = MBProgressHUD.showAdded(to: window!, animated: true)
+        progressHUD.label.text = progressLabel
+    }
+
+     ///Dismiss loader after API response
+    ///
+    /// - Parameter isAnimated: animation
+    class func dismissHUD(isAnimated:Bool) {
+        let window = UIApplication.shared.delegate?.window!
+        MBProgressHUD.hide(for: window!, animated: isAnimated)
+    }
+    
 }

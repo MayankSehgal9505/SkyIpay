@@ -37,7 +37,7 @@ class RegistrationVC: BaseViewController {
     private var selectedItem = ""
     private var pickerType: PickerType = .dobPickerView
     let cp = CountryPickerView()
-    private let user = UserData.sharedInstance
+    private let userInfo = UserData.sharedInstance
     private var dob = ""
     var userModelObj = UserModel()
     //MARK:- Life Cycle Methods
@@ -63,7 +63,7 @@ class RegistrationVC: BaseViewController {
         self.genderTxtFld.text = Common.genderArray.first!.lowercased()
         setupCountryPicker()
         setPickerDataSourceDelegate(dataSourceArray: Common.genderArray)
-        self.countryTxtFld.text = user.usercountry.countryName
+        self.countryTxtFld.text = userInfo.userModel.userAddress.first?.countryModel.countryName
         dobPicker.maximumDate = Date()
     }
     /// set picker data source & delegates
@@ -137,8 +137,8 @@ class RegistrationVC: BaseViewController {
             userModelObj.password = passwordTxtFld.text!
             userModelObj.userDOB = dobTxtFld.text!
             var address = AddressModel()
-            address.countryModel.countryISOCode = user.usercountry.countryISOCode
-            address.countryModel.countryId = user.usercountry.countryId
+            address.countryModel.countryISOCode = userInfo.userModel.userAddress.first?.countryModel.countryISOCode ?? ""
+            address.countryModel.countryId = userInfo.userModel.userAddress.first?.countryModel.countryId ?? 0
             userModelObj.userAddress.append(address)
             self.moveToUploadDocuments()
         }
@@ -180,7 +180,10 @@ extension RegistrationVC: GenericPickerDataSourceDelegate {
 //MARK:- CountryPickerViewDelegate Methods
 extension RegistrationVC: CountryPickerViewDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
-        user.usercountry = country
+        var addressModelObj = AddressModel()
+        addressModelObj.countryModel = country
+        userModelObj.userAddress = [addressModelObj]
+        userInfo.userModel.userAddress = userModelObj.userAddress
         self.countryTxtFld.text = country.countryName
      }
  }

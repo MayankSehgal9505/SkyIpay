@@ -126,7 +126,6 @@ class UserProfileVC: BaseViewController {
     
     private func updateSignleton() {
         self.user.userID = userModel.userID
-        self.user.userPhoneNumber = userModel.userPhoneNumber
         self.user.userModel = userModel
     }
     /// Hiding Picker View
@@ -328,7 +327,6 @@ extension UserProfileVC {
 //MARK:- CountryPickerViewDelegate Methods
 extension UserProfileVC: CountryPickerViewDelegate {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
-        user.usercountry = country
         self.couuntryTxtFld.text = country.countryName
         self.countryCodeLbl.text = "(\(country.countryDialCode))-"
      }

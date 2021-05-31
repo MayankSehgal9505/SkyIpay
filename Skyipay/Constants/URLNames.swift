@@ -23,5 +23,5 @@ struct URLNames {
     static let removeBeneficiary = "user/remove-beneficiary"
     static let bankList = "user/banks"
     static let receivePaymentMethodUrl = "user/receive-payment-method"
-
+    static let transferReason = "user/transfer-reason"
 }
