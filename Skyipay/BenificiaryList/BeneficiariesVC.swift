@@ -196,7 +196,8 @@ class BeneficiariesVC: BaseViewController {
 extension BeneficiariesVC {
     private func removeBeneficiary(beneficiaryModel:BeneficiaryModel) {
         if NetworkManager.sharedInstance.isInternetAvailable(){
-            let updateUserProfileUrl = URLNames.baseUrl + URLNames.addBeneficiary
+            self.showHUD(progressLabel: AlertField.loaderString)
+            let updateUserProfileUrl = URLNames.baseUrl + URLNames.removeBeneficiary
             let parameters = [
                 "id":beneficiaryModel.beneficiaryID,
             ] as [String : Any]
@@ -332,6 +333,18 @@ extension BeneficiariesVC: UITableViewDelegate  {
         let beneficiaryDetailVC = BeneficiaryDetailVC()
         beneficiaryDetailVC.beneficiaryModel = beneficiaries[indexPath.row]
         self.navigationController?.pushViewController(beneficiaryDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+            // Write action code for the Deleting beneficiary
+        let trashAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            self.removeBeneficiary(beneficiaryModel: self.beneficiaries[indexPath.row])
+            success(true)
+        })
+        trashAction.backgroundColor = .red
+        let config = UISwipeActionsConfiguration(actions: [trashAction])
+        config.performsFirstActionWithFullSwipe = false
+        return config
     }
 }
 

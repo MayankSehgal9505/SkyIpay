@@ -19,8 +19,8 @@ class AdditionalDetailVC: SendMoneySuperVC {
     //MARK:- Local Variables
     private var effectView,vibrantView : UIVisualEffectView?
     private var pickerDataSource: GenericPickerDataSource?
-    private var selectedItem = ""
     private var transferReasons = [TransferReasonModel]()
+    private var selectedReason = TransferReasonModel()
     //MARK:- Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class AdditionalDetailVC: SendMoneySuperVC {
         hidePickerView()
     }
     @IBAction func pickerDoneAction(_ sender: UIBarButtonItem) {
-        reasonForTransferLbl.text = selectedItem
+        reasonForTransferLbl.text = selectedReason.reasonTitle
         hidePickerView()
     }
     @IBAction func transferBtnAction(_ sender: UIButton) {
@@ -63,15 +63,22 @@ class AdditionalDetailVC: SendMoneySuperVC {
         CommonMethods.setPickerConstraintAccordingToDevice(pickerView: pickersParentView, view: (self.parent?.view)!)
     }
     @IBAction func continueAction(_ sender: UIButton) {
-        userInfo.selectedTab = .paymment
-        subVCdelegate?.continueButtonTapped()
+        self.view.endEditing(false)
+        if (reasonForTransferLbl.text?.isEmpty ??  true) {
+            self.view.makeToast("Select reason for transfer", duration: 3.0, position: .center)
+        } else {
+            userInfo.selectedTab = .paymment
+            subVCdelegate?.continueButtonTapped()
+        }
     }
 }
 
 //MARK:- GenericPickerDataSourceDelegate Methods
 extension AdditionalDetailVC: GenericPickerDataSourceDelegate {
     func selected(item: String) {
-        selectedItem = item
+        if let selectedTransferReason = transferReasons.filter({$0.reasonTitle == item}).first {
+            selectedReason =  selectedTransferReason
+        }
     }
 }
 
@@ -100,6 +107,7 @@ extension AdditionalDetailVC {
                             transferReasons.append(transferReasonModel)
                         }
                         self.transferReasons = transferReasons
+                        self.selectedReason = self.transferReasons.first ?? TransferReasonModel()
                     }
                     DispatchQueue.main.async {
                         self.setPickerDataSourceDelegate(dataSourceArray: self.transferReasons.map{$0.reasonTitle})

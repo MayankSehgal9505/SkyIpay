@@ -13,11 +13,33 @@ class ReviewVC: SendMoneySuperVC {
         super.viewDidLoad()
     }
     
+    //MARK:- IBActions
+    @IBAction func transferDetailBtnAction(_ sender: UIButton) {
+        userInfo.selectedTab = .transfer
+        subVCdelegate?.continueButtonTapped()
+    }
+    @IBAction func recipientDetailBtnAction(_ sender: UIButton) {
+        userInfo.selectedTab = .recipient
+        subVCdelegate?.continueButtonTapped()
+    }
+    
+    @IBAction func bankDetailsBtnAction(_ sender: UIButton) {
+        userInfo.selectedTab = .bankDeposit
+        subVCdelegate?.continueButtonTapped()
+    }
+    @IBAction func paymentDetailBtnAction(_ sender: UIButton) {
+        userInfo.selectedTab = .paymment
+        subVCdelegate?.continueButtonTapped()
+    }
+    
     @IBAction func termsAndConditionCheckBox(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
-    @IBAction func continueAction(_ sender: UIButton) {
-        //userInfo.sendMoneyNavController!.popToRootViewController(animated: false)
+    @IBAction func cancelBtnAction(_ sender: Any) {
+        userInfo.selectedTab = .reset
+        subVCdelegate?.continueButtonTapped()
     }
-    
+    @IBAction func continueAction(_ sender: UIButton) {
+        self.view.makeToast("Coming Soon", duration: 3.0, position: .center)
+    }
 }

@@ -48,6 +48,9 @@
                                                                 <constraint firstAttribute="height" constant="20" id="UNV-2m-0Jz"/>
                                                             </constraints>
                                                             <state key="normal" image="editIcon"/>
+                                                            <connections>
+                                                                <action selector="transferDetailBtnAction:" destination="-1" eventType="touchUpInside" id="oJc-LL-h3p"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-uj-v6r">
                                                             <rect key="frame" x="10" y="37.666666666666657" width="354" height="473.33333333333337"/>
@@ -368,6 +371,9 @@
                                                                                         <constraint firstAttribute="width" constant="20" id="tu1-c4-cVM"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="editIcon"/>
+                                                                                    <connections>
+                                                                                        <action selector="recipientDetailBtnAction:" destination="-1" eventType="touchUpInside" id="Trs-SQ-GDK"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -466,6 +472,9 @@
                                                                                         <constraint firstAttribute="width" constant="20" id="rea-RO-U3n"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="editIcon"/>
+                                                                                    <connections>
+                                                                                        <action selector="bankDetailsBtnAction:" destination="-1" eventType="touchUpInside" id="mtI-zs-FxM"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -563,6 +572,9 @@
                                                                                         <constraint firstAttribute="width" constant="20" id="v6h-0H-EDA"/>
                                                                                     </constraints>
                                                                                     <state key="normal" image="editIcon"/>
+                                                                                    <connections>
+                                                                                        <action selector="paymentDetailBtnAction:" destination="-1" eventType="touchUpInside" id="fZa-xk-dyQ"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -962,6 +974,9 @@
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="continueAction:" destination="-1" eventType="touchUpInside" id="31f-aB-XJQ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jj-qp-Y5u">
                                                     <rect key="frame" x="132" y="90" width="150" height="40"/>
@@ -985,6 +1000,9 @@
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cancelBtnAction:" destination="-1" eventType="touchUpInside" id="4at-pA-06a"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1031,20 +1049,8 @@
         </view>
     </objects>
     <designables>
-        <designable name="67k-L3-4bQ">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
         <designable name="PKq-SB-tdm">
-            <size key="intrinsicContentSize" width="101" height="34"/>
-        </designable>
-        <designable name="S4j-Qu-8NW">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="eyb-Ch-aYt">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="zvm-WS-fp0">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="54" height="34"/>
         </designable>
     </designables>
     <resources>

@@ -24,4 +24,5 @@ struct URLNames {
     static let bankList = "user/banks"
     static let receivePaymentMethodUrl = "user/receive-payment-method"
     static let transferReason = "user/transfer-reason"
+    static let getFee = "user/app-fee"
 }

@@ -7,7 +7,7 @@
 import UIKit
 enum Tabs: Int {
     case transfer = 0
-    case recipient, bankDeposit, additional, paymment, review
+    case recipient, bankDeposit, additional, paymment, review,reset
     
     var associatedClass:String {
         switch self {
@@ -17,6 +17,7 @@ enum Tabs: Int {
             case .additional: return "AdditionalDetailVC"
             case .paymment: return "PaymentDetailVC"
             case .review: return "ReviewVC"
+            default: return  ""
         }
     }
 }
@@ -90,7 +91,12 @@ class SendMoneyTabView: UIView {
             tabsLinesView[index].tag = tabType.rawValue
         }
     }
-    
+    func resetUI() {
+        tabsImgs.forEach { $0.image = UIImage(named: "greyCircle")        }
+        tabsLabel.forEach { $0.textColor = UIColor.init(red: 41/255, green: 41/255, blue: 41/255, alpha: 1.0)       }
+        tabsLinesView.forEach { $0.backgroundColor = UIColor.init(red: 168/255, green: 168/255, blue: 168/255, alpha: 1.0)        }
+
+    }
     func updateUI() {
         tabsImgs.forEach { tabImg in
             if tabImg.tag <= userInfo.selectedTab.rawValue {

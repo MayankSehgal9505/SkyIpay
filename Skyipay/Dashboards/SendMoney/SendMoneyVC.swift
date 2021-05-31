@@ -99,7 +99,15 @@ class SendMoneyVC: BaseTabVC {
 //MARK:- SendMoneySuperVCNavigator Delegate Methods
 extension SendMoneyVC:SendMoneySuperVCNavigator {
     func continueButtonTapped() {
-        setupContainerView()
+        switch userInfo.selectedTab {
+        case .reset:
+            userInfo.cachedControllers.removeAll()
+            sendMoneyTabView.resetUI()
+            userInfo.selectedTab = .transfer
+            setupContainerView()
+        default:
+            setupContainerView()
+        }
     }
 }
 //MARK:- SendMoneySuperVCNavigator Delegate Methods

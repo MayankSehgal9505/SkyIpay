@@ -329,22 +329,13 @@
     </objects>
     <designables>
         <designable name="Ecq-2c-pqn">
-            <size key="intrinsicContentSize" width="37" height="30"/>
+            <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
         <designable name="FQx-U6-HQ7">
-            <size key="intrinsicContentSize" width="42" height="30"/>
+            <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
         <designable name="eSK-sk-5Aa">
-            <size key="intrinsicContentSize" width="73" height="34"/>
-        </designable>
-        <designable name="hiG-Zc-oc5">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="jTw-uM-4lP">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="res-1f-BpX">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="54" height="34"/>
         </designable>
     </designables>
     <resources>

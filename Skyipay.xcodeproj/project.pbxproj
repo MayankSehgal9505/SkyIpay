@@ -86,6 +86,9 @@
 		4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDD1FE2652FB3E008A8119 /* EnquiryVC.swift */; };
 		4EBDD2012652FB3E008A8119 /* EnquiryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBDD1FF2652FB3E008A8119 /* EnquiryVC.xib */; };
 		4EBE8A9E2664BDDB007A2C7E /* TransferReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE8A9D2664BDDB007A2C7E /* TransferReason.swift */; };
+		4EBE8AA02664D682007A2C7E /* FeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE8A9F2664D682007A2C7E /* FeeModel.swift */; };
+		4EBE8AA22664DAED007A2C7E /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE8AA12664DAED007A2C7E /* Bank.swift */; };
+		4EBE8AA4266504A4007A2C7E /* RecipientDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE8AA3266504A4007A2C7E /* RecipientDetail.swift */; };
 		4EC2EC012643018000EE1F71 /* BeneficiariesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EBFF2643018000EE1F71 /* BeneficiariesVC.swift */; };
 		4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */; };
 		4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */; };
@@ -198,6 +201,9 @@
 		4EBDD1FE2652FB3E008A8119 /* EnquiryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnquiryVC.swift; sourceTree = "<group>"; };
 		4EBDD1FF2652FB3E008A8119 /* EnquiryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnquiryVC.xib; sourceTree = "<group>"; };
 		4EBE8A9D2664BDDB007A2C7E /* TransferReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferReason.swift; sourceTree = "<group>"; };
+		4EBE8A9F2664D682007A2C7E /* FeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeModel.swift; sourceTree = "<group>"; };
+		4EBE8AA12664DAED007A2C7E /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		4EBE8AA3266504A4007A2C7E /* RecipientDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipientDetail.swift; sourceTree = "<group>"; };
 		4EC2EBFF2643018000EE1F71 /* BeneficiariesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiariesVC.swift; sourceTree = "<group>"; };
 		4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiariesVC.xib; sourceTree = "<group>"; };
 		4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryTVC.swift; sourceTree = "<group>"; };
@@ -426,6 +432,9 @@
 				4EBDD1FC2652F360008A8119 /* FAQModel.swift */,
 				4E18CE8A2655873300D9F424 /* BeneficiaryModel.swift */,
 				4EBE8A9D2664BDDB007A2C7E /* TransferReason.swift */,
+				4EBE8A9F2664D682007A2C7E /* FeeModel.swift */,
+				4EBE8AA12664DAED007A2C7E /* Bank.swift */,
+				4EBE8AA3266504A4007A2C7E /* RecipientDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -715,6 +724,7 @@
 				4E0BD7C4262D77BC00CBC046 /* TrackVC.swift in Sources */,
 				4EBDD1F92652EC66008A8119 /* FAQTVC.swift in Sources */,
 				4EA973E32629AAF5001A6446 /* AppDelegate.swift in Sources */,
+				4EBE8AA4266504A4007A2C7E /* RecipientDetail.swift in Sources */,
 				4EE2D4EA2631F9BC00B6A4DA /* ImagePickerManager.swift in Sources */,
 				4E9AC594264E5F0A00C2B6A8 /* DocumentsModel.swift in Sources */,
 				4E942782262C0AD50017CDE3 /* URLNames.swift in Sources */,
@@ -722,11 +732,13 @@
 				4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */,
 				4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */,
 				4E942785262C151C0017CDE3 /* APIFields.swift in Sources */,
+				4EBE8AA22664DAED007A2C7E /* Bank.swift in Sources */,
 				4EE18C312660AF8500FC7270 /* SendMoneyTabView.swift in Sources */,
 				4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */,
 				4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */,
 				4E0BD7C0262D778F00CBC046 /* ActivitesVC.swift in Sources */,
 				4EC2EC012643018000EE1F71 /* BeneficiariesVC.swift in Sources */,
+				4EBE8AA02664D682007A2C7E /* FeeModel.swift in Sources */,
 				4E262160262D3B3A00C7D377 /* OtpTextfield.swift in Sources */,
 				4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */,
 				4E262147262CAB4D00C7D377 /* Utility.swift in Sources */,
@@ -905,7 +917,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -930,7 +942,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
