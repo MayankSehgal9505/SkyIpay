@@ -16,6 +16,7 @@ class BankDepositDetailVC: SendMoneySuperVC {
     @IBOutlet weak var bankAccountNumTxtFld: UITextField!
     //MARK:- Properties
     private let userInfo = UserData.sharedInstance
+    private let sendMoneyInfo = SendMoney.sharedInstance
     //MARK:- Local Variables
     private var effectView,vibrantView : UIVisualEffectView?
     private var pickerDataSource: GenericPickerDataSource?
@@ -76,7 +77,13 @@ class BankDepositDetailVC: SendMoneySuperVC {
             self.view.makeToast("Bank ID can't bee empty", duration: 3.0, position: .center)
         } else if (bankAccountNumTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Bank Account Number can't be empty", duration: 3.0, position: .center)
+        } else if (bankAccountNumTxtFld.text!.count < 4) {
+            self.view.makeToast("Bank Account Numbershould have 4 characters", duration: 3.0, position: .center)
         } else {
+            var bankDepositModel = BankDeposit()
+            bankDepositModel.bank = selectedBank
+            bankDepositModel.bankAccountNum = bankAccountNumTxtFld.text!
+            sendMoneyInfo.bankDepositDetails = bankDepositModel
             userInfo.selectedTab = .additional
             subVCdelegate?.continueButtonTapped()
         }

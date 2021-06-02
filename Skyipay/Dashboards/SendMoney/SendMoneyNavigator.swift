@@ -37,6 +37,7 @@ class ViewEmbedder {
             let controllerDict = [childClassName:child]
             userInfo.cachedControllers.append(controllerDict)
         }
+        NotificationCenter.default.post(name: Notification.Name("updateReviewData"), object: nil)
         childVC.willMove(toParent: parent)
         parent.addChild(childVC)
         container.addSubview(childVC.view)

@@ -7,10 +7,17 @@
 
 import Foundation
 import SwiftyJSON
-
+import CountryPickerView
 struct RecipientDetail {
     //MARK: Variable
-    var recipientName = ""
+    var recipientFirstName = ""
+    var recipientMiddleName = ""
+    var recipientSurName = ""
+    var recipientSecondSurName = ""
+    var recipientAddress = ""
+    var recipientCity = ""
+    var recipientCountry = Country()
+
     //MARK: Lifecycle
     init() {
     }

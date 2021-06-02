@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CountryPickerView
 import UIKit
 
 final class UserData: NSObject {

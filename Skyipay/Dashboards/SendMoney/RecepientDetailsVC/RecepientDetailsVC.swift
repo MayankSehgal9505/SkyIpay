@@ -22,12 +22,14 @@ class RecepientDetailsVC: SendMoneySuperVC {
     @IBOutlet weak var recipientCountry: UILabel!
     //MARK:- Properties
     private let userInfo = UserData.sharedInstance
+    private let sendMoneyInfo = SendMoney.sharedInstance
     //MARK:- Local Variables
     private var effectView,vibrantView : UIVisualEffectView?
     private var pickerDataSource: GenericPickerDataSource?
     private let cp = CountryPickerView()
     private var recipients = [RecipientDetail]()
     private var selectedRecipient = RecipientDetail()
+    private var receipientCountry = Country()
     //MARK:- Life Cycle Method
 
     override func viewDidLoad() {
@@ -86,6 +88,14 @@ class RecepientDetailsVC: SendMoneySuperVC {
         } else if (recipientCountry.text?.isEmpty ??  true) {
             self.view.makeToast("Select recipient coutry", duration: 3.0, position: .center)
         } else {
+            selectedRecipient.recipientFirstName =  recipientFirstNameTxtFld.text!
+            selectedRecipient.recipientMiddleName = recepientMiddleNametxtFld.text!
+            selectedRecipient.recipientSurName = recipientSurnameTxtFld.text!
+            selectedRecipient.recipientSecondSurName = recipientSecondSurnameTxtFld.text!
+            selectedRecipient.recipientAddress = recipientAddressTxtFld.text!
+            selectedRecipient.recipientCity = recipientCityTxtFld.text!
+            selectedRecipient.recipientCountry = receipientCountry
+            sendMoneyInfo.recipientDetails = selectedRecipient
             userInfo.selectedTab = .bankDeposit
             subVCdelegate?.continueButtonTapped()
         }
@@ -117,6 +127,7 @@ extension RecepientDetailsVC: CountryPickerViewDataSource, CountryPickerViewDele
     }
     
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        receipientCountry = country
         self.recipientCountry.text = country.countryName
      }
 }
@@ -149,7 +160,7 @@ extension RecepientDetailsVC {
                         self.selectedRecipient = self.recipients.first ?? RecipientDetail()
                     }
                     DispatchQueue.main.async {
-                        self.setPickerDataSourceDelegate(dataSourceArray: self.recipients.map{$0.recipientName})
+                        self.setPickerDataSourceDelegate(dataSourceArray: self.recipients.map{$0.recipientFirstName})
                     }
                 }
                 else {

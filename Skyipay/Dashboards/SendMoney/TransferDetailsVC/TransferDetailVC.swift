@@ -27,9 +27,11 @@ class TransferDetailVC: SendMoneySuperVC {
     }
     //MARK:- Local Variables
     private let userInfo = UserData.sharedInstance
+    private let sendMoneyInfo = SendMoney.sharedInstance
     private let cp = CountryPickerView()
     private var feeObj = FeeModel()
     private var amountEntered = 0
+    private var selectedCoutry = Country()
     //MARK:- Internal Methods
     private func setupInitialUI() {
         setupCountryPicker()
@@ -51,6 +53,12 @@ class TransferDetailVC: SendMoneySuperVC {
         } else if (amountTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Amount can't be empty", duration: 3.0, position: .center)
         } else {
+            var transferDetails = TransferDetails()
+            transferDetails.transferCountry = selectedCoutry
+            transferDetails.transferFee = self.feeAmountValue.text!
+            transferDetails.transferTax = "0"
+            transferDetails.transferAmout = self.amountTxtFld.text!
+            sendMoneyInfo.transferDetails = transferDetails
             userInfo.selectedTab = .recipient
             subVCdelegate?.continueButtonTapped()
         }
@@ -93,6 +101,7 @@ extension TransferDetailVC: CountryPickerViewDataSource, CountryPickerViewDelega
     }
     
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        selectedCoutry = country
         self.countryLbl.text = country.countryName
         payOutCurrencyValue.text = country.countryCurrency
      }

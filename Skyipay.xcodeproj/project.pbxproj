@@ -28,6 +28,7 @@
 		4E3765A9262B0B50002FBBB7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3765A8262B0B50002FBBB7 /* UIView.swift */; };
 		4E3CC3FD265C9E0500F32744 /* BeneficiaryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3CC3FB265C9E0500F32744 /* BeneficiaryDetailVC.swift */; };
 		4E3CC3FE265C9E0500F32744 /* BeneficiaryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */; };
+		4E46F80C26676FAC0095737C /* TransferDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46F80B26676FAC0095737C /* TransferDetails.swift */; };
 		4E4C43B62639324F002C4609 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4C43B52639324F002C4609 /* ActivityModel.swift */; };
 		4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED38264F86DC00A08AC2 /* Verification.swift */; };
 		4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */; };
@@ -93,6 +94,8 @@
 		4EC2EC022643018000EE1F71 /* BeneficiariesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */; };
 		4EC2EC0526430CDB00EE1F71 /* BeneficiaryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */; };
 		4EC2EC0626430CDB00EE1F71 /* BeneficiaryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC2EC0426430CDB00EE1F71 /* BeneficiaryTVC.xib */; };
+		4ED06BB226672B7B006BC2FF /* SendMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED06BB126672B7B006BC2FF /* SendMoney.swift */; };
+		4ED06BB426673119006BC2FF /* BankDepositModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED06BB326673119006BC2FF /* BankDepositModel.swift */; };
 		4EE18C312660AF8500FC7270 /* SendMoneyTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */; };
 		4EE18C322660AF8500FC7270 /* SendMoneyTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */; };
 		4EE2D4EA2631F9BC00B6A4DA /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE2D4E92631F9BC00B6A4DA /* ImagePickerManager.swift */; };
@@ -141,6 +144,7 @@
 		4E3765B0262B0E37002FBBB7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3CC3FB265C9E0500F32744 /* BeneficiaryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryDetailVC.swift; sourceTree = "<group>"; };
 		4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiaryDetailVC.xib; sourceTree = "<group>"; };
+		4E46F80B26676FAC0095737C /* TransferDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetails.swift; sourceTree = "<group>"; };
 		4E4C43B52639324F002C4609 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		4E7BED38264F86DC00A08AC2 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 		4EC2EC002643018000EE1F71 /* BeneficiariesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiariesVC.xib; sourceTree = "<group>"; };
 		4EC2EC0326430CDB00EE1F71 /* BeneficiaryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeneficiaryTVC.swift; sourceTree = "<group>"; };
 		4EC2EC0426430CDB00EE1F71 /* BeneficiaryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiaryTVC.xib; sourceTree = "<group>"; };
+		4ED06BB126672B7B006BC2FF /* SendMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoney.swift; sourceTree = "<group>"; };
+		4ED06BB326673119006BC2FF /* BankDepositModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDepositModel.swift; sourceTree = "<group>"; };
 		4EE18C2F2660AF8500FC7270 /* SendMoneyTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMoneyTabView.swift; sourceTree = "<group>"; };
 		4EE18C302660AF8500FC7270 /* SendMoneyTabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMoneyTabView.xib; sourceTree = "<group>"; };
 		4EE2D4E92631F9BC00B6A4DA /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
@@ -435,6 +441,9 @@
 				4EBE8A9F2664D682007A2C7E /* FeeModel.swift */,
 				4EBE8AA12664DAED007A2C7E /* Bank.swift */,
 				4EBE8AA3266504A4007A2C7E /* RecipientDetail.swift */,
+				4ED06BB126672B7B006BC2FF /* SendMoney.swift */,
+				4ED06BB326673119006BC2FF /* BankDepositModel.swift */,
+				4E46F80B26676FAC0095737C /* TransferDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -698,6 +707,7 @@
 				4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */,
 				4E8AC33F26602DA100A1F98E /* PaymentDetailVC.swift in Sources */,
 				4E3CC3FD265C9E0500F32744 /* BeneficiaryDetailVC.swift in Sources */,
+				4ED06BB226672B7B006BC2FF /* SendMoney.swift in Sources */,
 				4E9AC592264E5B1B00C2B6A8 /* AddressModel.swift in Sources */,
 				4EB5B2A12632E6A7006F8B17 /* VerificationDoneVC.swift in Sources */,
 				4EA97412262AA0BA001A6446 /* WalkthroughCell.swift in Sources */,
@@ -708,6 +718,7 @@
 				4EEF8CB1265EDC87005E805E /* RecepientDetailsVC.swift in Sources */,
 				4EBE8A9E2664BDDB007A2C7E /* TransferReason.swift in Sources */,
 				4E262141262C9DBF00C7D377 /* RegistrationVC.swift in Sources */,
+				4E46F80C26676FAC0095737C /* TransferDetails.swift in Sources */,
 				4E262145262CA09200C7D377 /* BaseViewController.swift in Sources */,
 				4E0BD7C6262D77CB00CBC046 /* LocationsVC.swift in Sources */,
 				4E94275B262BF2D30017CDE3 /* NetworkManager.swift in Sources */,
@@ -739,6 +750,7 @@
 				4E0BD7C0262D778F00CBC046 /* ActivitesVC.swift in Sources */,
 				4EC2EC012643018000EE1F71 /* BeneficiariesVC.swift in Sources */,
 				4EBE8AA02664D682007A2C7E /* FeeModel.swift in Sources */,
+				4ED06BB426673119006BC2FF /* BankDepositModel.swift in Sources */,
 				4E262160262D3B3A00C7D377 /* OtpTextfield.swift in Sources */,
 				4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */,
 				4E262147262CAB4D00C7D377 /* Utility.swift in Sources */,
@@ -917,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -942,7 +954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ei.Skyipay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
