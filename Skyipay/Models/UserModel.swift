@@ -35,7 +35,7 @@ struct UserModel {
         userPhoneNumber = JsonDashBoard["phone"].stringValue
         userGender = JsonDashBoard["gender"].stringValue
         userDOB = JsonDashBoard["dob"].stringValue
-        if let verificationStatus =  VerificationStatus.init(rawValue: JsonDashBoard["is_verify"].intValue) {
+        if let verificationStatus =  VerificationStatus.init(rawValue: Int(JsonDashBoard["is_verify"].stringValue) ?? 0) {
             userVerified = verificationStatus
         }
         userImageUrl = JsonDashBoard["profile_image"].stringValue

@@ -161,7 +161,9 @@ class BeneficiariesVC: BaseViewController {
         hideBeneficiaryPopup()
     }
     @IBAction func addBeneficiaryAction(_ sender: UIButton) {
-        showAddBeneficiaryPopup()
+        //showAddBeneficiaryPopup()
+        let addBeneficiary = AddBanaficiaryVC()
+        self.navigationController?.pushViewController(addBeneficiary, animated: false)
     }
     
     @IBAction func countryBtnAction(_ sender: UIButton) {
@@ -232,10 +234,15 @@ extension BeneficiariesVC {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             self.showHUD(progressLabel: AlertField.loaderString)
             let faqURL : String = URLNames.baseUrl + URLNames.beneficiaryList
+            print(faqURL)
+            //http://dev.equalinfotech.in/skyipay/api/user/receipientlist
             let headers = [
                 "Authorization": "Bearer \(Defaults.getAccessToken())",
             ]
-            NetworkManager.sharedInstance.commonApiCall(url: faqURL, method: .get, parameters: nil,headers: headers, completionHandler: { (json, status) in
+            let params = [
+                "user_id": "\(String(describing: Defaults.getUserID()!))",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: faqURL, method: .post, parameters: params,headers: headers, completionHandler: { (json, status) in
                 guard let jsonValue = json?.dictionaryValue else {
                     DispatchQueue.main.async {
                         self.dismissHUD(isAnimated: true)

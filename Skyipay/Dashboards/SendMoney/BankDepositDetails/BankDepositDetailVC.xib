@@ -422,14 +422,26 @@
         </view>
     </objects>
     <designables>
+        <designable name="3Vh-Sz-ZmV">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="4ca-CL-yto">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="79" height="30"/>
+        </designable>
+        <designable name="AYF-DM-Dxm">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="FhT-ym-Rvr">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="WXJ-yT-POY">
-            <size key="intrinsicContentSize" width="54" height="34"/>
+            <size key="intrinsicContentSize" width="73" height="34"/>
         </designable>
         <designable name="XIv-lI-gg3">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="112" height="30"/>
+        </designable>
+        <designable name="yPt-7y-Vfn">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

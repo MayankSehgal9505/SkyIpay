@@ -30,6 +30,9 @@
 		4E3CC3FE265C9E0500F32744 /* BeneficiaryDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */; };
 		4E46F80C26676FAC0095737C /* TransferDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46F80B26676FAC0095737C /* TransferDetails.swift */; };
 		4E4C43B62639324F002C4609 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4C43B52639324F002C4609 /* ActivityModel.swift */; };
+		4E7A4669270395F7007175F2 /* CurrencyConverterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A4668270395F7007175F2 /* CurrencyConverterModel.swift */; };
+		4E7A466C2703A1B6007175F2 /* AddBanaficiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A466A2703A1B6007175F2 /* AddBanaficiaryVC.swift */; };
+		4E7A466D2703A1B6007175F2 /* AddBanaficiaryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7A466B2703A1B6007175F2 /* AddBanaficiaryVC.xib */; };
 		4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED38264F86DC00A08AC2 /* Verification.swift */; };
 		4E7BED3B264F877E00A08AC2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */; };
 		4E7BED3D264FBB7200A08AC2 /* LogOutProtocall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */; };
@@ -104,6 +107,8 @@
 		4EEF8CAE265EDC29005E805E /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8CAD265EDC29005E805E /* CustomView.swift */; };
 		4EEF8CB1265EDC87005E805E /* RecepientDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */; };
 		4EEF8CB2265EDC87005E805E /* RecepientDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */; };
+		4EFFD1DD2705F23100A8B8CA /* IDDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFFD1DC2705F23100A8B8CA /* IDDocument.swift */; };
+		4EFFD1DF2705F37300A8B8CA /* Occupation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFFD1DE2705F37300A8B8CA /* Occupation.swift */; };
 		AB60B83871150F084CC8C969 /* Pods_Skyipay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E162205C1BD076792F3017 /* Pods_Skyipay.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +151,9 @@
 		4E3CC3FC265C9E0500F32744 /* BeneficiaryDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeneficiaryDetailVC.xib; sourceTree = "<group>"; };
 		4E46F80B26676FAC0095737C /* TransferDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetails.swift; sourceTree = "<group>"; };
 		4E4C43B52639324F002C4609 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		4E7A4668270395F7007175F2 /* CurrencyConverterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterModel.swift; sourceTree = "<group>"; };
+		4E7A466A2703A1B6007175F2 /* AddBanaficiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBanaficiaryVC.swift; sourceTree = "<group>"; };
+		4E7A466B2703A1B6007175F2 /* AddBanaficiaryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBanaficiaryVC.xib; sourceTree = "<group>"; };
 		4E7BED38264F86DC00A08AC2 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4E7BED3A264F877E00A08AC2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
 		4E7BED3C264FBB7200A08AC2 /* LogOutProtocall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutProtocall.swift; sourceTree = "<group>"; };
@@ -222,6 +230,8 @@
 		4EEF8CAD265EDC29005E805E /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		4EEF8CAF265EDC87005E805E /* RecepientDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecepientDetailsVC.swift; sourceTree = "<group>"; };
 		4EEF8CB0265EDC87005E805E /* RecepientDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepientDetailsVC.xib; sourceTree = "<group>"; };
+		4EFFD1DC2705F23100A8B8CA /* IDDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDDocument.swift; sourceTree = "<group>"; };
+		4EFFD1DE2705F37300A8B8CA /* Occupation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Occupation.swift; sourceTree = "<group>"; };
 		523D2C7D0E7482F5A1CE4978 /* Pods-Skyipay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skyipay.debug.xcconfig"; path = "Target Support Files/Pods-Skyipay/Pods-Skyipay.debug.xcconfig"; sourceTree = "<group>"; };
 		56E162205C1BD076792F3017 /* Pods_Skyipay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skyipay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -278,6 +288,8 @@
 				4EC2EC08264320D200EE1F71 /* BenificiaryList */,
 				4E9AC580264DA39000C2B6A8 /* DataManager.swift */,
 				4E8FF62D2653B1D900C8FCAA /* Enquiry */,
+				4E7A466A2703A1B6007175F2 /* AddBanaficiaryVC.swift */,
+				4E7A466B2703A1B6007175F2 /* AddBanaficiaryVC.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -444,6 +456,9 @@
 				4ED06BB126672B7B006BC2FF /* SendMoney.swift */,
 				4ED06BB326673119006BC2FF /* BankDepositModel.swift */,
 				4E46F80B26676FAC0095737C /* TransferDetails.swift */,
+				4E7A4668270395F7007175F2 /* CurrencyConverterModel.swift */,
+				4EFFD1DC2705F23100A8B8CA /* IDDocument.swift */,
+				4EFFD1DE2705F37300A8B8CA /* Occupation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -632,6 +647,7 @@
 				4EA973EF2629AAF6001A6446 /* LaunchScreen.storyboard in Resources */,
 				4EE18C322660AF8500FC7270 /* SendMoneyTabView.xib in Resources */,
 				4E87DDF6263166080039EB72 /* ActivityTVC.xib in Resources */,
+				4E7A466D2703A1B6007175F2 /* AddBanaficiaryVC.xib in Resources */,
 				4EA97413262AA0BA001A6446 /* WalkthroughCell.xib in Resources */,
 				4EB5B2B026335807006F8B17 /* UserProfileVC.xib in Resources */,
 				4E8AC3382660252400A1F98E /* BankDepositDetailVC.xib in Resources */,
@@ -742,20 +758,24 @@
 				4EA97420262AF92C001A6446 /* CustomPageControl.swift in Sources */,
 				4E7BED39264F86DC00A08AC2 /* Verification.swift in Sources */,
 				4EBDD2002652FB3E008A8119 /* EnquiryVC.swift in Sources */,
+				4E7A466C2703A1B6007175F2 /* AddBanaficiaryVC.swift in Sources */,
 				4E942785262C151C0017CDE3 /* APIFields.swift in Sources */,
 				4EBE8AA22664DAED007A2C7E /* Bank.swift in Sources */,
 				4EE18C312660AF8500FC7270 /* SendMoneyTabView.swift in Sources */,
 				4E94279F262C84B70017CDE3 /* GetOtp.swift in Sources */,
 				4EB5B2942632A28A006F8B17 /* VerifictionPendingVC.swift in Sources */,
 				4E0BD7C0262D778F00CBC046 /* ActivitesVC.swift in Sources */,
+				4EFFD1DF2705F37300A8B8CA /* Occupation.swift in Sources */,
 				4EC2EC012643018000EE1F71 /* BeneficiariesVC.swift in Sources */,
 				4EBE8AA02664D682007A2C7E /* FeeModel.swift in Sources */,
 				4ED06BB426673119006BC2FF /* BankDepositModel.swift in Sources */,
 				4E262160262D3B3A00C7D377 /* OtpTextfield.swift in Sources */,
 				4E87DDF5263166080039EB72 /* ActivityTVC.swift in Sources */,
 				4E262147262CAB4D00C7D377 /* Utility.swift in Sources */,
+				4E7A4669270395F7007175F2 /* CurrencyConverterModel.swift in Sources */,
 				4EA9741A262AC948001A6446 /* LoginVC.swift in Sources */,
 				4E9AC581264DA39000C2B6A8 /* DataManager.swift in Sources */,
+				4EFFD1DD2705F23100A8B8CA /* IDDocument.swift in Sources */,
 				4EA974082629BD5F001A6446 /* Constants.swift in Sources */,
 				4EEF8CAB265ECF42005E805E /* TransferDetailVC.swift in Sources */,
 				4E7CA78C2662A6B700BAA846 /* SendMoneyNavigator.swift in Sources */,
@@ -922,7 +942,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZE38D2D95S;
+				DEVELOPMENT_TEAM = XT6D3A3626;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -934,7 +954,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -947,7 +967,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZE38D2D95S;
+				DEVELOPMENT_TEAM = XT6D3A3626;
 				INFOPLIST_FILE = Skyipay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -959,7 +979,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

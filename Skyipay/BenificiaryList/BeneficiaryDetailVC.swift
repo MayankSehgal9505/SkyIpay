@@ -63,3 +63,41 @@ class BeneficiaryDetailVC: BaseViewController {
         self.navigationController?.popViewController(animated: false)
     }
 }
+
+// MARK: API Call
+extension BeneficiaryDetailVC {
+    private func getBeneficiaryDetail() {
+        if NetworkManager.sharedInstance.isInternetAvailable(){
+            self.showHUD(progressLabel: AlertField.loaderString)
+            let beneficaryDetailUrl : String = URLNames.baseUrl + URLNames.beneficiaryDetails
+            let headers = [
+                "Authorization": "Bearer \(Defaults.getAccessToken())",
+            ]
+            let params = [
+                "receipient_id": beneficiaryModel.beneficiaryID
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: beneficaryDetailUrl, method: .post, parameters: params,headers: headers, completionHandler: { (json, status) in
+                guard let jsonValue = json?.dictionaryValue else {
+                    DispatchQueue.main.async {
+                        self.dismissHUD(isAnimated: true)
+                        self.view.makeToast(status, duration: 3.0, position: .bottom)
+                    }
+                    return
+                }
+                if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
+                    DispatchQueue.main.async {
+                    }
+                }
+                else {
+                    DispatchQueue.main.async {
+                    self.view.makeToast(jsonValue["msg"]?.stringValue, duration: 3.0, position: .bottom)
+                    }
+                }
+                DispatchQueue.main.async {
+                }
+            })
+        }else{
+            self.showNoInternetAlert()
+        }
+    }
+}

@@ -127,7 +127,10 @@ extension SendMoneyVC {
             let headers = [
                 "Authorization": "Bearer \(Defaults.getAccessToken())",
             ]
-            NetworkManager.sharedInstance.commonApiCall(url: getUserDetails, method: .get, parameters: nil,headers: headers, completionHandler: { (json, status) in
+            let params = [
+                "id": "\(String(describing: Defaults.getUserID()))",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: getUserDetails, method: .post, parameters: params,headers: headers, completionHandler: { (json, status) in
              guard let jsonValue = json?.dictionaryValue else {
                 self.dismissHUD(isAnimated: true)
                 return

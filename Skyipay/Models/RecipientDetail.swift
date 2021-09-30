@@ -13,7 +13,7 @@ struct RecipientDetail {
     var recipientFirstName = ""
     var recipientMiddleName = ""
     var recipientSurName = ""
-    var recipientSecondSurName = ""
+    var recipientEmail = ""
     var recipientAddress = ""
     var recipientCity = ""
     var recipientCountry = Country()

@@ -32,7 +32,7 @@ class BeneficiaryTVC: UITableViewCell {
     }
     
     func setupCell(_ beneficiaryModel: BeneficiaryModel) {
-        beneficaryName.text = beneficiaryModel.beneficiaryName
+        beneficaryName.text = beneficiaryModel.beneficiaryName.isEmpty ? "\(beneficiaryModel.beneficiaryFirstName + " " + beneficiaryModel.beneficiaryMiddleName + " " + beneficiaryModel.beneficiaryLastName)" : beneficiaryModel.beneficiaryName
         beneficiaryStatus.text = beneficiaryModel.beneficiaryStatus.beneficiaryStatusText
         beneficiaryStatusImg.image = UIImage.init(named: beneficiaryModel.beneficiaryStatus.beneficiaryStatusImg)
         accountNumber.text = "(AC \(beneficiaryModel.beneficiaryAccountNumber))"

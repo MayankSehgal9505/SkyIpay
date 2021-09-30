@@ -31,19 +31,30 @@ struct BeneficiaryModel {
     }
     //MARK: Variable
     var beneficiaryID = ""
-    var beneficiaryUserID = ""
+    var currentUserID = ""
     var beneficiaryName = ""
+    var beneficiaryFirstName = ""
+    var beneficiaryMiddleName = ""
+    var beneficiaryLastName = ""
     var beneficiaryBankName = ""
+    var beneficiaryBankID = ""
     var beneficiaryAccountNumber = ""
     var beneficiaryDialCode = ""
     var beneficiaryPhoneNumber = ""
     var beneficiaryEmail = ""
     var beneficiaryDOB = ""
+    var beneficiaryOccupation = ""
     var beneficiaryCountryID = ""
     var beneficiaryStatus:BeneficiaryStatus = .notVerified
     var beneficiaryCreationDate = ""
     var beneficiaryUpdateDate = ""
+    var beneficiaryiso3 = ""
+    var beneficiaryAddress = ""
+    var beneficiaryCity = ""
+    var beneficiaryPostCode = ""
+    var beneficiaryCountryName = ""
     var countryModel: Country = Country()
+    
     //MARK: Lifecycle
     init() {
     }
@@ -53,15 +64,25 @@ struct BeneficiaryModel {
     /// - Parameter json: Json object
     init(json : JSON) {
         self.beneficiaryID = json["id"].stringValue
-        self.beneficiaryUserID = json["user_id"].stringValue
+        self.currentUserID = json["user_id"].stringValue
         self.beneficiaryName = json["name"].stringValue
+        self.beneficiaryFirstName = json["first_name"].stringValue
+        self.beneficiaryMiddleName = json["middle_name"].stringValue
+        self.beneficiaryLastName = json["last_name"].stringValue
         self.beneficiaryBankName = json["bank_name"].stringValue
+        self.beneficiaryBankID = json["bank_id"].stringValue
         self.beneficiaryAccountNumber = json["ac_no"].stringValue
         self.beneficiaryDialCode = json["dial_code"].stringValue
         self.beneficiaryPhoneNumber = json["phone"].stringValue
         self.beneficiaryEmail = json["email"].stringValue
         self.beneficiaryDOB = json["dob"].stringValue
+        self.beneficiaryOccupation = json["occupation"].stringValue
         self.beneficiaryCountryID = json["country_id"].stringValue
+        self.beneficiaryiso3 = json["iso3"].stringValue
+        self.beneficiaryAddress = json["address"].stringValue
+        self.beneficiaryCity = json["city"].stringValue
+        self.beneficiaryPostCode = json["postcode"].stringValue
+        self.beneficiaryCountryName = json["country_name"].stringValue
         if let beneficiaryStatus = BeneficiaryStatus.init(rawValue: json["status"].stringValue) {
             self.beneficiaryStatus = beneficiaryStatus
         }

@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="continueBtn" destination="5xW-Ht-hrg" id="Z5b-hy-9Bl"/>
                 <outlet property="pickerParentView" destination="8cW-7H-0Fm" id="jFL-tZ-Wtt"/>
+                <outlet property="postCodeTextField" destination="PJ3-2P-ePq" id="OVv-xX-HqX"/>
                 <outlet property="previousRecipientLbl" destination="MVZ-gE-hL0" id="wfq-k5-ENV"/>
                 <outlet property="recepientMiddleNametxtFld" destination="5Mc-XU-cSh" id="UqP-Uy-IZx"/>
                 <outlet property="recipientAddressTxtFld" destination="Fez-Qg-0E4" id="IV6-sW-gD8"/>
@@ -86,10 +87,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1159"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZT0-Zk-onO" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1152"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1280"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vFe-EN-gyT">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1152"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1280"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUl-Bm-foA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -322,7 +323,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrz-Jc-tFz">
                                             <rect key="frame" x="0.0" y="512" width="414" height="128"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Surname (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-ke-UJX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-ke-UJX">
                                                     <rect key="frame" x="20" y="20" width="374" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -469,8 +470,58 @@
                                                 <constraint firstAttribute="trailing" secondItem="baY-Bf-cSl" secondAttribute="trailing" constant="20" id="lU8-8i-ugU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9P-3g-4cw">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-hc-ceZ">
                                             <rect key="frame" x="0.0" y="896" width="414" height="128"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znn-xh-GdA">
+                                                    <rect key="frame" x="20" y="20" width="374" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-cX-WAL" customClass="CustomView" customModule="Skyipay" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="88" width="374" height="40"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-2P-ePq">
+                                                            <rect key="frame" x="10" y="0.0" width="354" height="40"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="PJ3-2P-ePq" secondAttribute="trailing" constant="10" id="0gz-tW-rPc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PJ3-2P-ePq" secondAttribute="bottom" id="UwU-EO-H2t"/>
+                                                        <constraint firstItem="PJ3-2P-ePq" firstAttribute="top" secondItem="uXK-cX-WAL" secondAttribute="top" id="cUe-OE-ZsP"/>
+                                                        <constraint firstItem="PJ3-2P-ePq" firstAttribute="leading" secondItem="uXK-cX-WAL" secondAttribute="leading" constant="10" id="ctS-WO-NaI"/>
+                                                        <constraint firstAttribute="height" constant="40" id="ekv-OJ-aBx"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="customBorderColor">
+                                                            <color key="value" red="0.76078431369999999" green="0.76078431369999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="znn-xh-GdA" firstAttribute="leading" secondItem="XSv-hc-ceZ" secondAttribute="leading" constant="20" id="51e-hC-NFX"/>
+                                                <constraint firstItem="znn-xh-GdA" firstAttribute="top" secondItem="XSv-hc-ceZ" secondAttribute="top" constant="20" id="D7M-a5-Xf4"/>
+                                                <constraint firstAttribute="bottom" secondItem="uXK-cX-WAL" secondAttribute="bottom" id="Q8G-Ed-1Jo"/>
+                                                <constraint firstItem="uXK-cX-WAL" firstAttribute="top" secondItem="znn-xh-GdA" secondAttribute="bottom" constant="10" id="d5f-Qr-xcm"/>
+                                                <constraint firstAttribute="trailing" secondItem="uXK-cX-WAL" secondAttribute="trailing" constant="20" id="fRx-jV-jRc"/>
+                                                <constraint firstItem="uXK-cX-WAL" firstAttribute="leading" secondItem="XSv-hc-ceZ" secondAttribute="leading" constant="20" id="vHG-fc-6hD"/>
+                                                <constraint firstAttribute="trailing" secondItem="znn-xh-GdA" secondAttribute="trailing" constant="20" id="xLo-TU-Cga"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9P-3g-4cw">
+                                            <rect key="frame" x="0.0" y="1024" width="414" height="128"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region/Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRk-1m-xfj">
                                                     <rect key="frame" x="20" y="20" width="374" height="53"/>
@@ -539,7 +590,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-f9-obP">
-                                            <rect key="frame" x="0.0" y="1024" width="414" height="128"/>
+                                            <rect key="frame" x="0.0" y="1152" width="414" height="128"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumer Fraud Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqO-l7-YCG">
                                                     <rect key="frame" x="106" y="15" width="172" height="33"/>
@@ -628,8 +679,35 @@
         </view>
     </objects>
     <designables>
+        <designable name="3Ru-mg-0bX">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="5xW-Ht-hrg">
-            <size key="intrinsicContentSize" width="51" height="33"/>
+            <size key="intrinsicContentSize" width="69" height="33"/>
+        </designable>
+        <designable name="Dfg-dq-CGB">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="Kdz-6L-b1N">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="V23-j8-6PK">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="XgL-Sp-UTf">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="baY-Bf-cSl">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="uXK-cX-WAL">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="umB-6s-Dsf">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="upN-gv-UYL">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

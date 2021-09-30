@@ -20,6 +20,7 @@ class RecepientDetailsVC: SendMoneySuperVC {
     @IBOutlet weak var recipientAddressTxtFld: UITextField!
     @IBOutlet weak var recipientCityTxtFld: UITextField!
     @IBOutlet weak var recipientCountry: UILabel!
+    @IBOutlet weak var postCodeTextField: UITextField!
     //MARK:- Properties
     private let userInfo = UserData.sharedInstance
     private let sendMoneyInfo = SendMoney.sharedInstance
@@ -30,12 +31,15 @@ class RecepientDetailsVC: SendMoneySuperVC {
     private var recipients = [RecipientDetail]()
     private var selectedRecipient = RecipientDetail()
     private var receipientCountry = Country()
+    private var beneficiaries = [BeneficiaryModel]()
+    private var selectedBeneficary = BeneficiaryModel()
+    private var selectedItem = ""
     //MARK:- Life Cycle Method
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCountryPicker()
-
+        getBeneficiariesList()
     }
     //MARK:- Internal Methods
     private func setupCountryPicker() {
@@ -63,6 +67,18 @@ class RecepientDetailsVC: SendMoneySuperVC {
         hidePickerView()
     }
     @IBAction func pickerDoneAction(_ sender: UIBarButtonItem) {
+        self.selectedBeneficary = self.beneficiaries.filter({ model -> Bool in
+            return model.beneficiaryFirstName == selectedItem
+        }).first!
+        previousRecipientLbl.text = self.selectedBeneficary.beneficiaryFirstName
+        recipientFirstNameTxtFld.text = self.selectedBeneficary.beneficiaryFirstName
+        recepientMiddleNametxtFld.text = self.selectedBeneficary.beneficiaryMiddleName
+        recipientSurnameTxtFld.text = self.selectedBeneficary.beneficiaryLastName
+        recipientSecondSurnameTxtFld.text = self.selectedBeneficary.beneficiaryEmail
+        recipientAddressTxtFld.text = self.selectedBeneficary.beneficiaryAddress
+        recipientCityTxtFld.text = self.selectedBeneficary.beneficiaryCity
+        postCodeTextField.text = self.selectedBeneficary.beneficiaryPostCode
+        recipientCountry.text = self.selectedBeneficary.beneficiaryCountryName
         hidePickerView()
     }
     @IBAction func previousRecipientAction(_ sender: UIButton) {
@@ -83,15 +99,19 @@ class RecepientDetailsVC: SendMoneySuperVC {
             self.view.makeToast("Recipient first name can't be empty", duration: 3.0, position: .center)
         } else if (recipientSurnameTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Recipient Surname can't be empty", duration: 3.0, position: .center)
+        } else if (recipientSecondSurnameTxtFld.text?.isEmpty ??  true) {
+            self.view.makeToast("Recipient emailID can't be empty", duration: 3.0, position: .center)
         } else if (recipientCityTxtFld.text?.isEmpty ??  true) {
             self.view.makeToast("Recipient City can't be empty", duration: 3.0, position: .center)
+        } else if (postCodeTextField.text?.isEmpty ??  true) {
+            self.view.makeToast("Post code can't be empty", duration: 3.0, position: .center)
         } else if (recipientCountry.text?.isEmpty ??  true) {
             self.view.makeToast("Select recipient coutry", duration: 3.0, position: .center)
-        } else {
+        }  else {
             selectedRecipient.recipientFirstName =  recipientFirstNameTxtFld.text!
             selectedRecipient.recipientMiddleName = recepientMiddleNametxtFld.text!
             selectedRecipient.recipientSurName = recipientSurnameTxtFld.text!
-            selectedRecipient.recipientSecondSurName = recipientSecondSurnameTxtFld.text!
+            selectedRecipient.recipientEmail = recipientSecondSurnameTxtFld.text!
             selectedRecipient.recipientAddress = recipientAddressTxtFld.text!
             selectedRecipient.recipientCity = recipientCityTxtFld.text!
             selectedRecipient.recipientCountry = receipientCountry
@@ -105,6 +125,7 @@ class RecepientDetailsVC: SendMoneySuperVC {
 //MARK:- GenericPickerDataSourceDelegate Methods
 extension RecepientDetailsVC: GenericPickerDataSourceDelegate {
     func selected(item: String) {
+        selectedItem = item
     }
 }
 
@@ -134,14 +155,19 @@ extension RecepientDetailsVC: CountryPickerViewDataSource, CountryPickerViewDele
 
 //MARK:- API Call Methods
 extension RecepientDetailsVC {
-    private func getRecipientList() {
+    private func getBeneficiariesList() {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             Utility.showHUDOnWindow(progressLabel: AlertField.loaderString)
-            let bankListUrl : String = URLNames.baseUrl + URLNames.bankList
+            let faqURL : String = URLNames.baseUrl + URLNames.beneficiaryList
+            print(faqURL)
+            //http://dev.equalinfotech.in/skyipay/api/user/receipientlist
             let headers = [
                 "Authorization": "Bearer \(Defaults.getAccessToken())",
             ]
-            NetworkManager.sharedInstance.commonApiCall(url: bankListUrl, method: .get, parameters: nil,headers: headers, completionHandler: { (json, status) in
+            let params = [
+                "user_id": "\(String(describing: Defaults.getUserID()!))",
+            ]
+            NetworkManager.sharedInstance.commonApiCall(url: faqURL, method: .post, parameters: params,headers: headers, completionHandler: { (json, status) in
                 guard let jsonValue = json?.dictionaryValue else {
                     DispatchQueue.main.async {
                         Utility.dismissHUD(isAnimated: true)
@@ -150,17 +176,17 @@ extension RecepientDetailsVC {
                     return
                 }
                 if let apiSuccess = jsonValue[APIFields.codeKey], apiSuccess == 200 {
-                    if let recipientList = jsonValue[APIFields.dataKey]?.array {
-                        var recipients = Array<RecipientDetail>()
-                        for recipient in recipientList {
-                            let recipientObj = RecipientDetail.init(json: recipient)
-                            recipients.append(recipientObj)
+                    if let beneficiarylist = jsonValue[APIFields.dataKey]?.array {
+                        var beneficiaries = Array<BeneficiaryModel>()
+                        for beneficiary in beneficiarylist {
+                            let beneficiaryModel = BeneficiaryModel.init(json: beneficiary)
+                            beneficiaries.append(beneficiaryModel)
                         }
-                        self.recipients = recipients
-                        self.selectedRecipient = self.recipients.first ?? RecipientDetail()
+                        self.beneficiaries = beneficiaries
+                        self.selectedItem = self.beneficiaries.map{$0.beneficiaryFirstName}.first!
                     }
                     DispatchQueue.main.async {
-                        self.setPickerDataSourceDelegate(dataSourceArray: self.recipients.map{$0.recipientFirstName})
+                        self.setPickerDataSourceDelegate(dataSourceArray: self.beneficiaries.map{$0.beneficiaryFirstName})
                     }
                 }
                 else {
@@ -176,4 +202,5 @@ extension RecepientDetailsVC {
             self.showNoInternetAlert()
         }
     }
+
 }

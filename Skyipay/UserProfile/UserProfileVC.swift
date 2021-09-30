@@ -286,6 +286,7 @@ extension UserProfileVC {
         if NetworkManager.sharedInstance.isInternetAvailable(){
             let updateUserProfileUrl = URLNames.baseUrl + URLNames.updateUserDetails
             let parameters = [
+                "user_id":"",
                 "first_name": self.getFirstLastName(firstNameRequire: true),
                 "last_name": self.getFirstLastName(firstNameRequire: false),
                 "email": self.userEmailTxtFld.text!,
