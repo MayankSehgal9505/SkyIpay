@@ -76,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          let token = tokenParts.joined()
          // 2. Print device token to use for PNs payloads
          print("Device Token: \(token)")
+        Defaults.setDeviceToken(deviceToken: token)
      }
 
      func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

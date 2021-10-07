@@ -63,9 +63,13 @@ class BeneficiariesVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        getBeneficiariesList()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getBeneficiariesList()
+
+    }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         baseView.roundCorners(corners: [.topLeft, .topRight], radius: 30)

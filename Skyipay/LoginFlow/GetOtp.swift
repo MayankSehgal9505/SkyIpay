@@ -19,7 +19,9 @@ extension GetOtp where Self:UIViewController {
             let parameters = [
                 "dial_code":"\(userModelObj.userAddress.first?.countryModel.countryDialCode ?? 0)",
                 "iso":userModelObj.userAddress.first?.countryModel.countryISOCode ?? "",
-                "phone":userModelObj.userPhoneNumber
+                "phone":userModelObj.userPhoneNumber,
+                "device_id":Defaults.getDeviceToken(),
+                "status":"login"
             ] as [String : Any]
             print(parameters)
             NetworkManager.sharedInstance.commonApiCall(url: loginURL, method: .post, parameters: parameters, completionHandler: { (json, status) in

@@ -479,29 +479,25 @@ extension AddBanaficiaryVC {
             self.showHUD(progressLabel: AlertField.loaderString)
             let updateUserProfileUrl = URLNames.baseUrl + URLNames.addBeneficiary
             let parameters = [
+                "user_id": "\(Defaults.getUserID()!)",
                 "first_name":firstNameTxtFld.text!,
                 "last_name":lastNameTxtFld.text!,
                 "email":emailTtFld.text!,
-                "password":"123456",
+                "dial_code": country.countryDialCode,
+                "phone" : phoneNumberTtFld.text!,
                 "dob":dobTxtFld.text!,
-                "iso":country.countryISOCode,
+                "ac_no":accountNumTxtFld.text!,
+                "bank_name": selectedBank.bankName,
                 "country_id":country.countryId,
+                "bank_id":"\(selectedBank.bankID)",
                 "address":addressTxtFld.text!,
-                "city":cityTextFld.text!,
-                "county_id":"1",
-                "postcode":postCodeTxtFld.text!,
-                "country":country.countryId,
-                "country_of_birth":country.countryId,
-                "customer_type_id":"1",
-                "gender":"Male",
-                "occupation_id":selectedOccupation.id,
                 "id_type":selectedidDocument.id,
                 "id_number":idNumberTxtFld.text!,
-                "id_card":"dnndn",
                 "issue_date":issueDateTxtFld.text!,
                 "expire_date":expiryDateTxtFld.text!,
-                "ac_no":accountNumTxtFld.text!,
-                "bank_name": selectedBank.bankName
+                "county_id":"1",
+                "postcode":postCodeTxtFld.text!,
+                "occupation_id":selectedOccupation.id,
             ] as [String : Any]
             print(parameters)
             let headers = [
